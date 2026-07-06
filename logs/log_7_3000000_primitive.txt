@@ -1,0 +1,59 @@
+PS C:\dev\mystimath\conjectura> python search_magic_square_of_squares_v4.py --max-center-root 3000000 --min-squares 7 --primitive-only --progress 100000 --csv results_7_3000000_primitive.csv
+Génération des progressions de carrés...
+Recherche des carrés magiques...
+[progress] centre=100000/3000000 résultats=1 temps=13.9s
+[progress] centre=200000/3000000 résultats=1 temps=17.4s
+[progress] centre=300000/3000000 résultats=1 temps=21.5s
+[progress] centre=400000/3000000 résultats=1 temps=25.9s
+[progress] centre=500000/3000000 résultats=1 temps=30.5s
+[progress] centre=600000/3000000 résultats=1 temps=35.2s
+[progress] centre=700000/3000000 résultats=1 temps=40.2s
+[progress] centre=800000/3000000 résultats=1 temps=45.2s
+[progress] centre=900000/3000000 résultats=1 temps=50.5s
+[progress] centre=1000000/3000000 résultats=1 temps=55.7s
+[progress] centre=1100000/3000000 résultats=1 temps=61.2s
+[progress] centre=1200000/3000000 résultats=1 temps=66.7s
+[progress] centre=1300000/3000000 résultats=1 temps=72.3s
+[progress] centre=1400000/3000000 résultats=1 temps=78.1s
+[progress] centre=1500000/3000000 résultats=1 temps=83.9s
+[progress] centre=1600000/3000000 résultats=1 temps=89.7s
+[progress] centre=1700000/3000000 résultats=1 temps=95.8s
+[progress] centre=1800000/3000000 résultats=1 temps=101.8s
+[progress] centre=1900000/3000000 résultats=1 temps=107.9s
+[progress] centre=2000000/3000000 résultats=1 temps=114.2s
+[progress] centre=2100000/3000000 résultats=1 temps=120.4s
+[progress] centre=2200000/3000000 résultats=1 temps=126.7s
+[progress] centre=2300000/3000000 résultats=1 temps=133.1s
+[progress] centre=2400000/3000000 résultats=1 temps=139.7s
+[progress] centre=2500000/3000000 résultats=1 temps=146.2s
+[progress] centre=2600000/3000000 résultats=1 temps=152.8s
+[progress] centre=2700000/3000000 résultats=1 temps=159.5s
+[progress] centre=2800000/3000000 résultats=1 temps=166.1s
+[progress] centre=2900000/3000000 résultats=1 temps=172.9s
+[progress] centre=3000000/3000000 résultats=1 temps=179.6s
+
+Résultats trouvés : 1
+
+================================================================================
+Nombre d'entrées carrées : 7/9
+Somme magique            : 541875
+Centre                   : 425² = 180625
+p                        : 138600
+q                        : 97104
+gcd des 9 entrées         : 1
+facteur carré commun      : 1
+
+        373² |       360721 |         205²
+        289² |         425² |         527²
+        565² |          23² |       222121
+
+Entrées carrées :
+  a = 373² = 139129
+  c = 205² = 42025
+  d = 289² = 83521
+  e = 425² = 180625
+  f = 527² = 277729
+  h = 565² = 319225
+  i = 23² = 529
+
+CSV exporté : results_7_3000000_primitive.csv

@@ -1,0 +1,15 @@
+__pycache__/
+*.pyc
+
+# Fichiers temporaires
+*.tmp
+*.bak
+
+# Environnements Python
+.venv/
+venv/
+env/
+
+# Gros exports éventuels
+results/tmp/
+results/raw/

@@ -1,0 +1,37 @@
+PS C:\dev\mystimath\conjectura> python search_magic_square_of_squares_v4.py --max-center-root 3000000 --min-squares 8 --primitive-only --progress 100000 --csv results_8_3000000_primitive.csv
+Génération des progressions de carrés...
+Recherche des carrés magiques...
+[progress] centre=100000/3000000 résultats=0 temps=13.6s
+[progress] centre=200000/3000000 résultats=0 temps=17.1s
+[progress] centre=300000/3000000 résultats=0 temps=21.0s
+[progress] centre=400000/3000000 résultats=0 temps=25.3s
+[progress] centre=500000/3000000 résultats=0 temps=29.9s
+[progress] centre=600000/3000000 résultats=0 temps=34.7s
+[progress] centre=700000/3000000 résultats=0 temps=39.7s
+[progress] centre=800000/3000000 résultats=0 temps=44.9s
+[progress] centre=900000/3000000 résultats=0 temps=50.1s
+[progress] centre=1000000/3000000 résultats=0 temps=55.5s
+[progress] centre=1100000/3000000 résultats=0 temps=61.0s
+[progress] centre=1200000/3000000 résultats=0 temps=66.5s
+[progress] centre=1300000/3000000 résultats=0 temps=72.2s
+[progress] centre=1400000/3000000 résultats=0 temps=78.0s
+[progress] centre=1500000/3000000 résultats=0 temps=83.9s
+[progress] centre=1600000/3000000 résultats=0 temps=89.8s
+[progress] centre=1700000/3000000 résultats=0 temps=95.9s
+[progress] centre=1800000/3000000 résultats=0 temps=101.9s
+[progress] centre=1900000/3000000 résultats=0 temps=108.1s
+[progress] centre=2000000/3000000 résultats=0 temps=114.3s
+[progress] centre=2100000/3000000 résultats=0 temps=120.6s
+[progress] centre=2200000/3000000 résultats=0 temps=127.0s
+[progress] centre=2300000/3000000 résultats=0 temps=133.4s
+[progress] centre=2400000/3000000 résultats=0 temps=139.8s
+[progress] centre=2500000/3000000 résultats=0 temps=146.4s
+[progress] centre=2600000/3000000 résultats=0 temps=152.8s
+[progress] centre=2700000/3000000 résultats=0 temps=159.5s
+[progress] centre=2800000/3000000 résultats=0 temps=166.3s
+[progress] centre=2900000/3000000 résultats=0 temps=173.0s
+[progress] centre=3000000/3000000 résultats=0 temps=179.8s
+
+Résultats trouvés : 0
+
+CSV exporté : results_8_3000000_primitive.csv
