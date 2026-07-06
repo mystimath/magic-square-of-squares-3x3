@@ -1,0 +1,107 @@
+PS C:\dev\mystimath\conjectura\magic-square-of-squares-3x3> python search_magic_square_of_squares_v5_non_square_center.py --max-outer-root 20000 --primitive-only --progress-root 2000 --progress-center 100000 --csv results_8_non_square_center_root20000.csv
+Génération des paires de carrés autour de centres entiers...
+[generation] outer_root=2000/20000 paires=998001 centres=582989 temps=1.3s
+[generation] outer_root=4000/20000 paires=3996001 centres=2233516 temps=5.4s
+[generation] outer_root=6000/20000 paires=8994001 centres=4907788 temps=12.0s
+[generation] outer_root=8000/20000 paires=15992001 centres=8585731 temps=23.1s
+[generation] outer_root=10000/20000 paires=24990001 centres=13253273 temps=39.3s
+[generation] outer_root=12000/20000 paires=35988001 centres=18900573 temps=55.9s
+[generation] outer_root=14000/20000 paires=48986001 centres=25519795 temps=102.3s
+[generation] outer_root=16000/20000 paires=63984001 centres=33104216 temps=1126.6s
+[generation] outer_root=18000/20000 paires=80982001 centres=41648329 temps=2586.8s
+[generation] outer_root=20000/20000 paires=99980001 centres=51147649 temps=5163.9s
+Filtrage des centres ayant au moins 4 paires opposées...
+Nombre total de paires générées     : 99990000
+Nombre total de centres rencontrés  : 51153080
+Centres avec au moins 4 offsets     : 7198712
+Recherche des carrés magiques 8/9...
+[search] centre_index=100000/7198712 résultats=0 temps=5699.6s
+[search] centre_index=200000/7198712 résultats=0 temps=5704.8s
+[search] centre_index=300000/7198712 résultats=0 temps=5709.8s
+[search] centre_index=400000/7198712 résultats=0 temps=5714.4s
+[search] centre_index=500000/7198712 résultats=0 temps=5719.0s
+[search] centre_index=600000/7198712 résultats=0 temps=5724.2s
+[search] centre_index=700000/7198712 résultats=0 temps=5728.5s
+[search] centre_index=800000/7198712 résultats=0 temps=5732.9s
+[search] centre_index=900000/7198712 résultats=0 temps=5737.2s
+[search] centre_index=1000000/7198712 résultats=0 temps=5742.8s
+[search] centre_index=1100000/7198712 résultats=0 temps=5747.8s
+[search] centre_index=1200000/7198712 résultats=0 temps=5753.9s
+[search] centre_index=1300000/7198712 résultats=0 temps=5763.4s
+[search] centre_index=1400000/7198712 résultats=0 temps=5770.4s
+[search] centre_index=1500000/7198712 résultats=0 temps=5777.9s
+[search] centre_index=1600000/7198712 résultats=0 temps=5784.9s
+[search] centre_index=1700000/7198712 résultats=0 temps=5791.2s
+[search] centre_index=1800000/7198712 résultats=0 temps=5796.8s
+[search] centre_index=1900000/7198712 résultats=0 temps=5802.0s
+[search] centre_index=2000000/7198712 résultats=0 temps=5807.9s
+[search] centre_index=2100000/7198712 résultats=0 temps=5815.8s
+[search] centre_index=2200000/7198712 résultats=0 temps=5822.1s
+[search] centre_index=2300000/7198712 résultats=0 temps=5828.7s
+[search] centre_index=2400000/7198712 résultats=0 temps=5834.1s
+[search] centre_index=2500000/7198712 résultats=0 temps=5840.1s
+[search] centre_index=2600000/7198712 résultats=0 temps=5847.1s
+[search] centre_index=2700000/7198712 résultats=0 temps=5854.6s
+[search] centre_index=2800000/7198712 résultats=0 temps=5862.6s
+[search] centre_index=2900000/7198712 résultats=0 temps=5870.6s
+[search] centre_index=3000000/7198712 résultats=0 temps=5877.3s
+[search] centre_index=3100000/7198712 résultats=0 temps=5882.5s
+[search] centre_index=3200000/7198712 résultats=0 temps=5888.6s
+[search] centre_index=3300000/7198712 résultats=0 temps=5895.9s
+[search] centre_index=3400000/7198712 résultats=0 temps=5902.3s
+[search] centre_index=3500000/7198712 résultats=0 temps=5908.4s
+[search] centre_index=3600000/7198712 résultats=0 temps=5914.9s
+[search] centre_index=3700000/7198712 résultats=0 temps=5922.8s
+[search] centre_index=3800000/7198712 résultats=0 temps=5930.0s
+[search] centre_index=3900000/7198712 résultats=0 temps=5936.4s
+[search] centre_index=4000000/7198712 résultats=0 temps=5941.8s
+[search] centre_index=4100000/7198712 résultats=0 temps=5946.6s
+[search] centre_index=4200000/7198712 résultats=0 temps=5951.7s
+[search] centre_index=4300000/7198712 résultats=0 temps=5958.9s
+[search] centre_index=4400000/7198712 résultats=0 temps=5964.5s
+[search] centre_index=4500000/7198712 résultats=0 temps=5970.5s
+[search] centre_index=4600000/7198712 résultats=0 temps=5976.9s
+[search] centre_index=4700000/7198712 résultats=0 temps=5983.7s
+[search] centre_index=4800000/7198712 résultats=0 temps=5990.3s
+[search] centre_index=4900000/7198712 résultats=0 temps=5996.2s
+[search] centre_index=5000000/7198712 résultats=0 temps=6002.9s
+[search] centre_index=5100000/7198712 résultats=0 temps=6007.5s
+[search] centre_index=5200000/7198712 résultats=0 temps=6012.5s
+[search] centre_index=5300000/7198712 résultats=0 temps=6019.1s
+[search] centre_index=5400000/7198712 résultats=0 temps=6024.7s
+[search] centre_index=5500000/7198712 résultats=0 temps=6029.7s
+[search] centre_index=5600000/7198712 résultats=0 temps=6034.2s
+[search] centre_index=5700000/7198712 résultats=0 temps=6039.5s
+[search] centre_index=5800000/7198712 résultats=0 temps=6046.1s
+[search] centre_index=5900000/7198712 résultats=0 temps=6051.4s
+[search] centre_index=6000000/7198712 résultats=0 temps=6057.0s
+[search] centre_index=6100000/7198712 résultats=0 temps=6062.7s
+[search] centre_index=6200000/7198712 résultats=0 temps=6068.1s
+[search] centre_index=6300000/7198712 résultats=0 temps=6072.4s
+[search] centre_index=6400000/7198712 résultats=0 temps=6076.5s
+[search] centre_index=6500000/7198712 résultats=0 temps=6081.5s
+[search] centre_index=6600000/7198712 résultats=0 temps=6087.5s
+[search] centre_index=6700000/7198712 résultats=0 temps=6093.6s
+[search] centre_index=6800000/7198712 résultats=0 temps=6102.4s
+[search] centre_index=6900000/7198712 résultats=0 temps=6109.8s
+[search] centre_index=7000000/7198712 résultats=0 temps=6118.1s
+[search] centre_index=7100000/7198712 résultats=0 temps=6130.2s
+
+Résultats trouvés : 0
+
+================================================================================
+STATISTIQUES
+================================================================================
+max_outer_root                : 20000
+pair_count                    : 99990000
+all_centers_count             : 51153080
+candidate_centers_count       : 7198712
+tested_offset_pairs           : 161942106
+rejected_square_center        : 2352
+rejected_not_magic            : 0
+rejected_not_distinct         : 0
+rejected_not_primitive        : 0
+results_count                 : 0
+elapsed_seconds               : 6145.59
+
+CSV exporté : results_8_non_square_center_root20000.csv

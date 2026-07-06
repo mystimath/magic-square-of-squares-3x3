@@ -1,0 +1,69 @@
+PS C:\dev\mystimath\conjectura\magic-square-of-squares-3x3> python search_magic_square_of_squares_v5_non_square_center.py --max-outer-root 10000 --primitive-only --progress-root 1000 --progress-center 50000 --csv results_8_non_square_center_root10000.csv
+Génération des paires de carrés autour de centres entiers...
+[generation] outer_root=1000/10000 paires=249001 centres=152745 temps=0.2s
+[generation] outer_root=2000/10000 paires=998001 centres=582989 temps=1.2s
+[generation] outer_root=3000/10000 paires=2247001 centres=1278482 temps=2.8s
+[generation] outer_root=4000/10000 paires=3996001 centres=2233516 temps=5.5s
+[generation] outer_root=5000/10000 paires=6245001 centres=3444188 temps=8.8s
+[generation] outer_root=6000/10000 paires=8994001 centres=4907788 temps=12.0s
+[generation] outer_root=7000/10000 paires=12243001 centres=6622327 temps=16.2s
+[generation] outer_root=8000/10000 paires=15992001 centres=8585731 temps=23.4s
+[generation] outer_root=9000/10000 paires=20241001 centres=10796473 temps=30.4s
+[generation] outer_root=10000/10000 paires=24990001 centres=13253273 temps=39.9s
+Filtrage des centres ayant au moins 4 paires opposées...
+Nombre total de paires générées     : 24995000
+Nombre total de centres rencontrés  : 13256086
+Centres avec au moins 4 offsets     : 1676050
+Recherche des carrés magiques 8/9...
+[search] centre_index=50000/1676050 résultats=0 temps=41.5s
+[search] centre_index=100000/1676050 résultats=0 temps=41.7s
+[search] centre_index=150000/1676050 résultats=0 temps=41.9s
+[search] centre_index=200000/1676050 résultats=0 temps=42.2s
+[search] centre_index=250000/1676050 résultats=0 temps=42.4s
+[search] centre_index=300000/1676050 résultats=0 temps=42.6s
+[search] centre_index=350000/1676050 résultats=0 temps=42.8s
+[search] centre_index=400000/1676050 résultats=0 temps=43.1s
+[search] centre_index=450000/1676050 résultats=0 temps=43.3s
+[search] centre_index=500000/1676050 résultats=0 temps=43.5s
+[search] centre_index=550000/1676050 résultats=0 temps=43.8s
+[search] centre_index=600000/1676050 résultats=0 temps=44.0s
+[search] centre_index=650000/1676050 résultats=0 temps=44.2s
+[search] centre_index=700000/1676050 résultats=0 temps=44.5s
+[search] centre_index=750000/1676050 résultats=0 temps=44.7s
+[search] centre_index=800000/1676050 résultats=0 temps=44.9s
+[search] centre_index=850000/1676050 résultats=0 temps=45.2s
+[search] centre_index=900000/1676050 résultats=0 temps=45.4s
+[search] centre_index=950000/1676050 résultats=0 temps=45.6s
+[search] centre_index=1000000/1676050 résultats=0 temps=45.9s
+[search] centre_index=1050000/1676050 résultats=0 temps=46.1s
+[search] centre_index=1100000/1676050 résultats=0 temps=46.4s
+[search] centre_index=1150000/1676050 résultats=0 temps=46.6s
+[search] centre_index=1200000/1676050 résultats=0 temps=46.8s
+[search] centre_index=1250000/1676050 résultats=0 temps=47.1s
+[search] centre_index=1300000/1676050 résultats=0 temps=47.3s
+[search] centre_index=1350000/1676050 résultats=0 temps=47.6s
+[search] centre_index=1400000/1676050 résultats=0 temps=47.8s
+[search] centre_index=1450000/1676050 résultats=0 temps=48.0s
+[search] centre_index=1500000/1676050 résultats=0 temps=48.2s
+[search] centre_index=1550000/1676050 résultats=0 temps=48.4s
+[search] centre_index=1600000/1676050 résultats=0 temps=48.6s
+[search] centre_index=1650000/1676050 résultats=0 temps=48.8s
+
+Résultats trouvés : 0
+
+================================================================================
+STATISTIQUES
+================================================================================
+max_outer_root                : 10000
+pair_count                    : 24995000
+all_centers_count             : 13256086
+candidate_centers_count       : 1676050
+tested_offset_pairs           : 35224376
+rejected_square_center        : 1033
+rejected_not_magic            : 0
+rejected_not_distinct         : 0
+rejected_not_primitive        : 0
+results_count                 : 0
+elapsed_seconds               : 48.89
+
+CSV exporté : results_8_non_square_center_root10000.csv
