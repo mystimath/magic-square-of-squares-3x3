@@ -1,0 +1,99 @@
+PS C:\dev\mystimath\conjectura> python magic_square_of_squares.py --limit 20000
+Etape 1 : recherche des progressions arithmetiques de carres (E <= 20000)...
+  ... E=2000/20000  (3.8s ecoulees)
+  ... E=4000/20000  (15.4s ecoulees)
+  ... E=6000/20000  (35.7s ecoulees)
+  ... E=8000/20000  (66.5s ecoulees)
+  ... E=10000/20000  (106.0s ecoulees)
+  ... E=12000/20000  (156.9s ecoulees)
+  ... E=14000/20000  (217.6s ecoulees)
+  ... E=16000/20000  (291.2s ecoulees)
+  ... E=18000/20000  (374.6s ecoulees)
+  ... E=20000/20000  (471.2s ecoulees)
+  -> 27175 paires (A, J) trouvees, reparties sur 13211 valeurs de E.
+
+Etape 2 : combinaison des paires partageant le meme centre E, verification des 4 cases derivees (b, d, f, i)...
+
+Temps total : 471.6s
+Nombre de configurations valides trouvees : 179
+Repartition par nombre de carres bonus (b,d,f,i) : {1: 179}
+
+Meilleur resultat : 1 carre(s) bonus => 6 carres sur 9 au total.
+
+Detail des 15 meilleures configurations :
+
+  E=845 A=455 C=713 J=1105 H=959  -> 1 carre(s) bonus parmi b,d,f,i
+           455^2      1426681        713^2
+         1015369        845^2       412681
+           959^2         37^2       1105^2
+
+  E=901 A=329 C=839 J=1231 H=959  -> 1 carre(s) bonus parmi b,d,f,i
+           329^2      1623241        839^2
+         1407481        901^2       216121
+           959^2         19^2       1231^2
+
+  E=1105 A=809 C=995 J=1337 H=1205  -> 1 carre(s) bonus parmi b,d,f,i
+           809^2      2018569        995^2
+         1556569       1105^2        941^2
+          1205^2       423481       1337^2
+
+  E=1445 A=595 C=1367 J=1955 H=1519  -> 1 carre(s) bonus parmi b,d,f,i
+           595^2      4041361       1367^2
+         3602689       1445^2       573361
+          1519^2        367^2       1955^2
+
+  E=1625 A=575 C=1567 J=2225 H=1681  -> 1 carre(s) bonus parmi b,d,f,i
+           575^2      5135761       1567^2
+          2183^2       1625^2       515761
+          1681^2       145489       2225^2
+
+  E=1685 A=937 C=1513 J=2191 H=1841  -> 1 carre(s) bonus parmi b,d,f,i
+           937^2      5350537       1513^2
+         4250425       1685^2       1195^2
+          1841^2       327913       2191^2
+
+  E=1690 A=910 C=1426 J=2210 H=1918  -> 1 carre(s) bonus parmi b,d,f,i
+           910^2      5706724       1426^2
+         4061476       1690^2      1650724
+          1918^2         74^2       2210^2
+
+  E=1802 A=658 C=1678 J=2462 H=1918  -> 1 carre(s) bonus parmi b,d,f,i
+           658^2      6492964       1678^2
+         5629924       1802^2       864484
+          1918^2         38^2       2462^2
+
+  E=1885 A=1297 C=1547 J=2329 H=2171  -> 1 carre(s) bonus parmi b,d,f,i
+          1297^2      6584257       1547^2
+          2065^2       1885^2      2842225
+          2171^2       522193       2329^2
+
+  E=1921 A=1129 C=1649 J=2471 H=2159  -> 1 carre(s) bonus parmi b,d,f,i
+          1129^2      7076881       1649^2
+         5134801       1921^2      2245681
+          2159^2        551^2       2471^2
+
+  E=2125 A=1645 C=1831 J=2515 H=2383  -> 1 carre(s) bonus parmi b,d,f,i
+          1645^2      7488289       1831^2
+         5162161       2125^2       1967^2
+          2383^2      1542961       2515^2
+
+  E=2210 A=1618 C=1990 J=2674 H=2410  -> 1 carre(s) bonus parmi b,d,f,i
+          1618^2      8074276       1990^2
+         6226276       2210^2       1882^2
+          2410^2      1693924       2674^2
+
+  E=2405 A=1739 C=1873 J=2923 H=2839  -> 1 carre(s) bonus parmi b,d,f,i
+          1739^2     10819825       1873^2
+         6268033       2405^2      5300017
+          2839^2        865^2       2923^2
+
+  E=2535 A=1365 C=2139 J=3315 H=2877  -> 1 carre(s) bonus parmi b,d,f,i
+          1365^2     12840129       2139^2
+         9138321       2535^2      3714129
+          2877^2        111^2       3315^2
+
+  E=2703 A=987 C=2517 J=3693 H=2877  -> 1 carre(s) bonus parmi b,d,f,i
+           987^2     14609169       2517^2
+        12667329       2703^2      1945089
+          2877^2         57^2       3693^2
+

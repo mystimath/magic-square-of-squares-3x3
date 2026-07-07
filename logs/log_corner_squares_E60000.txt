@@ -1,0 +1,103 @@
+Etape 1 : recherche des progressions arithmetiques de carres (E <= 60000)...
+  ... E=2000/60000  (7.6s ecoulees)
+  ... E=4000/60000  (36.1s ecoulees)
+  ... E=6000/60000  (87.8s ecoulees)
+  ... E=8000/60000  (165.2s ecoulees)
+  ... E=10000/60000  (269.2s ecoulees)
+  ... E=12000/60000  (396.2s ecoulees)
+  ... E=14000/60000  (550.3s ecoulees)
+  ... E=16000/60000  (728.4s ecoulees)
+  ... E=18000/60000  (931.6s ecoulees)
+  ... E=20000/60000  (1161.5s ecoulees)
+  ... E=22000/60000  (1423.3s ecoulees)
+  ... E=24000/60000  (1712.2s ecoulees)
+  ... E=26000/60000  (2030.0s ecoulees)
+  ... E=28000/60000  (2374.7s ecoulees)
+  ... E=30000/60000  (2744.5s ecoulees)
+  ... E=32000/60000  (3138.0s ecoulees)
+  ... E=34000/60000  (3563.4s ecoulees)
+  ... E=36000/60000  (4027.5s ecoulees)
+  ... E=38000/60000  (4511.0s ecoulees)
+  ... E=40000/60000  (5025.7s ecoulees)
+  ... E=42000/60000  (5572.5s ecoulees)
+  ... E=44000/60000  (6144.6s ecoulees)
+  ... E=46000/60000  (6742.5s ecoulees)
+  ... E=48000/60000  (7365.6s ecoulees)
+  ... E=50000/60000  (8026.1s ecoulees)
+  ... E=52000/60000  (8704.1s ecoulees)
+  ... E=54000/60000  (9412.9s ecoulees)
+  ... E=56000/60000  (10144.4s ecoulees)
+  ... E=58000/60000  (10897.9s ecoulees)
+  ... E=60000/60000  (11696.5s ecoulees)
+  -> 91967 paires (A, J) trouvees, reparties sur 40891 valeurs de E.
+
+Etape 2 : combinaison des paires partageant le meme centre E, verification des 4 cases derivees (b, d, f, i)...
+
+Temps total : 11697.0s
+Nombre de configurations valides trouvees : 614
+
+           809^2      2018569        995^2
+         1556569       1105^2        941^2
+          1205^2       423481       1337^2
+
+  E=1445 A=595 C=1367 J=1955 H=1519  -> 1 carre(s) bonus parmi b,d,f,i
+           595^2      4041361       1367^2
+         3602689       1445^2       573361
+          1519^2        367^2       1955^2
+
+  E=1625 A=575 C=1567 J=2225 H=1681  -> 1 carre(s) bonus parmi b,d,f,i
+           575^2      5135761       1567^2
+          2183^2       1625^2       515761
+          1681^2       145489       2225^2
+
+  E=1685 A=937 C=1513 J=2191 H=1841  -> 1 carre(s) bonus parmi b,d,f,i
+           937^2      5350537       1513^2
+         4250425       1685^2       1195^2
+          1841^2       327913       2191^2
+
+  E=1690 A=910 C=1426 J=2210 H=1918  -> 1 carre(s) bonus parmi b,d,f,i
+           910^2      5706724       1426^2
+         4061476       1690^2      1650724
+          1918^2         74^2       2210^2
+
+  E=1802 A=658 C=1678 J=2462 H=1918  -> 1 carre(s) bonus parmi b,d,f,i
+           658^2      6492964       1678^2
+         5629924       1802^2       864484
+
+  E=1885 A=1297 C=1547 J=2329 H=2171  -> 1 carre(s) bonus parmi b,d,f,i
+          1297^2      6584257       1547^2
+          2065^2       1885^2      2842225
+          2171^2       522193       2329^2
+
+  E=1921 A=1129 C=1649 J=2471 H=2159  -> 1 carre(s) bonus parmi b,d,f,i
+          1129^2      7076881       1649^2
+         5134801       1921^2      2245681
+          2159^2        551^2       2471^2
+
+  E=2125 A=1645 C=1831 J=2515 H=2383  -> 1 carre(s) bonus parmi b,d,f,i
+          1645^2      7488289       1831^2
+         5162161       2125^2       1967^2
+          2383^2      1542961       2515^2
+
+  E=2210 A=1618 C=1990 J=2674 H=2410  -> 1 carre(s) bonus parmi b,d,f,i
+          1618^2      8074276       1990^2
+         6226276       2210^2       1882^2
+          2410^2      1693924       2674^2
+
+  E=2405 A=1739 C=1873 J=2923 H=2839  -> 1 carre(s) bonus parmi b,d,f,i
+          1739^2     10819825       1873^2
+         6268033       2405^2      5300017
+          2839^2        865^2       2923^2
+
+  E=2535 A=1365 C=2139 J=3315 H=2877  -> 1 carre(s) bonus parmi b,d,f,i
+          1365^2     12840129       2139^2
+         9138321       2535^2      3714129
+          2877^2        111^2       3315^2
+
+  E=2703 A=987 C=2517 J=3693 H=2877  -> 1 carre(s) bonus parmi b,d,f,i
+           987^2     14609169       2517^2
+        12667329       2703^2      1945089
+          2877^2         57^2       3693^2
+
+
+Resultats complets exportes vers : resultats.csv
