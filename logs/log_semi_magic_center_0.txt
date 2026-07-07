@@ -1,0 +1,56 @@
+PS C:\dev\mystimath\conjectura> python search_semimagic_e0_squares.py --max-root 100 --min-squares 7 --primitive-only --limit 10 --csv results_semimagic_e0.csv
+
+Paires pythagoriciennes générées : 63
+Paires avec au moins un voisin commun : 128
+
+Résultats trouvés : 4
+
+================================================================================
+Nombre de carrés positifs : 8/8
+Racines des coins          : A=20, C=15, H=48, J=36
+Somme semi-magique         : 4225
+Somme semi-magique         : 65²
+Racine maximale            : 60
+Facteur carré commun       : 1
+
+       20² |        60² |        15²
+       39² |          0 |        52²
+       48² |        25² |        36²
+
+================================================================================
+Nombre de carrés positifs : 8/8
+Racines des coins          : A=32, C=24, H=60, J=45
+Somme semi-magique         : 7225
+Somme semi-magique         : 85²
+Racine maximale            : 75
+Facteur carré commun       : 1
+
+       32² |        75² |        24²
+       51² |          0 |        68²
+       60² |        40² |        45²
+
+================================================================================
+Nombre de carrés positifs : 8/8
+Racines des coins          : A=63, C=60, H=84, J=80
+Somme semi-magique         : 21025
+Somme semi-magique         : 145²
+Racine maximale            : 116
+Facteur carré commun       : 1
+
+       63² |       116² |        60²
+      100² |          0 |       105²
+       84² |        87² |        80²
+
+================================================================================
+Nombre de carrés positifs : 8/8
+Racines des coins          : A=28, C=21, H=96, J=72
+Somme semi-magique         : 15625
+Somme semi-magique         : 125²
+Racine maximale            : 120
+Facteur carré commun       : 1
+
+       28² |       120² |        21²
+       75² |          0 |       100²
+       96² |        35² |        72²
+
+CSV exporté : results_semimagic_e0.csv

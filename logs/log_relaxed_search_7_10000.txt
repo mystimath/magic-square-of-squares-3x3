@@ -1,0 +1,46 @@
+PS C:\dev\mystimath\conjectura> python magic_square_relaxed_search.py --limit 10000 --qmax 300000 --min-total 7 --out best.csv
+Etape 1 : recherche des triplets (A,E,J) avec E <= 10000...
+  [etape 1] E=2000/10000  (0.1s)
+  [etape 1] E=4000/10000  (0.2s)
+  [etape 1] E=6000/10000  (0.4s)
+  [etape 1] E=8000/10000  (0.6s)
+  [etape 1] E=10000/10000  (0.9s)
+  -> 12471 triplets trouves en 0.9s
+
+Etape 2 : balayage de q (jusqu'a 300000) pour chaque triplet...
+  [etape 2] 2000/12471 triplets traites  (16.3s)
+  [etape 2] 4000/12471 triplets traites  (124.1s)
+  [etape 2] 6000/12471 triplets traites  (236.8s)
+  [etape 2] 8000/12471 triplets traites  (352.4s)
+  [etape 2] 10000/12471 triplets traites  (475.0s)
+  [etape 2] 12000/12471 triplets traites  (592.4s)
+  -> balayage termine en 619.3s
+
+Nombre de configurations avec total >= 7 : 2
+Repartition par total de carres (sur 9) : {7: 2}
+
+Meilleur total trouve : 7/9
+Egale le record connu (7/9).
+
+Detail des 2 meilleurs resultats :
+
+  A=205 E=425 J=565  q=41496  -> total 7/9
+      b(r+q)          = 222121 (non-carre)
+      i(r-q)          = 373^2
+      top(r+p+q)      = 360721 (non-carre)
+      edge(r+p-q)     = 527^2
+      edge(r-p+q)     = 289^2
+      bottom(r-p-q)   = 23^2
+
+  A=410 E=850 J=1130  q=165984  -> total 7/9
+      b(r+q)          = 888484 (non-carre)
+      i(r-q)          = 746^2
+      top(r+p+q)      = 1442884 (non-carre)
+      edge(r+p-q)     = 1054^2
+      edge(r-p+q)     = 578^2
+      bottom(r-p-q)   = 46^2
+
+
+Resultats complets exportes vers : best.csv
+
+Temps total d'execution : 620.2s
