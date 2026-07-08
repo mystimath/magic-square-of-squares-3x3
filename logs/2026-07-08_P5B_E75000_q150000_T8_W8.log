@@ -1,0 +1,17 @@
+Crible modulaire actif sur les modules : 16, 5, 7, 11, 13
+Seuil de conservation : 8/9 (donc 5 carres parmi les 6 cases derivees)
+Generation des triplets (A,E,J) avec E <= 75000...
+  [    1.1s]       50,000 triplets traites  (45,186/s)  meilleur total : 0/9
+  [    1.1s]      100,000 triplets traites  (90,371/s)  meilleur total : 0/9
+
+Termine en 1.1s -- 117,620 triplets traites.
+
+Statistiques de rejet / survie :
+  reject_gap             : 29,170
+  reject_ok              : 9,021
+  reject_sparse_empty    : 79,429
+  triplets_seen          : 117,620
+
+Nombre de configurations distinctes avec total >= 8 : 0
+
+Aucun resultat au-dessus du seuil. Essayez d'augmenter --limit et/ou --qmax, ou de diminuer --min-total.

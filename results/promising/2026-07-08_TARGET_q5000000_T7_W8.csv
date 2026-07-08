@@ -1,0 +1,2 @@
+total_carres,bonus_carres,A,E,J,q,square_mask,b(r+q),i(r-q),top(r+p+q),edge(r+p-q),edge(r-p+q),bottom(r-p-q)
+7,4,205,425,565,41496,111010,222121,139129,360721,277729,83521,529

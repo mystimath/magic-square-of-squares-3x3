@@ -1,0 +1,36 @@
+Crible modulaire actif sur les modules : 16, 5, 7, 11
+Seuil de conservation : 7/9 (donc 4 carres parmi les 6 cases derivees)
+Generation des triplets (A,E,J) avec E <= 75000...
+  [    1.2s]       50,000 triplets traites  (42,655/s)  meilleur total : 0/9
+  [    1.2s]       97,620 triplets traites  (83,205/s)  meilleur total : 0/9
+  [    1.2s]      110,120 triplets traites  (93,859/s)  meilleur total : 7/9
+  [    1.2s]      112,620 triplets traites  (95,990/s)  meilleur total : 7/9
+  [    1.2s]      115,120 triplets traites  (98,121/s)  meilleur total : 7/9
+  [    1.2s]      117,620 triplets traites  (100,252/s)  meilleur total : 7/9
+
+Termine en 1.2s -- 117,620 triplets traites.
+
+Statistiques de rejet / survie :
+  reject_gap             : 829
+  reject_ok              : 40,541
+  reject_sparse_empty    : 76,249
+  triplets_seen          : 117,620
+  triplets_with_results  : 1
+
+Nombre de configurations distinctes avec total >= 7 : 1
+Repartition par total de carres (sur 9) : {7: 1}
+
+Meilleur total trouve : 7/9
+Egale le record connu (7/9).
+
+Detail des 1 meilleurs resultats :
+
+  A=205 E=425 J=565  q=41496  -> total 7/9  mask=111010
+      b(r+q)          = 222121 (non-carre)
+      i(r-q)          = 373^2
+      top(r+p+q)      = 360721 (non-carre)
+      edge(r+p-q)     = 527^2
+      edge(r-p+q)     = 289^2
+      bottom(r-p-q)   = 23^2
+
+Resultats deja ecrits au fur et a mesure dans : results/raw/2026-07-08_P5A_E75000_q150000_T7_W8_M16-5-7-11.csv

@@ -1,0 +1,674 @@
+Crible modulaire actif sur les modules : 16, 5, 7, 11
+Seuil de conservation : 6/9 (donc 3 carres parmi les 6 cases derivees)
+Generation des triplets (A,E,J) avec E <= 250000...
+  [    3.6s]       80,000 triplets traites  (22,534/s)  meilleur total : 6/9
+  [    4.4s]      108,000 triplets traites  (24,662/s)  meilleur total : 7/9
+  [    4.5s]      112,000 triplets traites  (24,954/s)  meilleur total : 7/9
+  [    4.6s]      116,000 triplets traites  (25,315/s)  meilleur total : 7/9
+  [    4.7s]      120,000 triplets traites  (25,465/s)  meilleur total : 7/9
+  [    4.8s]      124,000 triplets traites  (25,634/s)  meilleur total : 7/9
+  [    4.9s]      128,000 triplets traites  (25,878/s)  meilleur total : 7/9
+  [    5.0s]      132,000 triplets traites  (26,189/s)  meilleur total : 7/9
+  [    5.1s]      136,000 triplets traites  (26,494/s)  meilleur total : 7/9
+  [    5.3s]      140,000 triplets traites  (26,635/s)  meilleur total : 7/9
+  [    5.4s]      144,000 triplets traites  (26,849/s)  meilleur total : 7/9
+  [    5.5s]      148,000 triplets traites  (27,001/s)  meilleur total : 7/9
+  [    5.6s]      152,000 triplets traites  (27,253/s)  meilleur total : 7/9
+  [    5.7s]      156,000 triplets traites  (27,487/s)  meilleur total : 7/9
+  [    5.8s]      160,000 triplets traites  (27,599/s)  meilleur total : 7/9
+  [    5.9s]      164,000 triplets traites  (27,847/s)  meilleur total : 7/9
+  [    6.0s]      168,000 triplets traites  (28,045/s)  meilleur total : 7/9
+  [    6.1s]      172,000 triplets traites  (28,248/s)  meilleur total : 7/9
+  [    6.2s]      176,000 triplets traites  (28,484/s)  meilleur total : 7/9
+  [    6.3s]      180,000 triplets traites  (28,663/s)  meilleur total : 7/9
+  [    6.4s]      184,000 triplets traites  (28,845/s)  meilleur total : 7/9
+  [    6.5s]      188,000 triplets traites  (29,022/s)  meilleur total : 7/9
+  [    6.6s]      192,000 triplets traites  (29,238/s)  meilleur total : 7/9
+  [    6.7s]      196,000 triplets traites  (29,425/s)  meilleur total : 7/9
+  [    6.8s]      200,000 triplets traites  (29,617/s)  meilleur total : 7/9
+  [    6.8s]      204,000 triplets traites  (29,790/s)  meilleur total : 7/9
+  [    6.9s]      208,000 triplets traites  (29,985/s)  meilleur total : 7/9
+  [    7.0s]      212,000 triplets traites  (30,200/s)  meilleur total : 7/9
+  [    7.1s]      216,000 triplets traites  (30,389/s)  meilleur total : 7/9
+  [    7.2s]      220,000 triplets traites  (30,579/s)  meilleur total : 7/9
+  [    7.3s]      224,000 triplets traites  (30,780/s)  meilleur total : 7/9
+  [    7.4s]      228,000 triplets traites  (31,006/s)  meilleur total : 7/9
+  [    7.4s]      232,000 triplets traites  (31,210/s)  meilleur total : 7/9
+  [    7.5s]      236,000 triplets traites  (31,436/s)  meilleur total : 7/9
+  [    7.6s]      240,000 triplets traites  (31,627/s)  meilleur total : 7/9
+  [    7.7s]      244,000 triplets traites  (31,843/s)  meilleur total : 7/9
+  [    7.7s]      248,000 triplets traites  (32,077/s)  meilleur total : 7/9
+  [    7.8s]      252,000 triplets traites  (32,289/s)  meilleur total : 7/9
+  [    7.9s]      256,000 triplets traites  (32,489/s)  meilleur total : 7/9
+  [    7.9s]      260,000 triplets traites  (32,715/s)  meilleur total : 7/9
+  [    8.0s]      264,000 triplets traites  (32,948/s)  meilleur total : 7/9
+  [    8.1s]      268,000 triplets traites  (33,187/s)  meilleur total : 7/9
+  [    8.1s]      272,000 triplets traites  (33,425/s)  meilleur total : 7/9
+  [    8.2s]      276,000 triplets traites  (33,673/s)  meilleur total : 7/9
+  [    8.3s]      280,000 triplets traites  (33,925/s)  meilleur total : 7/9
+  [    8.3s]      284,000 triplets traites  (34,141/s)  meilleur total : 7/9
+  [    8.4s]      288,000 triplets traites  (34,386/s)  meilleur total : 7/9
+  [    8.4s]      292,000 triplets traites  (34,612/s)  meilleur total : 7/9
+  [    8.5s]      296,000 triplets traites  (34,862/s)  meilleur total : 7/9
+  [    8.5s]      300,000 triplets traites  (35,147/s)  meilleur total : 7/9
+  [    8.6s]      304,000 triplets traites  (35,441/s)  meilleur total : 7/9
+  [    8.6s]      308,000 triplets traites  (35,729/s)  meilleur total : 7/9
+  [    8.7s]      312,000 triplets traites  (36,005/s)  meilleur total : 7/9
+  [    8.7s]      316,000 triplets traites  (36,315/s)  meilleur total : 7/9
+  [    8.7s]      320,000 triplets traites  (36,771/s)  meilleur total : 7/9
+  [    8.7s]      320,007 triplets traites  (36,772/s)  meilleur total : 7/9
+  [    8.7s]      324,007 triplets traites  (37,231/s)  meilleur total : 7/9
+  [    8.7s]      328,007 triplets traites  (37,691/s)  meilleur total : 7/9
+  [    8.7s]      332,007 triplets traites  (38,151/s)  meilleur total : 7/9
+  [    8.7s]      336,007 triplets traites  (38,610/s)  meilleur total : 7/9
+  [    8.7s]      340,007 triplets traites  (39,070/s)  meilleur total : 7/9
+  [    8.7s]      344,007 triplets traites  (39,530/s)  meilleur total : 7/9
+  [    8.7s]      348,007 triplets traites  (39,989/s)  meilleur total : 7/9
+  [    8.7s]      352,007 triplets traites  (40,449/s)  meilleur total : 7/9
+  [    8.7s]      356,007 triplets traites  (40,904/s)  meilleur total : 7/9
+  [    8.7s]      360,007 triplets traites  (41,363/s)  meilleur total : 7/9
+  [    8.7s]      364,007 triplets traites  (41,823/s)  meilleur total : 7/9
+  [    8.7s]      368,007 triplets traites  (42,282/s)  meilleur total : 7/9
+  [    8.7s]      372,007 triplets traites  (42,742/s)  meilleur total : 7/9
+  [    8.7s]      376,007 triplets traites  (43,202/s)  meilleur total : 7/9
+  [    8.7s]      380,007 triplets traites  (43,661/s)  meilleur total : 7/9
+  [    8.7s]      384,007 triplets traites  (44,121/s)  meilleur total : 7/9
+  [    8.7s]      388,007 triplets traites  (44,580/s)  meilleur total : 7/9
+  [    8.7s]      392,007 triplets traites  (45,040/s)  meilleur total : 7/9
+  [    8.7s]      396,007 triplets traites  (45,500/s)  meilleur total : 7/9
+  [    8.7s]      400,007 triplets traites  (45,959/s)  meilleur total : 7/9
+  [    8.7s]      404,007 triplets traites  (46,419/s)  meilleur total : 7/9
+  [    8.7s]      408,007 triplets traites  (46,878/s)  meilleur total : 7/9
+  [    8.7s]      412,007 triplets traites  (47,338/s)  meilleur total : 7/9
+  [    8.7s]      416,007 triplets traites  (47,797/s)  meilleur total : 7/9
+  [    8.7s]      420,007 triplets traites  (48,257/s)  meilleur total : 7/9
+  [    8.7s]      424,007 triplets traites  (48,717/s)  meilleur total : 7/9
+  [    8.7s]      428,007 triplets traites  (49,176/s)  meilleur total : 7/9
+  [    8.7s]      432,007 triplets traites  (49,630/s)  meilleur total : 7/9
+  [    8.7s]      436,007 triplets traites  (50,090/s)  meilleur total : 7/9
+  [    8.7s]      440,007 triplets traites  (50,549/s)  meilleur total : 7/9
+
+Termine en 8.7s -- 440,007 triplets traites.
+Deduplication : 183 multiple(s) trivial(aux) retire(s) (249 -> 66).
+
+Statistiques de rejet / survie :
+  reject_gap             : 1,510
+  reject_ok              : 417,445
+  reject_sparse_empty    : 20,828
+  triplets_seen          : 440,007
+  triplets_with_results  : 224
+
+Nombre de configurations distinctes avec total >= 6 : 66
+Repartition par total de carres (sur 9) : {6: 65, 7: 1}
+
+Meilleur total trouve : 7/9
+Egale le record connu (7/9).
+
+Detail des 66 meilleurs resultats :
+
+  A=205 E=425 J=565  q=41496  -> total 7/9  mask=111010
+      (multiples triviaux aussi presents a l'echelle k=2,3 -- non affiches)
+      b(r+q)          = 222121 (non-carre)
+      i(r-q)          = 373^2
+      top(r+p+q)      = 360721 (non-carre)
+      edge(r+p-q)     = 527^2
+      edge(r-p+q)     = 289^2
+      bottom(r-p-q)   = 23^2
+
+  A=17 E=25 J=31  q=264  -> total 6/9  mask=100110
+      (multiples triviaux aussi presents a l'echelle k=2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43 -- non affiches)
+      b(r+q)          = 889 (non-carre)
+      i(r-q)          = 19^2
+      top(r+p+q)      = 35^2
+      edge(r+p-q)     = 697 (non-carre)
+      edge(r-p+q)     = 553 (non-carre)
+      bottom(r-p-q)   = 5^2
+
+  A=23 E=37 J=47  q=528  -> total 6/9  mask=101010
+      (multiples triviaux aussi presents a l'echelle k=2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30 -- non affiches)
+      b(r+q)          = 1897 (non-carre)
+      i(r-q)          = 29^2
+      top(r+p+q)      = 2737 (non-carre)
+      edge(r+p-q)     = 41^2
+      edge(r-p+q)     = 1057 (non-carre)
+      bottom(r-p-q)   = 1^2
+
+  A=71 E=281 J=391  q=3885  -> total 6/9  mask=101010
+      (multiples triviaux aussi presents a l'echelle k=2,3,4,5,6,7,8,9,10,11 -- non affiches)
+      b(r+q)          = 82846 (non-carre)
+      i(r-q)          = 274^2
+      top(r+p+q)      = 156766 (non-carre)
+      edge(r+p-q)     = 386^2
+      edge(r-p+q)     = 8926 (non-carre)
+      bottom(r-p-q)   = 34^2
+
+  A=91 E=221 J=299  q=5880  -> total 6/9  mask=111000
+      (multiples triviaux aussi presents a l'echelle k=2,3,4,5,6,7,8,9 -- non affiches)
+      b(r+q)          = 54721 (non-carre)
+      i(r-q)          = 42961 (non-carre)
+      top(r+p+q)      = 95281 (non-carre)
+      edge(r+p-q)     = 289^2
+      edge(r-p+q)     = 119^2
+      bottom(r-p-q)   = 49^2
+
+  A=97 E=113 J=127  q=7293  -> total 6/9  mask=101010
+      (multiples triviaux aussi presents a l'echelle k=2,3,4,5,6,7,8 -- non affiches)
+      b(r+q)          = 20062 (non-carre)
+      i(r-q)          = 74^2
+      top(r+p+q)      = 23422 (non-carre)
+      edge(r+p-q)     = 94^2
+      edge(r-p+q)     = 16702 (non-carre)
+      bottom(r-p-q)   = 46^2
+
+  A=97 E=113 J=127  q=9405  -> total 6/9  mask=101010
+      (multiples triviaux aussi presents a l'echelle k=2,3,4,5,6,7 -- non affiches)
+      b(r+q)          = 22174 (non-carre)
+      i(r-q)          = 58^2
+      top(r+p+q)      = 25534 (non-carre)
+      edge(r+p-q)     = 82^2
+      edge(r-p+q)     = 18814 (non-carre)
+      bottom(r-p-q)   = 2^2
+
+  A=98 E=122 J=142  q=9555  -> total 6/9  mask=101010
+      (multiples triviaux aussi presents a l'echelle k=2,3,4,5,6,7 -- non affiches)
+      b(r+q)          = 24439 (non-carre)
+      i(r-q)          = 73^2
+      top(r+p+q)      = 29719 (non-carre)
+      edge(r+p-q)     = 103^2
+      edge(r-p+q)     = 19159 (non-carre)
+      bottom(r-p-q)   = 7^2
+
+  A=103 E=233 J=313  q=6765  -> total 6/9  mask=101010
+      (multiples triviaux aussi presents a l'echelle k=2,3,4,5,6,7,8 -- non affiches)
+      b(r+q)          = 61054 (non-carre)
+      i(r-q)          = 218^2
+      top(r+p+q)      = 104734 (non-carre)
+      edge(r+p-q)     = 302^2
+      edge(r-p+q)     = 17374 (non-carre)
+      bottom(r-p-q)   = 62^2
+
+  A=113 E=173 J=217  q=3360  -> total 6/9  mask=110010
+      (multiples triviaux aussi presents a l'echelle k=2,3,4,5,6,7,8,9,10,11,12 -- non affiches)
+      b(r+q)          = 33289 (non-carre)
+      i(r-q)          = 163^2
+      top(r+p+q)      = 50449 (non-carre)
+      edge(r+p-q)     = 43729 (non-carre)
+      edge(r-p+q)     = 127^2
+      bottom(r-p-q)   = 97^2
+
+  A=119 E=145 J=167  q=11760  -> total 6/9  mask=111000
+      (multiples triviaux aussi presents a l'echelle k=2,3,4,5,6 -- non affiches)
+      b(r+q)          = 32785 (non-carre)
+      i(r-q)          = 9265 (non-carre)
+      top(r+p+q)      = 39649 (non-carre)
+      edge(r+p-q)     = 127^2
+      edge(r-p+q)     = 161^2
+      bottom(r-p-q)   = 49^2
+
+  A=119 E=145 J=167  q=14136  -> total 6/9  mask=100110
+      (multiples triviaux aussi presents a l'echelle k=2,3,4,5 -- non affiches)
+      b(r+q)          = 35161 (non-carre)
+      i(r-q)          = 83^2
+      top(r+p+q)      = 205^2
+      edge(r+p-q)     = 13753 (non-carre)
+      edge(r-p+q)     = 28297 (non-carre)
+      bottom(r-p-q)   = 5^2
+
+  A=119 E=185 J=233  q=11760  -> total 6/9  mask=110100
+      (multiples triviaux aussi presents a l'echelle k=2,3,4,5,6 -- non affiches)
+      b(r+q)          = 45985 (non-carre)
+      i(r-q)          = 22465 (non-carre)
+      top(r+p+q)      = 257^2
+      edge(r+p-q)     = 42529 (non-carre)
+      edge(r-p+q)     = 161^2
+      bottom(r-p-q)   = 49^2
+
+  A=137 E=305 J=409  q=18480  -> total 6/9  mask=110100
+      (multiples triviaux aussi presents a l'echelle k=2,3,4,5 -- non affiches)
+      b(r+q)          = 111505 (non-carre)
+      i(r-q)          = 74545 (non-carre)
+      top(r+p+q)      = 431^2
+      edge(r+p-q)     = 148801 (non-carre)
+      edge(r-p+q)     = 193^2
+      bottom(r-p-q)   = 17^2
+
+  A=167 E=197 J=223  q=26928  -> total 6/9  mask=101010
+      (multiples triviaux aussi presents a l'echelle k=2,3,4 -- non affiches)
+      b(r+q)          = 65737 (non-carre)
+      i(r-q)          = 109^2
+      top(r+p+q)      = 76657 (non-carre)
+      edge(r+p-q)     = 151^2
+      edge(r-p+q)     = 54817 (non-carre)
+      bottom(r-p-q)   = 31^2
+
+  A=199 E=221 J=241  q=38640  -> total 6/9  mask=100110
+      (multiples triviaux aussi presents a l'echelle k=2,3 -- non affiches)
+      b(r+q)          = 87481 (non-carre)
+      i(r-q)          = 101^2
+      top(r+p+q)      = 311^2
+      edge(r+p-q)     = 19441 (non-carre)
+      edge(r-p+q)     = 78241 (non-carre)
+      bottom(r-p-q)   = 31^2
+
+  A=205 E=445 J=595  q=31416  -> total 6/9  mask=110001
+      (multiples triviaux aussi presents a l'echelle k=2,3 -- non affiches)
+      b(r+q)          = 479^2
+      i(r-q)          = 166609 (non-carre)
+      top(r+p+q)      = 385441 (non-carre)
+      edge(r+p-q)     = 322609 (non-carre)
+      edge(r-p+q)     = 271^2
+      bottom(r-p-q)   = 103^2
+
+  A=239 E=509 J=679  q=37240  -> total 6/9  mask=101010
+      (multiples triviaux aussi presents a l'echelle k=2,3 -- non affiches)
+      b(r+q)          = 296321 (non-carre)
+      i(r-q)          = 471^2
+      top(r+p+q)      = 498281 (non-carre)
+      edge(r+p-q)     = 651^2
+      edge(r-p+q)     = 94361 (non-carre)
+      bottom(r-p-q)   = 141^2
+
+  A=241 E=265 J=287  q=35280  -> total 6/9  mask=101100
+      (multiples triviaux aussi presents a l'echelle k=2,3 -- non affiches)
+      b(r+q)          = 105505 (non-carre)
+      i(r-q)          = 34945 (non-carre)
+      top(r+p+q)      = 343^2
+      edge(r+p-q)     = 217^2
+      edge(r-p+q)     = 93361 (non-carre)
+      bottom(r-p-q)   = 151^2
+
+  A=263 E=725 J=991  q=48144  -> total 6/9  mask=100110
+      (multiples triviaux aussi presents a l'echelle k=2,3 -- non affiches)
+      b(r+q)          = 573769 (non-carre)
+      i(r-q)          = 691^2
+      top(r+p+q)      = 1015^2
+      edge(r+p-q)     = 933937 (non-carre)
+      edge(r-p+q)     = 117313 (non-carre)
+      bottom(r-p-q)   = 145^2
+
+  A=267 E=447 J=573  q=48488  -> total 6/9  mask=101010
+      (multiples triviaux aussi presents a l'echelle k=2,3 -- non affiches)
+      b(r+q)          = 248297 (non-carre)
+      i(r-q)          = 389^2
+      top(r+p+q)      = 376817 (non-carre)
+      edge(r+p-q)     = 529^2
+      edge(r-p+q)     = 119777 (non-carre)
+      bottom(r-p-q)   = 151^2
+
+  A=281 E=365 J=433  q=73920  -> total 6/9  mask=111000
+      (multiples triviaux aussi presents a l'echelle k=2 -- non affiches)
+      b(r+q)          = 207145 (non-carre)
+      i(r-q)          = 59305 (non-carre)
+      top(r+p+q)      = 261409 (non-carre)
+      edge(r+p-q)     = 337^2
+      edge(r-p+q)     = 391^2
+      bottom(r-p-q)   = 71^2
+
+  A=287 E=325 J=359  q=69144  -> total 6/9  mask=100110
+      (multiples triviaux aussi presents a l'echelle k=2 -- non affiches)
+      b(r+q)          = 174769 (non-carre)
+      i(r-q)          = 191^2
+      top(r+p+q)      = 445^2
+      edge(r+p-q)     = 59737 (non-carre)
+      edge(r-p+q)     = 151513 (non-carre)
+      bottom(r-p-q)   = 115^2
+
+  A=289 E=425 J=527  q=41496  -> total 6/9  mask=100110
+      (multiples triviaux aussi presents a l'echelle k=2,3 -- non affiches)
+      b(r+q)          = 222121 (non-carre)
+      i(r-q)          = 373^2
+      top(r+p+q)      = 565^2
+      edge(r+p-q)     = 236233 (non-carre)
+      edge(r-p+q)     = 125017 (non-carre)
+      bottom(r-p-q)   = 205^2
+
+  A=299 E=481 J=611  q=87720  -> total 6/9  mask=100110
+      (multiples triviaux aussi presents a l'echelle k=2 -- non affiches)
+      b(r+q)          = 319081 (non-carre)
+      i(r-q)          = 379^2
+      top(r+p+q)      = 679^2
+      edge(r+p-q)     = 285601 (non-carre)
+      edge(r-p+q)     = 177121 (non-carre)
+      bottom(r-p-q)   = 41^2
+
+  A=329 E=901 J=1231  q=107880  -> total 6/9  mask=100011
+      (multiples triviaux aussi presents a l'echelle k=2 -- non affiches)
+      b(r+q)          = 959^2
+      i(r-q)          = 839^2
+      top(r+p+q)      = 1623241 (non-carre)
+      edge(r+p-q)     = 1407481 (non-carre)
+      edge(r-p+q)     = 216121 (non-carre)
+      bottom(r-p-q)   = 19^2
+
+  A=334 E=394 J=446  q=100947  -> total 6/9  mask=101010
+      (multiples triviaux aussi presents a l'echelle k=2 -- non affiches)
+      b(r+q)          = 256183 (non-carre)
+      i(r-q)          = 233^2
+      top(r+p+q)      = 299863 (non-carre)
+      edge(r+p-q)     = 313^2
+      edge(r-p+q)     = 212503 (non-carre)
+      bottom(r-p-q)   = 103^2
+
+  A=337 E=365 J=391  q=68200  -> total 6/9  mask=101010
+      (multiples triviaux aussi presents a l'echelle k=2 -- non affiches)
+      b(r+q)          = 201425 (non-carre)
+      i(r-q)          = 255^2
+      top(r+p+q)      = 221081 (non-carre)
+      edge(r+p-q)     = 291^2
+      edge(r-p+q)     = 181769 (non-carre)
+      bottom(r-p-q)   = 213^2
+
+  A=353 E=445 J=521  q=122400  -> total 6/9  mask=110010
+      (multiples triviaux aussi presents a l'echelle k=2 -- non affiches)
+      b(r+q)          = 320425 (non-carre)
+      i(r-q)          = 275^2
+      top(r+p+q)      = 393841 (non-carre)
+      edge(r+p-q)     = 149041 (non-carre)
+      edge(r-p+q)     = 497^2
+      bottom(r-p-q)   = 47^2
+
+  A=355 E=425 J=485  q=42504  -> total 6/9  mask=101100
+      (multiples triviaux aussi presents a l'echelle k=2,3 -- non affiches)
+      b(r+q)          = 223129 (non-carre)
+      i(r-q)          = 138121 (non-carre)
+      top(r+p+q)      = 527^2
+      edge(r+p-q)     = 439^2
+      edge(r-p+q)     = 168529 (non-carre)
+      bottom(r-p-q)   = 289^2
+
+  A=357 E=555 J=699  q=127400  -> total 6/9  mask=101010
+      b(r+q)          = 435425 (non-carre)
+      i(r-q)          = 425^2
+      top(r+p+q)      = 616001 (non-carre)
+      edge(r+p-q)     = 601^2
+      edge(r-p+q)     = 254849 (non-carre)
+      bottom(r-p-q)   = 7^2
+
+  A=359 E=401 J=439  q=123552  -> total 6/9  mask=101010
+      (multiples triviaux aussi presents a l'echelle k=2 -- non affiches)
+      b(r+q)          = 284353 (non-carre)
+      i(r-q)          = 193^2
+      top(r+p+q)      = 316273 (non-carre)
+      edge(r+p-q)     = 263^2
+      edge(r-p+q)     = 252433 (non-carre)
+      bottom(r-p-q)   = 73^2
+
+  A=365 E=625 J=805  q=54264  -> total 6/9  mask=110001
+      (multiples triviaux aussi presents a l'echelle k=2,3 -- non affiches)
+      b(r+q)          = 667^2
+      i(r-q)          = 336361 (non-carre)
+      top(r+p+q)      = 702289 (non-carre)
+      edge(r+p-q)     = 593761 (non-carre)
+      edge(r-p+q)     = 433^2
+      bottom(r-p-q)   = 281^2
+
+  A=365 E=3485 J=4915  q=19656  -> total 6/9  mask=111000
+      (multiples triviaux aussi presents a l'echelle k=2,3,4,5 -- non affiches)
+      b(r+q)          = 12164881 (non-carre)
+      i(r-q)          = 12125569 (non-carre)
+      top(r+p+q)      = 24176881 (non-carre)
+      edge(r+p-q)     = 4913^2
+      edge(r-p+q)     = 391^2
+      bottom(r-p-q)   = 337^2
+
+  A=383 E=485 J=569  q=145464  -> total 6/9  mask=100101
+      b(r+q)          = 617^2
+      i(r-q)          = 89761 (non-carre)
+      top(r+p+q)      = 685^2
+      edge(r+p-q)     = 178297 (non-carre)
+      edge(r-p+q)     = 292153 (non-carre)
+      bottom(r-p-q)   = 35^2
+
+  A=403 E=2873 J=4043  q=115320  -> total 6/9  mask=110001
+      (multiples triviaux aussi presents a l'echelle k=2 -- non affiches)
+      b(r+q)          = 2893^2
+      i(r-q)          = 8138809 (non-carre)
+      top(r+p+q)      = 16461169 (non-carre)
+      edge(r+p-q)     = 16230529 (non-carre)
+      edge(r-p+q)     = 527^2
+      bottom(r-p-q)   = 217^2
+
+  A=455 E=845 J=1105  q=205656  -> total 6/9  mask=100011
+      b(r+q)          = 959^2
+      i(r-q)          = 713^2
+      top(r+p+q)      = 1426681 (non-carre)
+      edge(r+p-q)     = 1015369 (non-carre)
+      edge(r-p+q)     = 412681 (non-carre)
+      bottom(r-p-q)   = 37^2
+
+  A=479 E=809 J=1039  q=201552  -> total 6/9  mask=101010
+      b(r+q)          = 856033 (non-carre)
+      i(r-q)          = 673^2
+      top(r+p+q)      = 1281073 (non-carre)
+      edge(r+p-q)     = 937^2
+      edge(r-p+q)     = 430993 (non-carre)
+      bottom(r-p-q)   = 167^2
+
+  A=503 E=617 J=713  q=231693  -> total 6/9  mask=101010
+      b(r+q)          = 612382 (non-carre)
+      i(r-q)          = 386^2
+      top(r+p+q)      = 740062 (non-carre)
+      edge(r+p-q)     = 526^2
+      edge(r-p+q)     = 484702 (non-carre)
+      bottom(r-p-q)   = 146^2
+
+  A=511 E=685 J=823  q=258720  -> total 6/9  mask=111000
+      b(r+q)          = 727945 (non-carre)
+      i(r-q)          = 210505 (non-carre)
+      top(r+p+q)      = 936049 (non-carre)
+      edge(r+p-q)     = 647^2
+      edge(r-p+q)     = 721^2
+      bottom(r-p-q)   = 49^2
+
+  A=533 E=1105 J=1469  q=260064  -> total 6/9  mask=100101
+      b(r+q)          = 1217^2
+      i(r-q)          = 960961 (non-carre)
+      top(r+p+q)      = 1555^2
+      edge(r+p-q)     = 1897897 (non-carre)
+      edge(r-p+q)     = 544153 (non-carre)
+      bottom(r-p-q)   = 155^2
+
+  A=553 E=4205 J=5921  q=284784  -> total 6/9  mask=100110
+      b(r+q)          = 17966809 (non-carre)
+      i(r-q)          = 4171^2
+      top(r+p+q)      = 5945^2
+      edge(r+p-q)     = 34773457 (non-carre)
+      edge(r-p+q)     = 590593 (non-carre)
+      bottom(r-p-q)   = 145^2
+
+  A=565 E=56425 J=79795  q=319176  -> total 6/9  mask=111000
+      b(r+q)          = 3184099801 (non-carre)
+      i(r-q)          = 3183461449 (non-carre)
+      top(r+p+q)      = 6367561201 (non-carre)
+      edge(r+p-q)     = 79793^2
+      edge(r-p+q)     = 799^2
+      bottom(r-p-q)   = 7^2
+
+  A=575 E=1625 J=2225  q=185136  -> total 6/9  mask=001011
+      b(r+q)          = 1681^2
+      i(r-q)          = 1567^2
+      top(r+p+q)      = 5135761 (non-carre)
+      edge(r+p-q)     = 2183^2
+      edge(r-p+q)     = 515761 (non-carre)
+      bottom(r-p-q)   = 145489 (non-carre)
+
+  A=595 E=725 J=835  q=107016  -> total 6/9  mask=110010
+      (multiples triviaux aussi presents a l'echelle k=2 -- non affiches)
+      b(r+q)          = 632641 (non-carre)
+      i(r-q)          = 647^2
+      top(r+p+q)      = 804241 (non-carre)
+      edge(r+p-q)     = 590209 (non-carre)
+      edge(r-p+q)     = 679^2
+      bottom(r-p-q)   = 497^2
+
+  A=595 E=725 J=835  q=339864  -> total 6/9  mask=110010
+      b(r+q)          = 865489 (non-carre)
+      i(r-q)          = 431^2
+      top(r+p+q)      = 1037089 (non-carre)
+      edge(r+p-q)     = 357361 (non-carre)
+      edge(r-p+q)     = 833^2
+      bottom(r-p-q)   = 119^2
+
+  A=595 E=925 J=1165  q=116571  -> total 6/9  mask=010101
+      (multiples triviaux aussi presents a l'echelle k=2 -- non affiches)
+      b(r+q)          = 986^2
+      i(r-q)          = 739054 (non-carre)
+      top(r+p+q)      = 1214^2
+      edge(r+p-q)     = 1240654 (non-carre)
+      edge(r-p+q)     = 686^2
+      bottom(r-p-q)   = 237454 (non-carre)
+
+  A=595 E=1105 J=1445  q=219336  -> total 6/9  mask=101100
+      b(r+q)          = 1440361 (non-carre)
+      i(r-q)          = 1001689 (non-carre)
+      top(r+p+q)      = 1519^2
+      edge(r+p-q)     = 1367^2
+      edge(r-p+q)     = 573361 (non-carre)
+      bottom(r-p-q)   = 367^2
+
+  A=595 E=1445 J=1955  q=219336  -> total 6/9  mask=100011
+      b(r+q)          = 1519^2
+      i(r-q)          = 1367^2
+      top(r+p+q)      = 4041361 (non-carre)
+      edge(r+p-q)     = 3602689 (non-carre)
+      edge(r-p+q)     = 573361 (non-carre)
+      bottom(r-p-q)   = 367^2
+
+  A=595 E=48025 J=67915  q=271656  -> total 6/9  mask=111000
+      b(r+q)          = 2306672281 (non-carre)
+      i(r-q)          = 2306128969 (non-carre)
+      top(r+p+q)      = 4612718881 (non-carre)
+      edge(r+p-q)     = 67913^2
+      edge(r-p+q)     = 791^2
+      bottom(r-p-q)   = 287^2
+
+  A=635 E=725 J=805  q=401016  -> total 6/9  mask=101010
+      b(r+q)          = 926641 (non-carre)
+      i(r-q)          = 353^2
+      top(r+p+q)      = 1049041 (non-carre)
+      edge(r+p-q)     = 497^2
+      edge(r-p+q)     = 804241 (non-carre)
+      bottom(r-p-q)   = 47^2
+
+  A=673 E=1037 J=1303  q=425040  -> total 6/9  mask=110100
+      b(r+q)          = 1500409 (non-carre)
+      i(r-q)          = 650329 (non-carre)
+      top(r+p+q)      = 1457^2
+      edge(r+p-q)     = 1272769 (non-carre)
+      edge(r-p+q)     = 937^2
+      bottom(r-p-q)   = 167^2
+
+  A=685 E=8665 J=12235  q=208104  -> total 6/9  mask=110001
+      b(r+q)          = 8677^2
+      i(r-q)          = 74874121 (non-carre)
+      top(r+p+q)      = 149903329 (non-carre)
+      edge(r+p-q)     = 149487121 (non-carre)
+      edge(r-p+q)     = 823^2
+      bottom(r-p-q)   = 511^2
+
+  A=686 E=986 J=1214  q=116571  -> total 6/9  mask=101010
+      (multiples triviaux aussi presents a l'echelle k=2 -- non affiches)
+      b(r+q)          = 1088767 (non-carre)
+      i(r-q)          = 925^2
+      top(r+p+q)      = 1590367 (non-carre)
+      edge(r+p-q)     = 1165^2
+      edge(r-p+q)     = 587167 (non-carre)
+      bottom(r-p-q)   = 595^2
+
+  A=718 E=802 J=878  q=262515  -> total 6/9  mask=101010
+      b(r+q)          = 905719 (non-carre)
+      i(r-q)          = 617^2
+      top(r+p+q)      = 1033399 (non-carre)
+      edge(r+p-q)     = 713^2
+      edge(r-p+q)     = 778039 (non-carre)
+      bottom(r-p-q)   = 503^2
+
+  A=719 E=1241 J=1601  q=255840  -> total 6/9  mask=101100
+      b(r+q)          = 1795921 (non-carre)
+      i(r-q)          = 1284241 (non-carre)
+      top(r+p+q)      = 1679^2
+      edge(r+p-q)     = 1519^2
+      edge(r-p+q)     = 772801 (non-carre)
+      bottom(r-p-q)   = 511^2
+
+  A=755 E=1325 J=1715  q=274536  -> total 6/9  mask=011010
+      b(r+q)          = 2030161 (non-carre)
+      i(r-q)          = 1217^2
+      top(r+p+q)      = 3215761 (non-carre)
+      edge(r+p-q)     = 1633^2
+      edge(r-p+q)     = 919^2
+      bottom(r-p-q)   = 295489 (non-carre)
+
+  A=809 E=1105 J=1337  q=231000  -> total 6/9  mask=010011
+      b(r+q)          = 1205^2
+      i(r-q)          = 995^2
+      top(r+p+q)      = 2018569 (non-carre)
+      edge(r+p-q)     = 1556569 (non-carre)
+      edge(r-p+q)     = 941^2
+      bottom(r-p-q)   = 423481 (non-carre)
+
+  A=809 E=1105 J=1337  q=335544  -> total 6/9  mask=011010
+      b(r+q)          = 1556569 (non-carre)
+      i(r-q)          = 941^2
+      top(r+p+q)      = 2123113 (non-carre)
+      edge(r+p-q)     = 1205^2
+      edge(r-p+q)     = 995^2
+      bottom(r-p-q)   = 318937 (non-carre)
+
+  A=919 E=1325 J=1633  q=274536  -> total 6/9  mask=100110
+      b(r+q)          = 2030161 (non-carre)
+      i(r-q)          = 1217^2
+      top(r+p+q)      = 1715^2
+      edge(r+p-q)     = 2392153 (non-carre)
+      edge(r-p+q)     = 1119097 (non-carre)
+      bottom(r-p-q)   = 755^2
+
+  A=943 E=1213 J=1433  q=169592  -> total 6/9  mask=010101
+      b(r+q)          = 1281^2
+      i(r-q)          = 1301777 (non-carre)
+      top(r+p+q)      = 1491^2
+      edge(r+p-q)     = 1883897 (non-carre)
+      edge(r-p+q)     = 1029^2
+      bottom(r-p-q)   = 719657 (non-carre)
+
+  A=995 E=1105 J=1205  q=335544  -> total 6/9  mask=100110
+      b(r+q)          = 1556569 (non-carre)
+      i(r-q)          = 941^2
+      top(r+p+q)      = 1337^2
+      edge(r+p-q)     = 1116481 (non-carre)
+      edge(r-p+q)     = 1325569 (non-carre)
+      bottom(r-p-q)   = 809^2
+
+  A=995 E=1105 J=1205  q=351624  -> total 6/9  mask=101100
+      b(r+q)          = 1572649 (non-carre)
+      i(r-q)          = 869401 (non-carre)
+      top(r+p+q)      = 1343^2
+      edge(r+p-q)     = 1049^2
+      edge(r-p+q)     = 1341649 (non-carre)
+      bottom(r-p-q)   = 799^2
+
+  A=1029 E=1281 J=1491  q=169592  -> total 6/9  mask=101010
+      b(r+q)          = 1810553 (non-carre)
+      i(r-q)          = 1213^2
+      top(r+p+q)      = 2392673 (non-carre)
+      edge(r+p-q)     = 1433^2
+      edge(r-p+q)     = 1228433 (non-carre)
+      bottom(r-p-q)   = 943^2
+
+  A=2059 E=2465 J=2813  q=421800  -> total 6/9  mask=011100
+      b(r+q)          = 6498025 (non-carre)
+      i(r-q)          = 5654425 (non-carre)
+      top(r+p+q)      = 2887^2
+      edge(r+p-q)     = 2737^2
+      edge(r-p+q)     = 2159^2
+      bottom(r-p-q)   = 3817681 (non-carre)
+
+  A=2501 E=12505 J=17507  q=499800  -> total 6/9  mask=110010
+      b(r+q)          = 156874825 (non-carre)
+      i(r-q)          = 12485^2
+      top(r+p+q)      = 306994849 (non-carre)
+      edge(r+p-q)     = 305995249 (non-carre)
+      edge(r-p+q)     = 2599^2
+      bottom(r-p-q)   = 2399^2
+
+Resultats deja ecrits au fur et a mesure dans : results/raw/2026-07-08_MAP_E250000_q500000_T6_W8_M16-5-7-11.csv

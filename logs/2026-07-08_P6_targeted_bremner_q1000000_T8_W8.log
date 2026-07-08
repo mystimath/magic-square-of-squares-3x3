@@ -1,0 +1,13 @@
+Crible modulaire actif sur les modules : 16, 5, 7, 11, 13
+Seuil de conservation : 8/9 (donc 5 carres parmi les 6 cases derivees)
+Chargement des triplets depuis results/promising/triples_prometteurs_phase2.csv...
+
+Termine en 0.1s -- 1 triplets traites.
+
+Statistiques de rejet / survie :
+  reject_ok              : 1
+  triplets_seen          : 1
+
+Nombre de configurations distinctes avec total >= 8 : 0
+
+Aucun resultat au-dessus du seuil. Essayez d'augmenter --limit et/ou --qmax, ou de diminuer --min-total.

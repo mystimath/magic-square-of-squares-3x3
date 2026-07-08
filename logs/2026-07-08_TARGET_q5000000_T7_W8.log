@@ -1,0 +1,29 @@
+Crible modulaire actif sur les modules : 16, 5, 7, 11
+Seuil de conservation : 7/9 (donc 4 carres parmi les 6 cases derivees)
+Chargement des triplets depuis results/promising/triples_prometteurs_phase2.csv...
+  [    0.1s]           21 triplets traites  (172/s)  meilleur total : 7/9
+
+Termine en 0.1s -- 21 triplets traites.
+
+Statistiques de rejet / survie :
+  reject_ok              : 20
+  triplets_seen          : 21
+  triplets_with_results  : 1
+
+Nombre de configurations distinctes avec total >= 7 : 1
+Repartition par total de carres (sur 9) : {7: 1}
+
+Meilleur total trouve : 7/9
+Egale le record connu (7/9).
+
+Detail des 1 meilleurs resultats :
+
+  A=205 E=425 J=565  q=41496  -> total 7/9  mask=111010
+      b(r+q)          = 222121 (non-carre)
+      i(r-q)          = 373^2
+      top(r+p+q)      = 360721 (non-carre)
+      edge(r+p-q)     = 527^2
+      edge(r-p+q)     = 289^2
+      bottom(r-p-q)   = 23^2
+
+Resultats deja ecrits au fur et a mesure dans : results/promising/2026-07-08_TARGET_q5000000_T7_W8.csv

@@ -1,12 +1,18 @@
 # Status
 
+_Mise à jour : 2026-07-08_
+
+Ce document récapitule l’état actuel des différentes branches de recherche autour du problème du carré magique 3×3 de carrés, avec un accent particulier sur les campagnes computationnelles effectivement exécutées.
+
+---
+
 ## Branche A — centre carré
 
-Script principal :
+Script principal historique :
 
 ```text
 src/search_magic_square_of_squares_v4.py
-````
+```
 
 Résultat actuel :
 
@@ -16,15 +22,17 @@ Résultat actuel :
 | 8/9 primitif | center_root ≤ 10 000 000 |                  aucun |
 | 9/9 primitif |  inclus dans le test 8/9 | aucun dans cette borne |
 
+Conclusion provisoire : dans cette branche classique à centre carré, le meilleur résultat primitif reste le carré de Bremner à 7/9.
 
+---
 
 ## Branche B — centre non nécessairement carré
 
-Script :
+Script historique :
 
 ```text
 src/search_magic_square_of_squares_v5_non_square_center.py
-````
+```
 
 Résultat actuel :
 
@@ -35,34 +43,30 @@ Résultat actuel :
 
 La branche est figée provisoirement à 20 000, car la version actuelle devient fortement limitée par la mémoire.
 
+Conclusion provisoire : aucun 8/9 détecté dans la branche à centre non nécessairement carré jusqu’aux bornes testées.
+
+---
+
 ## Branche C — centre carré et quatre coins carrés
 
-Cette branche impose que les quatre coins et le centre soient des carrés parfaits :
+Cette branche impose que le centre et les quatre coins soient carrés parfaits :
 
 ```text
 a, c, e, h, j carrés
 ```
 
-Les quatre autres cases b, d, f, i sont ensuite testées.
+Les quatre autres cases `b, d, f, i` sont ensuite déduites et testées.
 
-Résultat actuel :
-|      Borne |                Résultat |
-| ---------: | ----------------------: |
-| E ≤ 20 000 | meilleur résultat : 6/9 |
-| E ≤ 20 000 |               aucun 7/9 |
-| E ≤ 20 000 |               aucun 8/9 |
+Résultats synthétiques :
 
+|      Borne | Configurations | Meilleur résultat |
+| ---------: | -------------: | ----------------: |
+| E ≤ 20 000 |            179 |              6/9 |
+| E ≤ 60 000 |            614 |              6/9 |
 
-**Résultats -test 2 :**
+Aucun 7/9 ni 8/9 trouvé dans cette famille.
 
-| Borne | Configurations | Meilleur résultat |
-|---:|---:|---:|
-| E ≤ 20 000 | 179 | 6/9 |
-| E ≤ 60 000 | 614 | 6/9 |
-
-Aucun 7/9 ou 8/9 trouvé dans cette famille.
-
-**Résumé test 2:**
+Résumé détaillé du test principal :
 
 ```text
 Borne : E ≤ 60 000
@@ -75,7 +79,8 @@ Aucun 8/9
 Durée : 11 697 s ≈ 3 h 15 min
 ```
 
-La répartition des carrés bonus parmi b, d, f, i est intéressante :
+Répartition des carrés bonus parmi `b, d, f, i` :
+
 ```text
 i carré : 354 cas
 f carré : 165 cas
@@ -83,30 +88,52 @@ d carré : 78 cas
 b carré : 17 cas
 ```
 
-Donc la case i = a + c - e est de loin celle qui devient le plus souvent carrée dans cette famille.
+Donc la case `i = a + c - e` est de loin celle qui devient le plus souvent carrée dans cette famille.
 
-### Point important : beaucoup de multiples triviaux
+### Multiples triviaux
 
-Sur les 614 résultats, seulement 75 ont un facteur carré commun égal à 1.
-
-Les 539 autres ont un facteur carré commun supérieur à 1, donc ce sont probablement des dilatations de configurations plus petites.
+Sur les 614 résultats, seulement 75 ont un facteur carré commun égal à 1. Les 539 autres sont très probablement des dilatations de configurations plus petites.
 
 ### Conclusion de la branche C
 
+> Dans la famille des carrés magiques 3×3 où le centre et les quatre coins sont imposés carrés, la recherche jusqu’à `E ≤ 60 000` donne 614 configurations valides, toutes avec exactement 6 carrés sur 9. Aucun 7/9 ni 8/9 n’a été trouvé.
 
-> Dans la famille des carrés magiques 3×3 où le centre et les quatre coins sont imposés carrés, la recherche jusqu’à E≤60000 donne 614 configurations valides, toutes avec exactement 6 carrés sur 9. Aucun carré à 7/9 ou 8/9 n’a été trouvé dans cette famille.
+Cette branche constitue donc une bonne branche négative documentée.
 
-C’est une bonne branche négative supplémentaire.
+---
 
-## Branche D
+## Branche D — une seule progression de carrés autour du centre
 
-Avec ce script relâché, **Bremner a été retrouvé très tôt**. La limite minimale est :
+### D.1. Idée
 
-```bash
-python magic_square_relaxed_search.py --limit 425 --qmax 41496 --min-total 7 --top 10
+On fixe une progression arithmétique de carrés autour du centre :
+
+```text
+A², E², J²
 ```
 
-Je l’ai testé avec mon script : il retrouve bien une configuration `7/9` en moins d’une seconde, avec :
+avec
+
+```text
+A² + J² = 2E²
+```
+
+puis on balaie un paramètre libre `q` pour tester les six autres cases :
+
+```text
+E²+q
+E²-q
+J²+q
+J²-q
+A²+q
+A²-q
+```
+
+Cette famille contient le carré de Bremner.
+
+### D.2. Seuil minimal pour retrouver Bremner
+
+Le carré de Bremner est retrouvé dès que :
 
 ```text
 A = 205
@@ -115,120 +142,152 @@ J = 565
 q = 41496
 ```
 
-Ce script fixe une progression arithmétique de carrés autour du centre :
+Donc les seuils minimaux sont :
 
 ```text
-A², E², J² = 205², 425², 565²
+limit >= 425
+qmax  >= 41496
+min-total = 7
 ```
 
-puis balaie `q` pour tester les 6 autres cases. C’est exactement la stratégie décrite dans ton script relâché. 
+### D.3. Ancienne version relâchée
 
-La configuration obtenue dans l’orientation du script est :
+Script historique :
 
 ```text
-565² | 23²     | 222121
-289² | 425²    | 527²
-373² | 360721  | 205²
+magic_square_relaxed_search.py
 ```
 
-Elle est bien équivalente au carré de Bremner, par rotation/symétrie :
+Conclusion historique : ce script retrouve Bremner et ses multiples triviaux, mais n’a pas produit de nouveau 8/9.
+
+---
+
+## Branche D' — script optimisé parallèle et criblé
+
+Nouveau script :
 
 ```text
-373² | 360721 | 205²
-289² | 425²   | 527²
-565² | 23²    | 222121
+src/magic_square_parallel_optimized.py
 ```
 
-Donc les seuils critiques sont :
+### D'.1. Optimisations intégrées
+
+Le script optimisé combine :
+
+1. génération streaming des triplets `(A,E,J)` via triplets pythagoriciens ;
+2. borne de rejet immédiate dépendant de `qmax` ;
+3. crible modulaire par triplet ;
+4. génération sparse des seuls `q` compatibles avec une proximité à un carré ;
+5. filtrage modulaire des `q` ;
+6. déduplication finale des multiples triviaux.
+
+Cette version est beaucoup plus rapide que la version dense de balayage complet sur `q`.
+
+### D'.2. Résultats 7/9 — campagnes larges
+
+| Campagne | Paramètres principaux | Triplets traités | Résultat distinct |
+| --- | --- | ---: | --- |
+| P2 | `limit=50 000`, `qmax=100 000`, `min-total=7` | 75 196 | Bremner seul |
+| P5A | `limit=75 000`, `qmax=150 000`, `min-total=7` | 117 620 | Bremner seul |
+| P7 | `limit=250 000`, `qmax=500 000`, `min-total=7` | 440 007 | Bremner seul |
+| P9 | `limit=500 000`, `qmax=1 000 000`, `min-total=7` | 935 188 | Bremner seul |
+
+Détails marquants :
+
+- `P7` : 3 résultats bruts à 7/9, tous équivalents après déduplication ;
+- `P9` : 4 résultats bruts à 7/9, correspondant à Bremner et à ses multiples triviaux `k=2,3,4`.
+
+Conclusion 7/9 :
+
+> Dans cette famille, jusqu’à `E ≤ 500 000` et `q ≤ 1 000 000`, aucun nouveau 7/9 primitif n’a été trouvé. Le seul 7/9 distinct rencontré est le carré de Bremner.
+
+### D'.3. Résultats 8/9 — campagnes larges
+
+| Campagne | Paramètres principaux | Triplets traités | Résultat |
+| --- | --- | ---: | --- |
+| P3 | `limit=50 000`, `qmax=100 000`, `min-total=8` | 75 196 | aucun 8/9 |
+| P5B | `limit=75 000`, `qmax=150 000`, `min-total=8` | 117 620 | aucun 8/9 |
+| P8 | `limit=250 000`, `qmax=500 000`, `min-total=8` | 440 007 | aucun 8/9 |
+| P8b | `limit=250 000`, `qmax=500 000`, `min-total=8`, `strict-24` | 440 007 | aucun 8/9 |
+| P9b | `limit=500 000`, `qmax=1 000 000`, `min-total=8`, `strict-24` | 935 188 | aucun 8/9 |
+
+Conclusion 8/9 :
+
+> Aucun 8/9 n’a été trouvé dans cette branche, y compris avec le crible plus agressif `strict-24`, jusqu’à `E ≤ 500 000` et `q ≤ 1 000 000`.
+
+### D'.4. Cartographie 6/9
+
+Campagne de cartographie :
 
 ```text
---limit >= 425
---qmax  >= 41496
---min-total 7
+limit = 250 000
+qmax = 500 000
+min-total = 6
+moduli = 16,5,7,11
 ```
 
-Commande recommandée avec un peu de marge :
-
-```bash
-python magic_square_relaxed_search.py --limit 500 --qmax 50000 --min-total 7 --top 20 --out bremner_relaxed.csv
-```
-
-À retenir : avec `--limit 424`, Bremner est impossible à retrouver, car le centre est `425²`. Avec `--qmax 41495`, il est également impossible, car le bon paramètre est exactement `q = 41496`.
-
-Ce nouveau script ne fait pas exactement le même balayage que la v4, mais pour l’objectif 7/9 ou 8/9 avec centre carré, il risque surtout de retrouver les mêmes familles, notamment Bremner et ses multiples.
-
-Il fixe seulement une progression de carrés autour du centre :
-```text
-A², E², J²
-```
-puis il balaie librement q et teste les six autres valeurs :
+Résultat :
 
 ```text
-r+q
-r-q
-r+p+q
-r+p-q
-r-p+q
-r-p-q
+Triplets traités : 440 007
+Résultats bruts retenus : 249
+Multiples triviaux retirés : 183
+Configurations distinctes : 66
+Répartition : 65 cas à 6/9, 1 cas à 7/9
 ```
-C’est donc plus large que la v4 au niveau du balayage brut, car q n’est plus obligé d’être lui-même un offset donnant directement une deuxième progression de carrés.
 
-Mais il y a une nuance importante.
+Cette cartographie est importante, car elle révèle plusieurs corridors fertiles à 6/9 sans produire de nouveau 7/9.
 
-Dans un carré magique 3×3 à centre carré avec 7/9, il y a le centre carré + 6 cases extérieures carrées. Or les 8 cases extérieures sont organisées en 4 paires opposées autour du centre. Si seulement deux cases extérieures ne sont pas carrées, alors il reste forcément au moins deux paires opposées entièrement carrées.
+Observations qualitatives :
 
-Donc tout vrai candidat 7/9 avec centre carré devrait déjà appartenir à la famille couverte par la v4, qui imposait deux progressions de carrés autour du centre.
+- le corridor autour de `E = 425` est particulièrement remarquable ;
+- plusieurs triplets admettent plusieurs valeurs de `q` donnant 6/9 ;
+- certains motifs de masque (`square_mask`) semblent plus structurés que d’autres.
 
-Pour 8/9, c’est encore plus fort : avec une seule case non carrée parmi les 8 extérieures, il reste au moins trois paires opposées entièrement carrées. Donc la v4 couvre naturellement cette zone aussi.
+Exemple de corridor notable :
 
-### Ce que ce script peut chercher hors v4
-
-Il peut explorer des near-misses intéressants, par exemple des 5/9 ou 6/9, où une seule progression opposée est garantie et où les autres carrés apparaissent accidentellement.
-
-Mais pour battre Bremner avec un 8/9 à centre carré, il n’apporte probablement pas une nouvelle zone conceptuelle par rapport à v4. Il est surtout une autre manière, plus brute, de retomber sur les mêmes structures.
-
-Il ne couvre pas non plus :
 ```text
-centre non carré
+A=205 E=425 J=565  q=41496  -> 7/9  (Bremner)
+A=289 E=425 J=527  q=41496  -> 6/9
+A=355 E=425 J=485  q=42504  -> 6/9
+A=205 E=445 J=595  q=31416  -> 6/9
+A=267 E=447 J=573  q=48488  -> 6/9
 ```
-ni (semi-magique):
+
+### D'.5. Reruns ciblés sur une shortlist de triplets prometteurs
+
+Fichier ciblé :
+
 ```text
-centre = 0
-```
-ni des familles semi-magiques qu'on va tester dans la foulée dans le cadre ce projet.
-
-#### Commandes utiles
-
-Pour retrouver seulement Bremner :
-```bash
-python magic_square_relaxed_search.py --limit 425 --qmax 41496 --min-total 7
-```
-Avec une petite marge :
-```bash
-python magic_square_relaxed_search.py --limit 500 --qmax 50000 --min-total 7 --out bremner_relaxed.csv
-```
-Pour retrouver Bremner et ses multiples jusqu’à k = 5 :
-```bash
-python magic_square_relaxed_search.py --limit 2125 --qmax 1037400 --min-total 7 --out bremner_multiples_k5.csv
+results/promising/triples_prometteurs_phase2.csv
 ```
 
-car :
-```text
-425 × 5 = 2125
-41496 × 5² = 1 037 400
-```
+Contenu : 21 triplets sélectionnés à partir de la cartographie 6/9.
 
-### Conclusion Branche D — contrainte relâchée à une seule progression de carrés
-> Résultat test : limit=10000, qmax=300000
+Campagnes exécutées :
 
-> Candidats 7/9 trouvés : Bremner et son multiple ×4
+| Campagne | Paramètres principaux | Résultat |
+| --- | --- | --- |
+| TARGET-T7 | `qmax=5 000 000`, `min-total=7` | Bremner seul |
+| TARGET-T8 | `qmax=5 000 000`, `min-total=8` | aucun 8/9 |
+| TARGET-T8-s24 | `qmax=5 000 000`, `min-total=8`, `strict-24` | aucun 8/9 |
+| TARGET-T8-s24-bis | `qmax=10 000 000`, `min-total=8`, `strict-24` | aucun 8/9 |
 
-> Aucun 8/9
+Conclusion ciblée :
 
+> Même en poussant `qmax` à 5 millions puis 10 millions sur une shortlist de 21 triplets prometteurs, aucun nouveau 7/9 ni aucun 8/9 n’a été trouvé. Le seul 7/9 détecté reste Bremner.
 
-## Branche Semi-Magique
+### D'.6. Conclusion générale de la branche D'
 
-Avec (e=0), on peut exploiter une paramétrisation beaucoup plus simple que le script précédent basé sur (r,p,q). 
+> La branche “une seule progression de carrés autour du centre”, dans sa version optimisée, a été poussée jusqu’à près d’un million de triplets utiles et `q ≤ 1 000 000` en balayage large, puis jusqu’à `q ≤ 10 000 000` sur une shortlist ciblée de 21 triplets prometteurs. Aucun nouveau 7/9 primitif ni aucun 8/9 n’a été trouvé. Le seul 7/9 distinct observé est le carré de Bremner.
+
+Cette branche est désormais très bien documentée expérimentalement. Elle reste utile, mais les gains futurs viendront probablement davantage d’un ciblage structurel plus fin que d’une simple augmentation uniforme des bornes.
+
+---
+
+## Branche E — semi-magique centre zéro
+
+Avec `e = 0`, on peut utiliser une paramétrisation plus simple.
 
 Si les quatre coins sont :
 
@@ -237,7 +296,7 @@ A²      C²
 H²      J²
 ```
 
-alors le carré semi-magique complet est automatiquement :
+alors le carré semi-magique associé est :
 
 ```text
 A²        H² + J²      C²
@@ -245,13 +304,13 @@ C² + J²   0            A² + H²
 H²        A² + C²      J²
 ```
 
-La somme magique vaut :
+La somme commune vaut :
 
 ```text
 S = A² + C² + H² + J²
 ```
 
-Le script ci-dessous cherche donc des quadruplets `A, C, H, J` tels que les quatre sommes :
+Le but est de choisir `A, C, H, J` de sorte que les quatre sommes :
 
 ```text
 H² + J²
@@ -261,19 +320,14 @@ A² + C²
 ```
 
 soient elles aussi des carrés.
-Dans ce cas, on obtient **8 carrés positifs sur 8**, avec centre `0`.
 
----
-
-
-
-#### Commande de test :
+Commande de test historique :
 
 ```bash
 python search_semimagic_e0_squares.py --max-root 100 --min-squares 7 --primitive-only --limit 10 --csv results_semimagic_e0.csv
 ```
 
-On peut obtenir très vite un carré comme celui-ci :
+Exemple obtenu rapidement :
 
 ```text
 15² | 60² | 20²
@@ -295,80 +349,49 @@ Les lignes et colonnes valent toutes :
 4225 = 65²
 ```
 
-Donc on a :
+Donc on obtient :
 
 ```text
-8 carrés positifs sur 8 cases non nulles
+8 carrés positifs sur les 8 cases non nulles
 ```
 
-ou, si on compte aussi `0 = 0²`, un semi-magique dégénéré à `9/9`.
+ou, si l’on compte aussi `0 = 0²`, un semi-magique dégénéré à `9/9`.
 
+### Statut conceptuel
 
-### Les carrés semi-magique dans la littérature des carrés magiques
+Cette famille est intéressante pour l’exploration et la pédagogie, mais elle n’est pas le cœur du problème historique des carrés magiques 3×3 de carrés parfaits distincts, puisque :
 
-**Le genre général est bien présent dans la littérature**, mais notre variante précise avec **centre (e=0)** est plutôt une **sous-famille dégénérée / constructive**, pas le cœur du problème classique.
+1. le centre nul rend la famille dégénérée du point de vue du problème classique ;
+2. les diagonales ne sont pas, en général, égales à la somme magique.
 
-Il faut distinguer trois niveaux.
+Elle reste néanmoins une branche constructive utile.
 
-#### 1. Les carrés semi-magiques sont parfaitement documentés
+---
 
-Un carré semi-magique est classiquement un carré dont **les lignes et les colonnes** ont la même somme, mais pas nécessairement les diagonales. MathWorld donne exactement cette définition : un semi-magic square échoue à être magique seulement parce qu’une ou deux diagonales ne valent pas la constante magique. ([MathWorld][1])
+## Conclusion générale au 2026-07-08
 
-Donc nos carrés avec (e=0) entrent bien dans la catégorie :
+À ce stade, les différentes branches donnent le tableau suivant :
 
-```text
-semi-magiques 3×3
-```
+- **branche A** : Bremner seul à 7/9 ; aucun 8/9 ni 9/9 dans les bornes historiques ;
+- **branche B** : aucun 8/9 jusqu’à racines extérieures `≤ 20 000` ;
+- **branche C** : beaucoup de 6/9, aucun 7/9 ni 8/9 ;
+- **branche D'** (script optimisé) : vaste exploration de la famille à une progression de carrés autour du centre, avec cartographie 6/9 riche mais aucun nouveau 7/9 ni 8/9 ;
+- **branche E** : semi-magique centre zéro très fertile, mais hors du cœur du problème magique complet.
 
-car les lignes et colonnes sont équilibrées.
+La meilleure piste pour la suite n’est probablement plus une simple montée uniforme des bornes. La prochaine étape naturelle est une recherche computationnelle plus vaste mais aussi plus structurée :
 
-#### 2. Les semi-magiques “de carrés” existent aussi dans la littérature
+1. exploitation systématique des familles fertiles à 6/9 ;
+2. ciblage automatique des triplets prometteurs ;
+3. cribles plus fins par motifs de cases carrées ;
+4. exploration plus large des branches non centrées sur la progression unique autour du centre.
 
-Plus intéressant : les **semi-magic squares of squares** sont eux aussi connus. Il existe même une famille attribuée à **Euler** : une page universitaire intitulée *Euler’s family of semi-magic squares of squares of order three* indique qu’Euler a publié en 1770 une famille de carrés semi-magiques d’ordre 3 composés de carrés rationnels, puis transformables en carrés d’entiers après multiplication. ([math.ru.nl][2])
+---
 
-Cette même source précise que Lucas a ensuite étudié le problème des carrés de carrés d’ordre 3 et que la famille d’Euler ne contient pas de vrai carré magique de carrés, c’est-à-dire pas de cas où les deux diagonales prennent aussi la somme magique. ([math.ru.nl][2])
+## Références rapides
 
-Donc  : **semi-magique + entrées carrées** est un objet mathématique connu.
-
-#### 3. Notre variante avec centre (0) est probablement une sous-famille particulière
-
-Nos carrés ont une forme spéciale :
-
-```text
-A²        H² + J²      C²
-C² + J²   0            A² + H²
-H²        A² + C²      J²
-```
-
-La somme commune vaut :
-
-```text
-S = A² + C² + H² + J²
-```
-
-Et pour obtenir 8 carrés positifs autour de zéro, il faut que les quatre sommes :
-
-```text
-H² + J²
-C² + J²
-A² + H²
-A² + C²
-```
-
-soient elles-mêmes des carrés. Autrement dit, on relie le problème à un réseau de relations pythagoriciennes. Le script qu’on a préparé cherche précisément ce type de structure : un carré semi-magique 3×3 avec centre nul, quatre coins carrés et quatre cases latérales qui deviennent carrées par sommes de deux carrés. 
-
-C’est une approche naturelle, mais elle est **moins centrale dans la littérature classique**, pour deux raisons :
-
-1. Le centre (0) rend le carré “dégénéré” si l’on cherche des carrés positifs distincts.
-2. Le vrai problème célèbre demande un **carré magique complet**, donc avec les deux diagonales aussi égales à la somme magique. Le problème 3×3 complet reste ouvert, et l’exemple de Bremner à 7 carrés reste cité comme l’unique exemple connu dans certains défis publics. ([plus.maths.org][3])
-
-
-Donc notre famille particulière avec centre (0), construite par sommes pythagoriciennes autour de quatre coins carrés, semble plutôt être une sous-famille constructive simple, utile pour l’exploration et la pédagogie, mais pas le cœur du problème historique des “magic squares of squares”.
-
-
-
-[1]: https://mathworld.wolfram.com/SemimagicSquare.html "Semimagic Square -- from Wolfram MathWorld"
-[2]: https://www.math.ru.nl/lo_shu_tot_sudoku/chapters/Euler%27s_family.pdf "Euler's family.dvi"
-[3]: https://plus.maths.org/os/latestnews/may-aug10/magic/index "Win money with magic squares | plus.maths.org"
-
-
+- Bremner, *On squares of squares* (1999) : http://www.multimagie.com/Bremner1.pdf
+- Bremner, *On squares of squares II* (2001) : http://www.multimagie.com/Bremner2.pdf
+- MystiMath — problème ouvert : https://mystimath.org/fr/articles/carre-magique-3x3-carres-parfaits-probleme-ouvert/
+- MystiMath — recherche expérimentale : https://mystimath.org/fr/articles/recherche-experimentale-carres-magiques-de-carres/
+- MystiMath — centre zéro : https://mystimath.org/fr/articles/carres-semi-magiques-centre-zero/
+- Magic square of squares (synthèse) : https://en.wikipedia.org/wiki/Magic_square_of_squares

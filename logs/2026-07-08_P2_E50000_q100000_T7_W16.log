@@ -1,0 +1,47 @@
+Crible modulaire actif sur les modules : 16, 5, 7, 11
+Seuil de conservation : 7/9 (donc 4 carres parmi les 6 cases derivees)
+Generation des triplets (A,E,J) avec E <= 50000...
+  [    0.6s]       12,000 triplets traites  (19,372/s)  meilleur total : 7/9
+  [    0.6s]       16,000 triplets traites  (25,829/s)  meilleur total : 7/9
+  [    0.6s]       20,000 triplets traites  (32,287/s)  meilleur total : 7/9
+  [    0.6s]       24,000 triplets traites  (38,744/s)  meilleur total : 7/9
+  [    0.6s]       28,000 triplets traites  (45,201/s)  meilleur total : 7/9
+  [    0.6s]       32,000 triplets traites  (51,658/s)  meilleur total : 7/9
+  [    0.6s]       36,000 triplets traites  (58,116/s)  meilleur total : 7/9
+  [    0.6s]       40,000 triplets traites  (64,573/s)  meilleur total : 7/9
+  [    0.6s]       44,000 triplets traites  (71,030/s)  meilleur total : 7/9
+  [    0.6s]       47,196 triplets traites  (76,190/s)  meilleur total : 7/9
+  [    0.6s]       51,196 triplets traites  (82,647/s)  meilleur total : 7/9
+  [    0.6s]       55,196 triplets traites  (89,104/s)  meilleur total : 7/9
+  [    0.6s]       59,196 triplets traites  (95,562/s)  meilleur total : 7/9
+  [    0.6s]       63,196 triplets traites  (102,019/s)  meilleur total : 7/9
+  [    0.6s]       67,196 triplets traites  (108,476/s)  meilleur total : 7/9
+  [    0.6s]       71,196 triplets traites  (114,934/s)  meilleur total : 7/9
+  [    0.6s]       75,196 triplets traites  (121,391/s)  meilleur total : 7/9
+
+Termine en 0.6s -- 75,196 triplets traites.
+
+Statistiques de rejet / survie :
+  reject_gap             : 674
+  reject_ok              : 25,716
+  reject_sparse_empty    : 48,805
+  triplets_seen          : 75,196
+  triplets_with_results  : 1
+
+Nombre de configurations distinctes avec total >= 7 : 1
+Repartition par total de carres (sur 9) : {7: 1}
+
+Meilleur total trouve : 7/9
+Egale le record connu (7/9).
+
+Detail des 1 meilleurs resultats :
+
+  A=205 E=425 J=565  q=41496  -> total 7/9  mask=111010
+      b(r+q)          = 222121 (non-carre)
+      i(r-q)          = 373^2
+      top(r+p+q)      = 360721 (non-carre)
+      edge(r+p-q)     = 527^2
+      edge(r-p+q)     = 289^2
+      bottom(r-p-q)   = 23^2
+
+Resultats deja ecrits au fur et a mesure dans : results/raw/2026-07-08_P2_E50000_q100000_T7_W16_M16-5-7-11.csv

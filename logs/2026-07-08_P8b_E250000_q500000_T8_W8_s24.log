@@ -1,0 +1,22 @@
+Crible modulaire actif sur les modules : 16, 5, 7, 11, 13, 24
+Seuil de conservation : 8/9 (donc 5 carres parmi les 6 cases derivees)
+Mode strict-24 ACTIF : filtre plus agressif, experimental.
+Generation des triplets (A,E,J) avec E <= 250000...
+  [    1.3s]       80,000 triplets traites  (59,430/s)  meilleur total : 0/9
+  [    1.9s]      160,000 triplets traites  (82,976/s)  meilleur total : 0/9
+  [    2.5s]      240,000 triplets traites  (96,607/s)  meilleur total : 0/9
+  [    2.9s]      320,000 triplets traites  (108,606/s)  meilleur total : 0/9
+  [    2.9s]      396,007 triplets traites  (134,357/s)  meilleur total : 0/9
+
+Termine en 3.0s -- 440,007 triplets traites.
+
+Statistiques de rejet / survie :
+  reject_gap             : 105,997
+  reject_mod             : 209,685
+  reject_ok              : 13,289
+  reject_sparse_empty    : 111,036
+  triplets_seen          : 440,007
+
+Nombre de configurations distinctes avec total >= 8 : 0
+
+Aucun resultat au-dessus du seuil. Essayez d'augmenter --limit et/ou --qmax, ou de diminuer --min-total.

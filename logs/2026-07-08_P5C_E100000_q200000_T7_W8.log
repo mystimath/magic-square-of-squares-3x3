@@ -1,0 +1,85 @@
+Crible modulaire actif sur les modules : 16, 5, 7, 11
+Seuil de conservation : 7/9 (donc 4 carres parmi les 6 cases derivees)
+Generation des triplets (A,E,J) avec E <= 100000...
+  [    0.9s]        6,000 triplets traites  (6,583/s)  meilleur total : 7/9
+  [    1.0s]        9,000 triplets traites  (9,462/s)  meilleur total : 7/9
+  [    1.0s]       12,000 triplets traites  (12,052/s)  meilleur total : 7/9
+  [    1.0s]       15,000 triplets traites  (14,410/s)  meilleur total : 7/9
+  [    1.1s]       18,000 triplets traites  (16,697/s)  meilleur total : 7/9
+  [    1.1s]       21,000 triplets traites  (18,783/s)  meilleur total : 7/9
+  [    1.2s]       24,000 triplets traites  (20,779/s)  meilleur total : 7/9
+  [    1.2s]       27,000 triplets traites  (22,658/s)  meilleur total : 7/9
+  [    1.2s]       30,000 triplets traites  (24,378/s)  meilleur total : 7/9
+  [    1.3s]       33,000 triplets traites  (25,971/s)  meilleur total : 7/9
+  [    1.3s]       36,000 triplets traites  (27,594/s)  meilleur total : 7/9
+  [    1.3s]       39,000 triplets traites  (29,132/s)  meilleur total : 7/9
+  [    1.4s]       42,000 triplets traites  (30,618/s)  meilleur total : 7/9
+  [    1.4s]       45,000 triplets traites  (32,103/s)  meilleur total : 7/9
+  [    1.4s]       48,000 triplets traites  (33,501/s)  meilleur total : 7/9
+  [    1.5s]       51,000 triplets traites  (34,913/s)  meilleur total : 7/9
+  [    1.5s]       54,000 triplets traites  (36,248/s)  meilleur total : 7/9
+  [    1.5s]       57,000 triplets traites  (37,580/s)  meilleur total : 7/9
+  [    1.5s]       60,000 triplets traites  (38,741/s)  meilleur total : 7/9
+  [    1.6s]       63,000 triplets traites  (40,083/s)  meilleur total : 7/9
+  [    1.6s]       66,000 triplets traites  (41,412/s)  meilleur total : 7/9
+  [    1.6s]       69,000 triplets traites  (42,810/s)  meilleur total : 7/9
+  [    1.6s]       72,000 triplets traites  (44,672/s)  meilleur total : 7/9
+  [    1.6s]       75,000 triplets traites  (46,533/s)  meilleur total : 7/9
+  [    1.6s]       78,000 triplets traites  (48,364/s)  meilleur total : 7/9
+  [    1.6s]       81,000 triplets traites  (50,225/s)  meilleur total : 7/9
+  [    1.6s]       84,000 triplets traites  (52,085/s)  meilleur total : 7/9
+  [    1.6s]       87,000 triplets traites  (53,945/s)  meilleur total : 7/9
+  [    1.6s]       90,000 triplets traites  (55,805/s)  meilleur total : 7/9
+  [    1.6s]       93,000 triplets traites  (57,665/s)  meilleur total : 7/9
+  [    1.6s]       96,000 triplets traites  (59,525/s)  meilleur total : 7/9
+  [    1.6s]       99,000 triplets traites  (61,386/s)  meilleur total : 7/9
+  [    1.6s]      102,000 triplets traites  (63,246/s)  meilleur total : 7/9
+  [    1.6s]      105,000 triplets traites  (65,106/s)  meilleur total : 7/9
+  [    1.6s]      108,000 triplets traites  (66,966/s)  meilleur total : 7/9
+  [    1.6s]      111,000 triplets traites  (68,826/s)  meilleur total : 7/9
+  [    1.6s]      114,000 triplets traites  (70,686/s)  meilleur total : 7/9
+  [    1.6s]      117,000 triplets traites  (72,547/s)  meilleur total : 7/9
+  [    1.6s]      119,436 triplets traites  (74,057/s)  meilleur total : 7/9
+  [    1.6s]      122,436 triplets traites  (75,917/s)  meilleur total : 7/9
+  [    1.6s]      125,436 triplets traites  (77,777/s)  meilleur total : 7/9
+  [    1.6s]      128,436 triplets traites  (79,638/s)  meilleur total : 7/9
+  [    1.6s]      131,436 triplets traites  (81,498/s)  meilleur total : 7/9
+  [    1.6s]      134,436 triplets traites  (83,358/s)  meilleur total : 7/9
+  [    1.6s]      137,436 triplets traites  (85,218/s)  meilleur total : 7/9
+  [    1.6s]      140,436 triplets traites  (87,078/s)  meilleur total : 7/9
+  [    1.6s]      143,436 triplets traites  (88,938/s)  meilleur total : 7/9
+  [    1.6s]      146,436 triplets traites  (90,799/s)  meilleur total : 7/9
+  [    1.6s]      149,436 triplets traites  (92,659/s)  meilleur total : 7/9
+  [    1.6s]      152,436 triplets traites  (94,519/s)  meilleur total : 7/9
+  [    1.6s]      155,436 triplets traites  (96,379/s)  meilleur total : 7/9
+  [    1.6s]      158,436 triplets traites  (98,239/s)  meilleur total : 7/9
+  [    1.6s]      161,436 triplets traites  (100,099/s)  meilleur total : 7/9
+
+Termine en 1.6s -- 161,436 triplets traites.
+Deduplication : 1 multiple(s) trivial(aux) retire(s) (2 -> 1).
+
+Statistiques de rejet / survie :
+  reject_gap             : 942
+  reject_ok              : 55,850
+  reject_sparse_empty    : 104,642
+  triplets_seen          : 161,436
+  triplets_with_results  : 2
+
+Nombre de configurations distinctes avec total >= 7 : 1
+Repartition par total de carres (sur 9) : {7: 1}
+
+Meilleur total trouve : 7/9
+Egale le record connu (7/9).
+
+Detail des 1 meilleurs resultats :
+
+  A=205 E=425 J=565  q=41496  -> total 7/9  mask=111010
+      (multiples triviaux aussi presents a l'echelle k=2 -- non affiches)
+      b(r+q)          = 222121 (non-carre)
+      i(r-q)          = 373^2
+      top(r+p+q)      = 360721 (non-carre)
+      edge(r+p-q)     = 527^2
+      edge(r-p+q)     = 289^2
+      bottom(r-p-q)   = 23^2
+
+Resultats deja ecrits au fur et a mesure dans : results/raw/2026-07-08_P5C_E100000_q200000_T7_W8_M16-5-7-11.csv
