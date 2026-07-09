@@ -1,0 +1,80 @@
+le script a écrit dans le dossier temp 11.7 Go de données !
+Voici une partie du log:
+PS C:\dev\mystimath\conjectura\magic-square-of-squares-3x3> python src/search_non_square_center_v2_optimized.py `     
+>>   --profile B2-1 `
+>>   --max-root 50000 `
+>>   --workers 8 `
+>>   --shard-workers 8 `
+>>   --shard-size 10000000 `
+>>   --flush-lines 200000 `
+>>   --primitive-only `
+>>   --distinct-roots `
+>>   --non-square-center-only `
+>>   --clean-tmp `
+>>   --tmp-dir tmp\b2_non_square_center `
+>>   --out results\raw\b2_non_square_center_v2_B2-1.csv
+Profil B2-1
+  cible      : racines extérieures <= 50,000
+  objectif   : Dépasser proprement la borne 20 000.
+  arrêt      : Stop si mur mémoire persistant après réécriture raisonnable.
+Recherche B2 optimisée — centre non nécessairement carré
+  max-root              : 50,000
+  workers               : 8
+  shard-workers         : 8
+  shard-size            : 10,000,000
+  tmp-dir               : tmp\b2_non_square_center
+  out                   : results\raw\b2_non_square_center_v2_B2-1.csv
+  primitive-only        : True
+  distinct-roots        : True
+  non-square-center-only: True
+[Stage 1/2] Génération parallèle des paires (center, offset) ...
+  worker done: pairs=9,762,312  x_done=6,250  shards=59
+  worker done: pairs=29,292,883  x_done=6,250  shards=81
+  worker done: pairs=48,823,099  x_done=6,250  shards=99
+  worker done: pairs=68,352,903  x_done=6,250  shards=112
+  worker done: pairs=87,882,183  x_done=6,250  shards=122
+  worker done: pairs=107,410,596  x_done=6,250  shards=128
+  worker done: pairs=126,937,448  x_done=6,250  shards=130
+  worker done: pairs=146,456,630  x_done=6,250  shards=127
+[Stage 1 terminé] durée=182.2s  pairs=624,918,054
+[Stage 2/2] Traitement des shards et recherche des candidats ...
+  shards détectés : 250
+  shard done 1/250: centers=1,981,401  results=0
+  shard done 2/250: centers=1,893,015  results=0
+  shard done 3/250: centers=1,844,959  results=0
+  shard done 4/250: centers=1,812,453  results=0
+  shard done 5/250: centers=1,820,962  results=0
+  shard done 6/250: centers=1,863,413  results=0
+  shard done 7/250: centers=1,805,226  results=0
+  shard done 8/250: centers=1,831,491  results=0
+  shard done 9/250: centers=1,798,934  results=0
+  shard done 10/250: centers=1,783,961  results=0
+  shard done 11/250: centers=1,772,943  results=0
+  shard done 12/250: centers=1,776,291  results=0
+  shard done 13/250: centers=1,788,488  results=0
+  shard done 14/250: centers=1,769,609  results=0
+  shard done 15/250: centers=1,793,408  results=0
+  shard done 16/250: centers=1,780,061  results=0
+  shard done 17/250: centers=1,766,748  results=0
+(..)
+shard done 248/250: centers=25,255  results=0
+  shard done 249/250: centers=56,109  results=0
+  shard done 250/250: centers=76,882  results=0
+[Stage 2 terminé] durée=340.0s  résultats distincts=0
+
+Terminé.
+  durée totale          : 522.2s
+  statistiques globales :
+    centers_no_candidate     : 48,360,113
+    centers_seen             : 306,065,680
+    centers_too_few_offsets  : 257,705,567
+    merged_duplicates        : 0
+    merged_results           : 0
+    pairs_written            : 624,918,054
+    reject_center_square_pair : 56,946
+    shard_id                 : 31,125
+    shards_touched           : 858
+    x_done                   : 50,000
+
+Critère d'arrêt de la campagne :
+  Stop si mur mémoire persistant après réécriture raisonnable.

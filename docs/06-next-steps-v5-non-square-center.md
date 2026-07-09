@@ -13,3 +13,5 @@ Motif visé :
 où `e` est entier, mais pas forcément carré.
 
 Cette branche est importante car un carré 8/9 améliorant Bremner pourrait avoir son unique case non carrée au centre.
+
+

@@ -4,6 +4,9 @@ __pycache__/
 # Fichiers temporaires
 *.tmp
 *.bak
+**/tmp/
+**/temp/
+magic-square-of-squares-3x3/tmp/
 
 # Environnements Python
 .venv/
