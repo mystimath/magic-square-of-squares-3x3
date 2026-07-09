@@ -45,7 +45,7 @@ La branche est figée provisoirement à 20 000, car la version actuelle devient 
 
 Conclusion provisoire : aucun 8/9 détecté dans la branche à centre non nécessairement carré jusqu’aux bornes testées.
 
-### B2-2
+### B2-1
 
 J’ai rédigé un **script optimisé pour la branche la plus prometteuse, B2** : le cas **centre non nécessairement carré**, avec **parallelisation** et **gestion mémoire par sharding disque**.
 
@@ -191,6 +191,52 @@ search_non_square_center_v2_1.py
 ```
 
 avec cette architecture en **deux passes + offsets sélectifs**.
+
+---
+
+### B2-v2.1 — campagne exacte `R ≤ 50 000`
+
+Script utilisé :
+
+```text
+src/search_non_square_center_v2_1.py
+````
+
+Nom du log :
+
+```text
+B2_v2_1_exact8_non_square_R50000_2026-07-09.log
+```
+
+Objectif : chercher un carré magique 3×3 avec centre non carré et huit cases extérieures carrées, en utilisant une architecture en deux passes : préfiltrage des centres par masques modulaires, puis régénération sélective des offsets.
+
+Résumé du run :
+
+```text
+Racines extérieures : ≤ 50 000
+Paires vues : 624 918 054
+Centres vus : 307 660 640
+Lignes temporaires Pass 1 : 620 675 115
+Centres sélectionnés après filtres : 1 594 960
+Offsets régénérés en Pass 2 : 9 427 690
+Centres recombinés sans candidat : 1 594 960
+Résultats distincts : 0
+Durée totale : 845.7 s
+Volume temporaire observé : environ 19 Go
+```
+
+Résultat :
+
+> Aucun candidat 8/9 n’a été trouvé dans cette campagne B2-v2.1 jusqu’à `R ≤ 50 000`, avec centre non carré.
+
+Interprétation :
+
+La Pass 2 est restée maîtrisée : environ 9,4 millions d’offsets seulement ont été régénérés. Le vrai coût reste la Pass 1, qui écrit encore presque autant de lignes temporaires que de paires rencontrées. Le run confirme donc que la stratégie v2.1 est correcte et termine, mais qu’elle reste trop verbeuse côté disque pour monter brutalement vers `R = 100 000`.
+
+Conclusion opérationnelle :
+
+> La branche B2-v2.1 donne un résultat négatif propre à `R ≤ 50 000`. Avant toute montée de borne, il faut nettoyer automatiquement `pass1_partials`, renforcer les filtres modulaires et ajouter un mode de recherche plus souple visant aussi les candidats `≥ 7/9`, pas seulement les candidats exacts à huit cases extérieures carrées.
+
 
 ---
 
