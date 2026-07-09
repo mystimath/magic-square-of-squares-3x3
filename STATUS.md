@@ -104,7 +104,7 @@ C’est un **script optimisé et structuré**, mais pas encore la version mathé
 
 #### Resultats
 
-Après lancement de run, l’architecture de coût que montre ton run : **624 918 054 paires** générées, **11,7 Go temporaires** écrits sur disque, **306 065 680 centres** vus, puis **zéro candidat au final**. On n’a pas une branche “difficile mais prometteuse”, on a ici une branche dont la première implémentation a surtout déplacé le mur de la **RAM** vers le **disque**.
+Après lancement de run, l’architecture de coût que montre mon run : **624 918 054 paires** générées, **11,7 Go temporaires** écrits sur disque, **306 065 680 centres** vus, puis **zéro candidat au final**. On n’a pas une branche “difficile mais prometteuse”, on a ici une branche dont la première implémentation a surtout déplacé le mur de la **RAM** vers le **disque**.
 
 Autrement dit, le critère d’arrêt prévu dans la roadmap est déjà atteint en pratique : _“stop si mur mémoire persistant après réécriture raisonnable”_. Même si le mur est ici I/O + espace temporaire plus que RAM pure, c’est bien la même catégorie d’échec technique. 
 
@@ -237,6 +237,84 @@ Conclusion opérationnelle :
 
 > La branche B2-v2.1 donne un résultat négatif propre à `R ≤ 50 000`. Avant toute montée de borne, il faut nettoyer automatiquement `pass1_partials`, renforcer les filtres modulaires et ajouter un mode de recherche plus souple visant aussi les candidats `≥ 7/9`, pas seulement les candidats exacts à huit cases extérieures carrées.
 
+
+### B2-v2.2 — campagne exacte `R ≤ 50 000` (SAFE)
+
+Script utilisé :
+
+```text
+src/search_non_square_center_v2_2_safe.py
+
+```
+
+Nom du log :
+
+```text
+B2_v2_2_exact8_non_square_R50000.log
+
+```
+
+Objectif : chercher un carré magique 3×3 avec centre non carré et huit cases extérieures carrées, en utilisant une architecture hybride en deux passes intégrant un crible modulaire renforcé (modules 127, 131, 137), un sharding par vagues et un nettoyage à chaud des fichiers temporaires pour sécuriser l'espace disque.
+
+Résumé du run :
+
+```text
+Racines extérieures : ≤ 50 000
+Paires vues : 624 918 054
+Centres vus : 306 383 416
+Lignes temporaires Pass 1 : 608 982 791
+Centres sélectionnés après filtres : 317 736
+Offsets régénérés en Pass 2 : 4 907 684
+Centres recombinés sans candidat : 317 736
+Résultats distincts : 0
+Durée totale : 1725.2 s (28.7 min)
+Volume temporaire cumulé détruit : 46.2 Go
+Taille résiduelle finale : 0.13 Go
+
+```
+
+Résultat :
+
+> Aucun candidat 8/9 n’a été trouvé dans cette campagne B2-v2.2 jusqu’à `R ≤ 50 000`, avec centre non carré.
+
+Interprétation :
+
+La mise en place du crible à trois modules (127, 131, 137) a fait chuter le nombre de centres sélectionnés à seulement 317 736 (contre 1,59 million en v2.1), divisant par deux le volume d'offsets à régénérer en Pass 2 (4,9 millions). Bien que la génération brute du Pass 1A écrive un volume cumulé massif de 46,2 Go de données intermédiaires, l'intégration du nettoyage à chaud (`--cleanup-partials`) a permis de purger le disque au fur et à mesure du traitement des shards, ramenant l'empreinte résiduelle finale à un niveau insignifiant (0,13 Go) et éliminant tout risque de saturation.
+
+Conclusion opérationnelle :
+
+> La branche B2-v2.2 valide avec succès l'architecture "SAFE". L'espace disque est désormais totalement maîtrisé grâce à la purge dynamique des shards et au filtrage modulaire drastique. Le pipeline étant robuste, la montée de borne vers `R = 100 000` ou l'exploration des structures à centre carré de type Bremner (`≥ 7/9` via le mode `relaxed7`) peuvent être lancées en toute sécurité.
+
+### B2-v2.2 — relaxed7, centre carré, `R ≤ 100 000`
+
+Script utilisé :
+
+```text
+src/search_non_square_center_v2_2_safe.py
+```
+Log :
+```text
+B2_v2_2_relaxed7_square_R100000_2026-07-09.log
+```
+Commande : recherche relâchée de carrés magiques 3×3 avec au moins 7 cases carrées, centre carré, racines extérieures ≤ 100 000.
+
+Résumé :
+```text
+Paires utiles vues : 122 640
+Centres vus : 73 990
+Centres sélectionnés : 18 199
+Offsets régénérés : 85 048
+Résultats distincts : 1
+Durée : 865.8 s
+Taille temporaire finale : 0.004 Go
+```
+Résultat :
+> Un seul candidat distinct à 7/9 ou plus a été trouvé dans ce run. Il s'agit du carré de Bremner.aucun nouveau 7/9 primitif + aucun 8/9
+
+Conclusion :
+
+> Le run relaxed7, centre carré, R ≤ 100 000, retrouve uniquement le carré de Bremner. Aucun nouveau candidat primitif à 7/9 ou plus n’a été trouvé.
+> C’est un bon résultat négatif : le script retrouve bien le témoin attendu, puis ne trouve rien d’autre dans la borne testée.
 
 ---
 
