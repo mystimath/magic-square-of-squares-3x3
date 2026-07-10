@@ -1180,3 +1180,273 @@ Terminé.
     x_done                         : 50,000
 Résumé JSON écrit : logs\B2_v2_2_relaxed7_non_square_R50000_count10_summary.json
 PS C:\dev\mystimath\conjectura\magic-square-of-squares-3x3> 
+
+PS C:\dev\mystimath\conjectura\magic-square-of-squares-3x3> python src/filter_selected_centers.py `
+>>   --src tmp\b2_v2_2_relaxed7_non_square_R50000\selected_centers `
+>>   --dst tmp\b2_v2_2_relaxed7_non_square_R50000_count9\selected_centers `
+>>   --min-count 9 `
+>>   --max-total 2000000
+Centres lus      : 58,294,510
+Centres conservés: 1,699,797
+Fichiers créés   : 202
+Dossier sortie   : tmp\b2_v2_2_relaxed7_non_square_R50000_count9\selected_centers
+PS C:\dev\mystimath\conjectura\magic-square-of-squares-3x3> python src/search_non_square_center_v2_2_safe.py `
+>>   --stage pass2 `
+>>   --resource-profile home16_balanced `
+>>   --search-mode relaxed7 `
+>>   --center-mode non-square `
+>>   --max-root 50000 `
+>>   --min-total 7 `
+>>   --min-offsets-relaxed 9 `
+>>   --primitive-only `
+>>   --distinct-roots `
+>>   --tmp-dir tmp\b2_v2_2_relaxed7_non_square_R50000_count9 `
+>>   --out results\raw\b2_v2_2_relaxed7_non_square_R50000_count9.csv `
+>>   --summary-json logs\B2_v2_2_relaxed7_non_square_R50000_count9_summary.json
+Recherche B2 v2.2 SAFE / HYBRIDE
+  max-root              : 50,000
+  search-mode           : relaxed7
+  center-mode           : non-square
+  min-total             : 7
+  workers pass1         : 7
+  workers reduce        : 4
+  workers pass2         : 2
+  workers recombine     : 5
+  x-batch-size          : 768
+  shard-size            : 10,000,000
+  moduli                : 127, 131, 137
+  min-offsets exact     : 4
+  min-offsets relaxed   : 9
+  max-selected-centers  : 3,000,000
+  max-tmp-gb            : 160.0
+  min-free-gb           : 70.0
+  cleanup-partials      : True
+  primitive-only        : True
+  distinct-roots        : True
+  tmp-dir               : tmp\b2_v2_2_relaxed7_non_square_R50000_count9
+  out                   : results\raw\b2_v2_2_relaxed7_non_square_R50000_count9.csv
+[Préflight] Espace disque libre : 690.8 Go
+[Pass 2A] Régénération sélective des offsets des centres retenus...
+  worker done: offsets=3,233,056  x_done=25,000
+  worker done: offsets=18,894,730  x_done=25,000
+[Pass 2A terminé] durée=214.6s
+[Pass 2B] Recombinaison exacte / relâchée par shard...
+  shard recombine 1/202: centers=4,918  results=0
+  shard recombine 2/202: centers=6,962  results=0
+  shard recombine 3/202: centers=7,772  results=0
+  shard recombine 4/202: centers=8,685  results=0
+  shard recombine 5/202: centers=8,293  results=0
+  shard recombine 6/202: centers=8,998  results=0
+  shard recombine 7/202: centers=9,260  results=0
+  shard recombine 8/202: centers=9,501  results=0
+  shard recombine 9/202: centers=9,657  results=0
+  shard recombine 10/202: centers=9,881  results=0
+  shard recombine 11/202: centers=10,008  results=0
+  shard recombine 12/202: centers=10,188  results=0
+  shard recombine 13/202: centers=10,233  results=0
+  shard recombine 14/202: centers=10,402  results=0
+  shard recombine 15/202: centers=10,531  results=0
+  shard recombine 16/202: centers=10,659  results=0
+  shard recombine 17/202: centers=10,719  results=0
+  shard recombine 18/202: centers=10,768  results=0
+  shard recombine 19/202: centers=10,947  results=0
+  shard recombine 20/202: centers=10,963  results=0
+  shard recombine 21/202: centers=11,068  results=0
+  shard recombine 22/202: centers=11,113  results=0
+  shard recombine 23/202: centers=11,183  results=0
+  shard recombine 24/202: centers=11,341  results=0
+  shard recombine 25/202: centers=11,277  results=0
+  shard recombine 26/202: centers=11,369  results=0
+  shard recombine 27/202: centers=11,533  results=0
+  shard recombine 28/202: centers=11,451  results=0
+  shard recombine 29/202: centers=11,664  results=0
+  shard recombine 30/202: centers=11,555  results=0
+  shard recombine 31/202: centers=11,744  results=0
+  shard recombine 32/202: centers=11,772  results=0
+  shard recombine 33/202: centers=11,704  results=0
+  shard recombine 34/202: centers=11,807  results=0
+  shard recombine 35/202: centers=11,953  results=0
+  shard recombine 36/202: centers=11,842  results=0
+  shard recombine 37/202: centers=11,944  results=0
+  shard recombine 38/202: centers=11,974  results=0
+  shard recombine 39/202: centers=11,990  results=0
+  shard recombine 40/202: centers=12,142  results=0
+  shard recombine 41/202: centers=12,169  results=0
+  shard recombine 42/202: centers=12,153  results=0
+  shard recombine 43/202: centers=12,136  results=0
+  shard recombine 44/202: centers=12,226  results=0
+  shard recombine 45/202: centers=12,301  results=0
+  shard recombine 46/202: centers=12,274  results=0
+  shard recombine 47/202: centers=12,279  results=0
+  shard recombine 48/202: centers=12,481  results=0
+  shard recombine 49/202: centers=12,424  results=0
+  shard recombine 50/202: centers=12,300  results=0
+  shard recombine 51/202: centers=12,460  results=0
+  shard recombine 52/202: centers=12,492  results=0
+  shard recombine 53/202: centers=12,568  results=0
+  shard recombine 54/202: centers=12,536  results=0
+  shard recombine 55/202: centers=12,545  results=0
+  shard recombine 56/202: centers=12,568  results=0
+  shard recombine 57/202: centers=12,710  results=0
+  shard recombine 58/202: centers=12,731  results=0
+  shard recombine 59/202: centers=12,647  results=0
+  shard recombine 60/202: centers=12,642  results=0
+  shard recombine 61/202: centers=12,760  results=0
+  shard recombine 62/202: centers=12,813  results=0
+  shard recombine 63/202: centers=12,830  results=0
+  shard recombine 64/202: centers=12,857  results=0
+  shard recombine 65/202: centers=12,752  results=0
+  shard recombine 66/202: centers=12,850  results=0
+  shard recombine 67/202: centers=12,848  results=0
+  shard recombine 68/202: centers=12,914  results=0
+  shard recombine 69/202: centers=12,985  results=0
+  shard recombine 70/202: centers=12,999  results=0
+  shard recombine 71/202: centers=12,958  results=0
+  shard recombine 72/202: centers=12,943  results=0
+  shard recombine 73/202: centers=12,923  results=0
+  shard recombine 74/202: centers=13,106  results=0
+  shard recombine 75/202: centers=13,151  results=0
+  shard recombine 76/202: centers=13,051  results=0
+  shard recombine 77/202: centers=13,044  results=0
+  shard recombine 78/202: centers=13,100  results=0
+  shard recombine 79/202: centers=13,099  results=0
+  shard recombine 80/202: centers=13,214  results=0
+  shard recombine 81/202: centers=13,207  results=0
+  shard recombine 82/202: centers=13,262  results=0
+  shard recombine 83/202: centers=13,297  results=0
+  shard recombine 84/202: centers=13,209  results=0
+  shard recombine 85/202: centers=13,130  results=0
+  shard recombine 86/202: centers=13,256  results=0
+  shard recombine 87/202: centers=13,301  results=0
+  shard recombine 88/202: centers=13,283  results=0
+  shard recombine 89/202: centers=13,387  results=0
+  shard recombine 90/202: centers=13,374  results=0
+  shard recombine 91/202: centers=13,385  results=0
+  shard recombine 92/202: centers=13,305  results=0
+  shard recombine 93/202: centers=13,405  results=0
+  shard recombine 94/202: centers=13,308  results=0
+  shard recombine 95/202: centers=13,420  results=0
+  shard recombine 96/202: centers=13,569  results=0
+  shard recombine 97/202: centers=13,540  results=0
+  shard recombine 98/202: centers=13,493  results=0
+  shard recombine 99/202: centers=13,434  results=0
+  shard recombine 100/202: centers=13,383  results=0
+  shard recombine 101/202: centers=13,602  results=0
+  shard recombine 102/202: centers=13,482  results=0
+  shard recombine 103/202: centers=13,536  results=0
+  shard recombine 104/202: centers=13,576  results=0
+  shard recombine 105/202: centers=13,565  results=0
+  shard recombine 106/202: centers=13,669  results=0
+  shard recombine 107/202: centers=13,611  results=0
+  shard recombine 108/202: centers=13,659  results=0
+  shard recombine 109/202: centers=13,588  results=0
+  shard recombine 110/202: centers=13,655  results=0
+  shard recombine 111/202: centers=13,649  results=0
+  shard recombine 112/202: centers=13,627  results=0
+  shard recombine 113/202: centers=13,673  results=0
+  shard recombine 114/202: centers=13,788  results=0
+  shard recombine 115/202: centers=13,716  results=0
+  shard recombine 116/202: centers=13,881  results=0
+  shard recombine 117/202: centers=13,723  results=0
+  shard recombine 118/202: centers=13,721  results=0
+  shard recombine 119/202: centers=13,761  results=0
+  shard recombine 120/202: centers=13,698  results=0
+  shard recombine 121/202: centers=13,739  results=0
+  shard recombine 122/202: centers=13,872  results=0
+  shard recombine 123/202: centers=13,809  results=0
+  shard recombine 124/202: centers=13,942  results=0
+  shard recombine 125/202: centers=13,260  results=0
+  shard recombine 126/202: centers=13,881  results=0
+  shard recombine 127/202: centers=12,784  results=0
+  shard recombine 128/202: centers=12,062  results=0
+  shard recombine 129/202: centers=10,447  results=0
+  shard recombine 130/202: centers=11,294  results=0
+  shard recombine 131/202: centers=9,519  results=0
+  shard recombine 132/202: centers=8,602  results=0
+  shard recombine 133/202: centers=7,710  results=0
+  shard recombine 134/202: centers=6,336  results=0
+  shard recombine 135/202: centers=5,753  results=0
+  shard recombine 136/202: centers=7,000  results=0
+  shard recombine 137/202: centers=5,277  results=0
+  shard recombine 138/202: centers=4,739  results=0
+  shard recombine 139/202: centers=4,103  results=0
+  shard recombine 140/202: centers=3,803  results=0
+  shard recombine 141/202: centers=4,449  results=0
+  shard recombine 142/202: centers=3,465  results=0
+  shard recombine 143/202: centers=2,176  results=0
+  shard recombine 144/202: centers=3,174  results=0
+  shard recombine 145/202: centers=2,538  results=0
+  shard recombine 146/202: centers=2,902  results=0
+  shard recombine 147/202: centers=1,985  results=0
+  shard recombine 148/202: centers=1,340  results=0
+  shard recombine 149/202: centers=1,211  results=0
+  shard recombine 150/202: centers=1,502  results=0
+  shard recombine 151/202: centers=1,694  results=0
+  shard recombine 152/202: centers=1,122  results=0
+  shard recombine 153/202: centers=723  results=0
+  shard recombine 154/202: centers=835  results=0
+  shard recombine 155/202: centers=926  results=0
+  shard recombine 156/202: centers=980  results=0
+  shard recombine 157/202: centers=494  results=0
+  shard recombine 158/202: centers=662  results=0
+  shard recombine 159/202: centers=537  results=0
+  shard recombine 160/202: centers=620  results=0
+  shard recombine 161/202: centers=580  results=0
+  shard recombine 162/202: centers=314  results=0
+  shard recombine 163/202: centers=346  results=0
+  shard recombine 164/202: centers=430  results=0
+  shard recombine 165/202: centers=387  results=0
+  shard recombine 166/202: centers=468  results=0
+  shard recombine 167/202: centers=161  results=0
+  shard recombine 168/202: centers=185  results=0
+  shard recombine 169/202: centers=235  results=0
+  shard recombine 170/202: centers=215  results=0
+  shard recombine 171/202: centers=290  results=0
+  shard recombine 172/202: centers=139  results=0
+  shard recombine 173/202: centers=99  results=0
+  shard recombine 174/202: centers=143  results=0
+  shard recombine 175/202: centers=110  results=0
+  shard recombine 176/202: centers=101  results=0
+  shard recombine 177/202: centers=48  results=0
+  shard recombine 178/202: centers=67  results=0
+  shard recombine 179/202: centers=63  results=0
+  shard recombine 180/202: centers=74  results=0
+  shard recombine 181/202: centers=83  results=0
+  shard recombine 182/202: centers=17  results=0
+  shard recombine 183/202: centers=33  results=0
+  shard recombine 184/202: centers=35  results=0
+  shard recombine 185/202: centers=43  results=0
+  shard recombine 186/202: centers=26  results=0
+  shard recombine 187/202: centers=21  results=0
+  shard recombine 188/202: centers=11  results=0
+  shard recombine 189/202: centers=13  results=0
+  shard recombine 190/202: centers=12  results=0
+  shard recombine 191/202: centers=8  results=0
+  shard recombine 192/202: centers=5  results=0
+  shard recombine 193/202: centers=2  results=0
+  shard recombine 194/202: centers=8  results=0
+  shard recombine 195/202: centers=2  results=0
+  shard recombine 196/202: centers=6  results=0
+  shard recombine 197/202: centers=2  results=0
+  shard recombine 198/202: centers=1  results=0
+  shard recombine 199/202: centers=1  results=0
+  shard recombine 200/202: centers=6  results=0
+  shard recombine 201/202: centers=1  results=0
+  shard recombine 202/202: centers=1  results=0
+[Pass 2 terminé] durée totale=629.8s  résultats distincts=0
+
+Terminé.
+  durée totale          : 629.8s
+  taille tmp            : 0.64 Go
+  espace libre          : 690.4 Go
+  statistiques globales :
+    centers_no_candidate           : 1,699,797
+    centers_seen                   : 1,699,797
+    merged_duplicates              : 0
+    merged_results                 : 0
+    offset_rows_written            : 22,127,786
+    reject_candidate_relaxed7      : 142,200,864
+    shard_id                       : 20,301
+    shards_touched                 : 297
+    x_done                         : 50,000
+Résumé JSON écrit : logs\B2_v2_2_relaxed7_non_square_R50000_count9_summary.json

@@ -328,15 +328,16 @@ count >= 24 : 53 226 centres, 1 346 542 offsets, 0 résultat
 count >= 16 : 457 060 centres, 7 952 316 offsets, 0 résultat
 count >= 12 : 1 363 694 centres, 18 894 170 offsets, 0 résultat
 count >= 10 : 1 546 979 centres, 20 752 424 offsets, 0 résultat
+count >=  9 :   1 699 797 centres → 0 résultat
 ```
 
 #### Résultat :
 
-> Aucun candidat ≥ 7/9 n’a été trouvé parmi les centres non carrés les plus riches jusqu’à R ≤ 50 000.
+> Aucun candidat ≥ 7/9 n’a été trouvé parmi les centres non carrés de richesse count >= 9 jusqu’à R ≤ 50 000.
 
 Interprétation :
 
-Les centres à forte multiplicité d’offsets ne produisent pas automatiquement de structure magique relâchée. La richesse brute en paires opposées est donc insuffisante ; il faut poursuivre par couches plus basses (count >= 12, puis éventuellement count >= 10) ou ajouter un filtre structurel plus fin.
+La richesse brute en offsets autour d’un centre ne suffit pas à produire une configuration magique 7/9. Les couches hautes et intermédiaires sont désormais éliminées expérimentalement. Descendre à count >= 8 devient nettement plus coûteux, car cette couche contient environ 7,24 millions de centres. La suite recommandée est soit de traiter count8 par tranches, soit de passer à une v2.3 avec filtrage structurel plus fort.
 
 ---
 
