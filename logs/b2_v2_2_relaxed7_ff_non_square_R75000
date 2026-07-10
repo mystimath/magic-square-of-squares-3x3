@@ -1,0 +1,207 @@
+PS C:\dev\mystimath\conjectura\magic-square-of-squares-3x3> python src/search_non_square_center_v2_2_safe.py `
+>>   --resource-profile home16_balanced `
+>>   --search-mode relaxed7 `
+>>   --center-mode non-square `
+>>   --max-root 75000 `
+>>   --min-total 7 `
+>>   --min-offsets-relaxed 3 `
+>>   --primitive-only `
+>>   --distinct-roots `
+>>   --clean-tmp `
+>>   --tmp-dir tmp\b2_v2_2_relaxed7_non_square_R75000 `
+>>   --out results\raw\b2_v2_2_relaxed7_non_square_R75000.csv `
+>>   --summary-json logs\B2_v2_2_relaxed7_non_square_R75000_summary.json
+Recherche B2 v2.2 SAFE / HYBRIDE
+  max-root              : 75,000
+  search-mode           : relaxed7
+  center-mode           : non-square
+  min-total             : 7
+  workers pass1         : 7
+  workers reduce        : 4
+  workers pass2         : 2
+  workers recombine     : 5
+  x-batch-size          : 768
+  shard-size            : 10,000,000
+  moduli                : 127, 131, 137
+  min-offsets exact     : 4
+  min-offsets relaxed   : 3
+  max-selected-centers  : 3,000,000
+  max-tmp-gb            : 160.0
+  min-free-gb           : 70.0
+  cleanup-partials      : True
+  primitive-only        : True
+  distinct-roots        : True
+  tmp-dir               : tmp\b2_v2_2_relaxed7_non_square_R75000
+  out                   : results\raw\b2_v2_2_relaxed7_non_square_R75000.csv
+[Préflight] Espace disque libre : 709.0 Go
+[Pass 1A] Génération parallèle des agrégats compacts par centre...
+  worker done: pairs=28,691,678  partial_rows=28,537,779  x_done=10,714
+  worker done: pairs=86,085,030  partial_rows=85,392,042  x_done=10,714
+  worker done: pairs=143,477,603  partial_rows=142,002,729  x_done=10,714
+  worker done: pairs=200,869,208  partial_rows=198,306,866  x_done=10,714
+  worker done: pairs=258,259,016  partial_rows=254,218,797  x_done=10,714
+  worker done: pairs=373,061,589  partial_rows=363,371,612  x_done=10,715
+  worker done: pairs=315,679,117  partial_rows=309,512,729  x_done=10,715
+[Pass 1A terminé] durée=2582.8s
+[Pass 1B] Réduction par shard et sélection des centres survivants...
+  shard reduce 1/563: centers=1,981,401  selected=346,143
+  shard reduce 2/563: centers=1,893,015  selected=366,039
+  shard reduce 3/563: centers=1,863,413  selected=372,443
+  shard reduce 4/563: centers=1,844,959  selected=376,134
+  shard reduce 5/563: centers=1,831,491  selected=378,936
+  shard reduce 6/563: centers=1,820,962  selected=381,126
+  shard reduce 7/563: centers=1,812,453  selected=382,721
+  shard reduce 8/563: centers=1,805,226  selected=384,471
+  shard reduce 9/563: centers=1,798,934  selected=385,419
+  shard reduce 10/563: centers=1,793,408  selected=386,769
+  shard reduce 11/563: centers=1,788,488  selected=387,675
+  shard reduce 12/563: centers=1,783,961  selected=388,376
+  shard reduce 13/563: centers=1,780,061  selected=389,215
+  shard reduce 14/563: centers=1,776,291  selected=389,961
+  shard reduce 15/563: centers=1,772,943  selected=390,602
+  shard reduce 16/563: centers=1,769,609  selected=391,405
+  shard reduce 17/563: centers=1,766,748  selected=391,845
+  shard reduce 18/563: centers=1,764,029  selected=392,398
+  shard reduce 19/563: centers=1,761,341  selected=392,886
+  shard reduce 20/563: centers=1,758,818  selected=393,304
+  shard reduce 21/563: centers=1,756,567  selected=393,725
+  shard reduce 22/563: centers=1,754,507  selected=394,301
+  shard reduce 23/563: centers=1,752,138  selected=394,614
+  shard reduce 24/563: centers=1,750,317  selected=394,955
+  shard reduce 25/563: centers=1,748,392  selected=395,095
+  shard reduce 26/563: centers=1,746,602  selected=395,812
+  shard reduce 27/563: centers=1,744,889  selected=396,261
+  shard reduce 28/563: centers=1,743,037  selected=396,263
+  shard reduce 29/563: centers=1,741,415  selected=396,568
+  shard reduce 30/563: centers=1,739,923  selected=396,963
+  shard reduce 31/563: centers=1,738,526  selected=397,453
+  shard reduce 32/563: centers=1,736,892  selected=397,440
+  shard reduce 33/563: centers=1,735,611  selected=397,472
+  shard reduce 34/563: centers=1,734,139  selected=398,163
+  shard reduce 35/563: centers=1,732,869  selected=398,219
+  shard reduce 36/563: centers=1,731,618  selected=398,490
+  shard reduce 37/563: centers=1,730,410  selected=398,514
+  shard reduce 38/563: centers=1,729,249  selected=399,018
+  shard reduce 39/563: centers=1,728,055  selected=398,897
+  shard reduce 40/563: centers=1,726,852  selected=399,491
+  shard reduce 41/563: centers=1,725,867  selected=399,499
+  shard reduce 42/563: centers=1,724,677  selected=399,517
+  shard reduce 43/563: centers=1,723,722  selected=400,154
+  shard reduce 44/563: centers=1,722,625  selected=400,042
+  shard reduce 45/563: centers=1,721,860  selected=400,745
+  shard reduce 46/563: centers=1,720,465  selected=400,305
+  shard reduce 47/563: centers=1,719,704  selected=400,380
+  shard reduce 48/563: centers=1,718,842  selected=400,941
+  shard reduce 49/563: centers=1,717,915  selected=400,759
+  shard reduce 50/563: centers=1,716,970  selected=400,901
+  shard reduce 51/563: centers=1,716,165  selected=401,175
+  shard reduce 52/563: centers=1,715,357  selected=401,678
+  shard reduce 53/563: centers=1,714,613  selected=401,713
+  shard reduce 54/563: centers=1,713,711  selected=401,825
+  shard reduce 55/563: centers=1,712,881  selected=401,878
+  shard reduce 56/563: centers=1,712,074  selected=402,064
+  shard reduce 57/563: centers=1,711,151  selected=402,227
+  shard reduce 58/563: centers=1,710,755  selected=402,417
+  shard reduce 59/563: centers=1,709,789  selected=402,980
+  shard reduce 60/563: centers=1,709,103  selected=402,416
+  shard reduce 61/563: centers=1,708,499  selected=402,509
+  shard reduce 62/563: centers=1,707,625  selected=402,986
+  shard reduce 63/563: centers=1,706,971  selected=403,062
+  shard reduce 64/563: centers=1,706,243  selected=402,918
+  shard reduce 65/563: centers=1,705,624  selected=402,975
+  shard reduce 66/563: centers=1,705,093  selected=403,015
+  shard reduce 67/563: centers=1,704,363  selected=403,552
+  shard reduce 68/563: centers=1,703,778  selected=403,538
+  shard reduce 69/563: centers=1,703,038  selected=404,018
+  shard reduce 70/563: centers=1,702,457  selected=403,520
+  shard reduce 71/563: centers=1,701,949  selected=404,025
+  shard reduce 72/563: centers=1,701,287  selected=403,727
+  shard reduce 73/563: centers=1,700,705  selected=403,904
+  shard reduce 74/563: centers=1,700,005  selected=404,311
+  shard reduce 75/563: centers=1,699,512  selected=404,209
+  shard reduce 76/563: centers=1,699,016  selected=404,835
+  shard reduce 77/563: centers=1,698,491  selected=404,499
+  shard reduce 78/563: centers=1,697,982  selected=404,129
+  shard reduce 79/563: centers=1,697,510  selected=404,589
+  shard reduce 80/563: centers=1,696,721  selected=405,236
+  shard reduce 81/563: centers=1,696,454  selected=404,889
+  shard reduce 82/563: centers=1,695,719  selected=404,985
+  shard reduce 83/563: centers=1,695,242  selected=405,214
+  shard reduce 84/563: centers=1,694,841  selected=404,858
+  shard reduce 85/563: centers=1,694,341  selected=405,235
+  shard reduce 86/563: centers=1,693,740  selected=405,384
+  shard reduce 87/563: centers=1,693,270  selected=405,401
+  shard reduce 88/563: centers=1,692,863  selected=405,218
+  shard reduce 89/563: centers=1,692,341  selected=405,675
+  shard reduce 90/563: centers=1,692,087  selected=405,558
+  shard reduce 91/563: centers=1,691,395  selected=405,904
+  shard reduce 92/563: centers=1,690,813  selected=406,124
+  shard reduce 93/563: centers=1,690,556  selected=405,667
+  shard reduce 94/563: centers=1,690,071  selected=405,879
+  shard reduce 95/563: centers=1,689,790  selected=405,593
+  shard reduce 96/563: centers=1,689,096  selected=406,730
+  shard reduce 97/563: centers=1,688,925  selected=406,142
+  shard reduce 98/563: centers=1,688,295  selected=406,024
+  shard reduce 99/563: centers=1,687,879  selected=406,357
+  shard reduce 100/563: centers=1,687,479  selected=406,285
+  shard reduce 101/563: centers=1,686,868  selected=406,642
+  shard reduce 102/563: centers=1,687,071  selected=406,296
+  shard reduce 103/563: centers=1,686,306  selected=406,466
+  shard reduce 104/563: centers=1,685,765  selected=406,940
+  shard reduce 105/563: centers=1,685,517  selected=406,920
+  shard reduce 106/563: centers=1,685,118  selected=406,629
+  shard reduce 107/563: centers=1,684,655  selected=407,076
+  shard reduce 108/563: centers=1,684,450  selected=406,803
+  shard reduce 109/563: centers=1,683,967  selected=406,971
+  shard reduce 110/563: centers=1,683,672  selected=406,933
+  shard reduce 111/563: centers=1,683,093  selected=407,091
+  shard reduce 112/563: centers=1,682,942  selected=407,299
+  shard reduce 113/563: centers=1,682,369  selected=407,088
+  shard reduce 114/563: centers=1,681,968  selected=407,528
+  shard reduce 115/563: centers=1,681,854  selected=407,292
+  shard reduce 116/563: centers=1,681,612  selected=407,524
+  shard reduce 117/563: centers=1,680,925  selected=408,192
+  shard reduce 118/563: centers=1,680,738  selected=407,626
+  shard reduce 119/563: centers=1,680,279  selected=407,677
+  shard reduce 120/563: centers=1,680,091  selected=407,539
+  shard reduce 121/563: centers=1,679,715  selected=407,543
+  shard reduce 122/563: centers=1,679,348  selected=408,027
+  shard reduce 123/563: centers=1,678,988  selected=407,667
+  shard reduce 124/563: centers=1,678,760  selected=408,064
+  shard reduce 125/563: centers=1,678,023  selected=408,192
+  shard reduce 126/563: centers=1,678,286  selected=408,117
+  shard reduce 127/563: centers=1,677,676  selected=408,206
+  shard reduce 128/563: centers=1,677,410  selected=407,773
+  shard reduce 129/563: centers=1,677,042  selected=407,982
+  shard reduce 130/563: centers=1,676,653  selected=408,167
+  shard reduce 131/563: centers=1,676,519  selected=408,002
+  shard reduce 132/563: centers=1,676,195  selected=408,058
+  shard reduce 133/563: centers=1,675,965  selected=408,343
+  shard reduce 134/563: centers=1,675,516  selected=408,849
+  shard reduce 135/563: centers=1,675,205  selected=408,472
+  shard reduce 136/563: centers=1,675,120  selected=408,545
+  shard reduce 137/563: centers=1,674,587  selected=408,939
+  shard reduce 138/563: centers=1,674,330  selected=408,774
+  shard reduce 139/563: centers=1,673,989  selected=408,734
+  shard reduce 140/563: centers=1,673,547  selected=408,575
+  shard reduce 141/563: centers=1,673,465  selected=408,838
+  shard reduce 142/563: centers=1,673,396  selected=409,133
+  shard reduce 143/563: centers=1,672,646  selected=408,989
+  shard reduce 144/563: centers=1,672,798  selected=408,555
+  shard reduce 145/563: centers=1,672,375  selected=409,235
+  shard reduce 146/563: centers=1,672,076  selected=408,605
+  shard reduce 147/563: centers=1,671,619  selected=409,491
+  shard reduce 148/563: centers=1,671,705  selected=409,229
+....
+  shard reduce 555/563: centers=36,029  selected=0
+  shard reduce 556/563: centers=45,094  selected=0
+  shard reduce 557/563: centers=13,403  selected=0
+  shard reduce 558/563: centers=17,925  selected=0
+  shard reduce 559/563: centers=22,434  selected=0
+  shard reduce 560/563: centers=26,933  selected=0
+  shard reduce 561/563: centers=561  selected=0
+  shard reduce 562/563: centers=4,489  selected=0
+  shard reduce 563/563: centers=8,830  selected=0
+[Pass 1 terminé] durée totale=4313.5s
+  centres sélectionnés comptés : 133,515,666
+  taille tmp actuelle          : 15.89 Go

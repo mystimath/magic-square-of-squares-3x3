@@ -316,6 +316,28 @@ Conclusion :
 > Le run relaxed7, centre carré, R ≤ 100 000, retrouve uniquement le carré de Bremner. Aucun nouveau candidat primitif à 7/9 ou plus n’a été trouvé.
 > C’est un bon résultat négatif : le script retrouve bien le témoin attendu, puis ne trouve rien d’autre dans la borne testée.
 
+### B2-v2.2 — relaxed7, centre non carré, couches `count >= 10`, `R ≤ 50 000`
+
+Après profilage des centres sélectionnés du run `relaxed7 / non-square / R ≤ 50 000`, plusieurs couches de richesse ont été testées en Pass 2.
+
+Résultats cumulés :
+
+```text
+count >= 32 : 6 656 centres, 221 614 offsets, 0 résultat
+count >= 24 : 53 226 centres, 1 346 542 offsets, 0 résultat
+count >= 16 : 457 060 centres, 7 952 316 offsets, 0 résultat
+count >= 12 : 1 363 694 centres, 18 894 170 offsets, 0 résultat
+count >= 10 : 1 546 979 centres, 20 752 424 offsets, 0 résultat
+```
+
+#### Résultat :
+
+> Aucun candidat ≥ 7/9 n’a été trouvé parmi les centres non carrés les plus riches jusqu’à R ≤ 50 000.
+
+Interprétation :
+
+Les centres à forte multiplicité d’offsets ne produisent pas automatiquement de structure magique relâchée. La richesse brute en paires opposées est donc insuffisante ; il faut poursuivre par couches plus basses (count >= 12, puis éventuellement count >= 10) ou ajouter un filtre structurel plus fin.
+
 ---
 
 ## Branche C — centre carré et quatre coins carrés
