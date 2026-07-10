@@ -339,6 +339,31 @@ Interprétation :
 
 La richesse brute en offsets autour d’un centre ne suffit pas à produire une configuration magique 7/9. Les couches hautes et intermédiaires sont désormais éliminées expérimentalement. Descendre à count >= 8 devient nettement plus coûteux, car cette couche contient environ 7,24 millions de centres. La suite recommandée est soit de traiter count8 par tranches, soit de passer à une v2.3 avec filtrage structurel plus fort.
 
+
+### B2-v2.2 — relaxed7, centre non carré, couches riches `R ≤ 75 000`
+
+Après le run brut `relaxed7 / non-square / R ≤ 75 000`, les centres sélectionnés ont été profilés par richesse (`count`). Le profil contient 133 515 666 centres sélectionnés, avec un maximum `count = 64`.
+
+Couches testées en Pass 2 :
+
+```text
+count >= 64 :      13 centres,        832 offsets, 0 résultat
+count >= 48 :     957 centres,     46 291 offsets, 0 résultat
+count >= 40 :   1 804 centres,     80 347 offsets, 0 résultat
+count >= 36 :   5 792 centres,    223 997 offsets, 0 résultat
+count >= 32 :  24 475 centres,    822 043 offsets, 0 résultat
+count >= 24 : 160 678 centres,  4 112 871 offsets, 0 résultat
+```
+
+**Conclusion provisoire** :
+
+> Aucun candidat ≥ 7/9 n’a été trouvé parmi les centres non carrés de richesse count >= 24 jusqu’à R ≤ 75 000.
+
+**Suite prévue** :
+
+Tester count >= 20, puis count >= 16. La couche count >= 12 contient 3 454 727 centres et devra être traitée avec prudence ou par échantillonnage plafonné.
+
+
 ---
 
 ## Branche C — centre carré et quatre coins carrés
