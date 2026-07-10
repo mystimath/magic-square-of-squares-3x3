@@ -1,6 +1,6 @@
 ## Feuille de route  concrète
 
-L’idée directrice est simple : **ne pas monter `limit` tout seul**. Avec notre moteur de recherche, les campagnes les plus rentables sont celles où **`qmax` et `limit` montent ensemble**, parce que la borne d’écart entre carrés impose déjà des zones mortes si `qmax` est trop petit. Pour viser 7/9, il faut nécessairement \(E \le (qmax+1)/2\), et pour viser 8/9 il faut essentiellement que les trois racines restent dans la zone contributive, donc il faut rester très attentif à \(J\) et donc à la taille effective des triplets. [script optimisé](https://www.genspark.ai/api/files/s/igWq25MM)
+L’idée directrice est simple : **ne pas monter `limit` tout seul**. Avec notre moteur de recherche, les campagnes les plus rentables sont celles où **`qmax` et `limit` montent ensemble**, parce que la borne d’écart entre carrés impose déjà des zones mortes si `qmax` est trop petit. Pour viser 7/9, il faut nécessairement \(E \le (qmax+1)/2\), et pour viser 8/9 il faut essentiellement que les trois racines restent dans la zone contributive, donc il faut rester très attentif à \(J\) et donc à la taille effective des triplets. [script optimisé]
 
 ### Palier 0 — validation
 À faire une seule fois, pour vérifier la machine et le débit réel :
@@ -97,7 +97,7 @@ python3 scripts/magic_square_parallel_optimized.py \
   | tee logs/2026-07-08_P2_E50000_q100000_T7_W16.log
 ```
 
-C’est à ce palier qu'on a de bonnes chances de tomber sur un **7/9 inhabituel**, s’il y en a un accessible dans cette famille. [script optimisé](https://www.genspark.ai/api/files/s/igWq25MM)
+C’est à ce palier qu'on a de bonnes chances de tomber sur un **7/9 inhabituel**, s’il y en a un accessible dans cette famille. [script optimisé]
 
 ---
 

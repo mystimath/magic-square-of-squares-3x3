@@ -17,7 +17,7 @@ Le moteur de recherche retenu part de triplets \((A,E,J)\) tels que
 A^2 + J^2 = 2E^2,
 \]
 c'est-à-dire de trois carrés en progression arithmétique, puis cherche un paramètre \(q\) pour rendre carrées le plus grand nombre possible parmi les six autres cases du carré magique 3x3 standard. Cette famille est exactement celle explorée par le script optimisé. Voir : script original, script optimisé et paramétrisation rationnelle de Bremner.  
-Sources : [script original](https://www.genspark.ai/api/files/s/26FTdZnx), [script optimisé](https://www.genspark.ai/api/files/s/igWq25MM), [Bremner 1999](http://www.multimagie.com/Bremner1.pdf)
+Sources : [script original], [Bremner 1999](http://www.multimagie.com/Bremner1.pdf)
 
 ---
 
@@ -37,7 +37,7 @@ Le point clé est la borne d'écart entre deux carrés. Si \(q < 2n-1\), alors \
   \]
 
 Conséquence stratégique : il est peu utile de lancer une campagne avec `limit` énorme si `qmax` reste petit. Mieux vaut augmenter `qmax`, puis fixer `limit` à peu près à `qmax/2`.  
-Source : [script optimisé](https://www.genspark.ai/api/files/s/igWq25MM)
+Source : [script optimisé]
 
 ### 2.2. Deux voies de recherche en parallèle
 
@@ -47,7 +47,7 @@ Il faut séparer les campagnes en deux familles :
 - **voie AGRESSIVE** : avec `--strict-24` et éventuellement un module supplémentaire 13, ciblée sur le 8/9.
 
 La voie sûre sert à la couverture large. La voie agressive sert à la chasse au jackpot.  
-Sources : [script optimisé](https://www.genspark.ai/api/files/s/igWq25MM), [Wikipedia](https://en.wikipedia.org/wiki/Magic_square_of_squares)
+Sources : [script optimisé], [Wikipedia](https://en.wikipedia.org/wiki/Magic_square_of_squares)
 
 ### 2.3. Chercher d'abord des motifs “Bremner-like” primitifs
 
@@ -58,7 +58,7 @@ Les résultats qui comptent vraiment sont :
 - ou une famille récurrente nouvelle menant souvent à 6/9 ou 7/9.
 
 La déduplication par facteur carré commun doit donc être gardée en permanence, et tout résultat prometteur doit être réexécuté localement avec une borne `qmax` plus grande pour vérifier qu'il ne s'agit pas d'un artefact de bord.  
-Sources : [script optimisé](https://www.genspark.ai/api/files/s/igWq25MM), [MystiMath](https://mystimath.org/fr/articles/carre-magique-3x3-carres-parfaits-probleme-ouvert/)
+Sources : [script optimisé], [MystiMath](https://mystimath.org/fr/articles/carre-magique-3x3-carres-parfaits-probleme-ouvert/)
 
 ---
 
@@ -420,5 +420,4 @@ Sources : [MystiMath](https://mystimath.org/fr/articles/recherche-experimentale-
 - MystiMath — recherche expérimentale : https://mystimath.org/fr/articles/recherche-experimentale-carres-magiques-de-carres/
 - MystiMath — centre zéro : https://mystimath.org/fr/articles/carres-semi-magiques-centre-zero/
 - Magic square of squares (synthèse) : https://en.wikipedia.org/wiki/Magic_square_of_squares
-- Script original : https://www.genspark.ai/api/files/s/26FTdZnx
-- Script optimisé : https://www.genspark.ai/api/files/s/igWq25MM
+
