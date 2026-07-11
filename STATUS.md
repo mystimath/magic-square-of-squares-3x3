@@ -475,6 +475,59 @@ La v2.3 devra donc introduire un filtre structurel plus fin que le simple compta
 
 ---
 
+### B2-v2.3 — structural relaxed7, centre non carré, `count 9..11`, `R ≤ 75 000`
+
+Première expérience v2.3 sur les centres non carrés moins riches, avec filtre structurel.
+
+Zone testée :
+
+```text
+R ≤ 75 000
+centre non carré
+count = 9 à 11
+min-total = 7
+````
+
+Résultat :
+
+```text
+centres testés        : 772 785
+offsets régénérés     : 7 451 532
+résultats distincts   : 0
+durée                 : 457.4 s
+```
+
+Statistique notable :
+
+```text
+reject_structural_bonus_too_low : 95
+```
+
+Interprétation :
+
+> La v2.3 a détecté 95 motifs structurels proches, mais aucun ne possède le carré isolé supplémentaire nécessaire pour atteindre `7/9`.
+
+Conclusion :
+
+Aucun candidat `7/9` trouvé dans la couche `count = 9..11`. La prochaine couche naturelle est `count = 8`, à traiter par tranches.
+
+
+### B2-v2.3 — structural relaxed7, centre non carré, `count = 8`, part1
+
+Première tranche de la couche `count = 8`.
+
+```text
+centres testés        : 2 000 000
+offsets régénérés     : 16 000 000
+résultats distincts   : 0
+reject_structural_bonus_too_low : 301
+
+Interprétation :
+
+La v2.3 détecte davantage de motifs proches dans count=8 que dans count=9..11, mais aucun ne possède le carré isolé supplémentaire permettant d’atteindre 7/9.
+
+
+---
 ## Branche C — centre carré et quatre coins carrés
 
 Cette branche impose que le centre et les quatre coins soient carrés parfaits :
