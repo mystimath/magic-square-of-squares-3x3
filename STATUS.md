@@ -340,31 +340,138 @@ Interprétation :
 La richesse brute en offsets autour d’un centre ne suffit pas à produire une configuration magique 7/9. Les couches hautes et intermédiaires sont désormais éliminées expérimentalement. Descendre à count >= 8 devient nettement plus coûteux, car cette couche contient environ 7,24 millions de centres. La suite recommandée est soit de traiter count8 par tranches, soit de passer à une v2.3 avec filtrage structurel plus fort.
 
 
-### B2-v2.2 — relaxed7, centre non carré, couches riches `R ≤ 75 000`
+### B2-v2.2 — relaxed7, centre non carré, couches `count >= 12`, `R ≤ 75 000`
 
-Après le run brut `relaxed7 / non-square / R ≤ 75 000`, les centres sélectionnés ont été profilés par richesse (`count`). Le profil contient 133 515 666 centres sélectionnés, avec un maximum `count = 64`.
+Après le run brut `relaxed7 / centre non carré / R ≤ 75 000`, les centres sélectionnés ont été profilés par richesse (`count`). La zone brute contenait 133 515 666 centres sélectionnés.
 
-Couches testées en Pass 2 :
+Les couches riches ont ensuite été testées séparément en Pass 2.
+
+Résultats :
 
 ```text
-count >= 64 :      13 centres,        832 offsets, 0 résultat
-count >= 48 :     957 centres,     46 291 offsets, 0 résultat
-count >= 40 :   1 804 centres,     80 347 offsets, 0 résultat
-count >= 36 :   5 792 centres,    223 997 offsets, 0 résultat
-count >= 32 :  24 475 centres,    822 043 offsets, 0 résultat
-count >= 24 : 160 678 centres,  4 112 871 offsets, 0 résultat
-count >= 20 :   205 559 centres → 0 résultat
-count >= 16 : 1 246 528 centres → 0 résultat
+count >= 64 :        13 centres,          832 offsets, 0 résultat
+count >= 48 :       957 centres,       46 291 offsets, 0 résultat
+count >= 40 :     1 804 centres,       80 347 offsets, 0 résultat
+count >= 36 :     5 792 centres,      223 997 offsets, 0 résultat
+count >= 32 :    24 475 centres,      822 043 offsets, 0 résultat
+count >= 24 :   160 678 centres,    4 112 871 offsets, 0 résultat
+count >= 20 :   205 559 centres,    5 018 219 offsets, 0 résultat
+count >= 16 : 1 246 528 centres,   21 858 786 offsets, 0 résultat
+count >= 12 : 3 454 727 centres,   48 514 001 offsets, 0 résultat
+```
+Pour count >= 12, la couche a été traitée en deux tranches :
+```text
+part1 : 2 000 000 centres, 27 861 032 offsets, 0 résultat
+part2 : 1 454 727 centres, 20 652 969 offsets, 0 résultat
 ```
 
-**Conclusion provisoire** :
+**Conclusion ** :
 
-> Aucun candidat ≥ 7/9 n’a été trouvé parmi les centres non carrés de richesse count >= 16 jusqu’à R ≤ 75 000.
+> Aucun candidat ≥ 7/9 n’a été trouvé parmi les centres non carrés de richesse count >= 12 jusqu’à R ≤ 75 000.
 
-**Suite prévue** :
+**Interprétation** :
 
-La couche count >= 12 contient 3 454 727 centres et devra être traitée avec prudence ou par échantillonnage plafonné.
+La richesse brute en offsets autour du centre ne suffit pas à produire une configuration magique relâchée. La descente vers les couches plus basses devient coûteuse et moins informative. La suite recommandée est de passer à une version v2.3 avec filtre structurel plus fort.
 
+## B2-v2.2 — centre non carré, mode relaxed7 (Récap)
+
+### Objectif
+
+Explorer les carrés magiques 3×3 de la forme :
+
+```text
+a = e - p + q      b = e + 2p - q      c = e - p
+d = e - q          e                   f = e + q
+g = e + p          h = e - 2p + q      i = e + p - q
+````
+
+avec centre `e` non carré, en cherchant des configurations ayant au moins 7 cases carrées sur 9.
+
+Les offsets `p` et `q` sont choisis de manière à garantir deux paires opposées de carrés :
+
+```text
+c = e - p      et      g = e + p
+d = e - q      et      f = e + q
+```
+
+---
+
+### Résultats principaux
+
+#### `R ≤ 50 000`
+
+La zone `relaxed7 / centre non carré` a été testée par couches de richesse des centres.
+
+Conclusion :
+
+```text
+R ≤ 50 000
+centre non carré
+mode relaxed7
+aucun candidat ≥ 7/9 trouvé jusqu’à count >= 9
+```
+
+#### `R ≤ 75 000`
+
+Le run brut a produit :
+
+```text
+centres sélectionnés : 133 515 666
+count maximum        : 64
+```
+
+Les couches riches ont ensuite été testées séparément :
+
+```text
+count >= 64 :        13 centres,          832 offsets, 0 résultat
+count >= 48 :       957 centres,       46 291 offsets, 0 résultat
+count >= 40 :     1 804 centres,       80 347 offsets, 0 résultat
+count >= 36 :     5 792 centres,      223 997 offsets, 0 résultat
+count >= 32 :    24 475 centres,      822 043 offsets, 0 résultat
+count >= 24 :   160 678 centres,    4 112 871 offsets, 0 résultat
+count >= 20 :   205 559 centres,    5 018 219 offsets, 0 résultat
+count >= 16 : 1 246 528 centres,   21 858 786 offsets, 0 résultat
+count >= 12 : 3 454 727 centres,   48 514 001 offsets, 0 résultat
+```
+
+Conclusion :
+
+> Aucun candidat `≥ 7/9` n’a été trouvé parmi les centres non carrés de richesse `count >= 12` jusqu’à `R ≤ 75 000`.
+
+### Recherche complémentaire 6/9
+
+Avant de passer à la v2.3, une variante exploratoire autorisant `min-total = 6` a été lancée sur la couche :
+
+```text
+R ≤ 75 000
+centre non carré
+count >= 48
+min-total = 6
+```
+
+Résultat :
+
+```text
+3 configurations 6/9 trouvées
+```
+
+Ces trois configurations ont un motif commun : les deux cases non carrées hors centre sont toujours opposées par symétrie centrale.
+
+Observation expérimentale :
+
+> Les configurations 6/9 trouvées avec centre non carré semblent naturellement apparaître sous forme de trois paires opposées de carrés autour d’un centre non carré.
+
+Ce n’est pas formulé comme un théorème, mais comme une observation structurante pour préparer la v2.3.
+
+---
+
+### Interprétation avant v2.3
+
+La richesse brute en offsets autour d’un centre ne suffit pas à produire une configuration `7/9`.
+
+Les exemples 6/9 montrent cependant que les centres non carrés peuvent produire des structures magiques partielles très régulières. Le passage de 6/9 à 7/9 semble demander une rupture de symétrie : une case isolée d’une paire opposée deviendrait carrée sans que sa case opposée le soit.
+
+La v2.3 devra donc introduire un filtre structurel plus fin que le simple comptage des offsets.
 
 ---
 

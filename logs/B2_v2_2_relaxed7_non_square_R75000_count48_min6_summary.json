@@ -1,0 +1,42 @@
+{
+  "script": "search_non_square_center_v2_2_safe.py",
+  "elapsed_seconds": 378.39891242980957,
+  "config": {
+    "max_root": 75000,
+    "search_mode": "relaxed7",
+    "center_mode": "non-square",
+    "min_total": 6,
+    "workers": 7,
+    "reduce_workers": 4,
+    "pass2_workers": 2,
+    "recombine_workers": 5,
+    "x_batch_size": 768,
+    "shard_size": 10000000,
+    "moduli": [
+      127,
+      131,
+      137
+    ],
+    "min_offsets_exact": 4,
+    "min_offsets_relaxed": 48,
+    "primitive_only": true,
+    "distinct_roots": true
+  },
+  "stats": {
+    "offset_rows_written": 46291,
+    "x_done": 75000,
+    "shards_touched": 382,
+    "centers_seen": 957,
+    "reject_candidate_relaxed7": 1096517,
+    "centers_no_candidate": 954,
+    "shard_id": 39033,
+    "candidates_kept_relaxed7": 3,
+    "cap_hit_center": 3,
+    "results_written": 3,
+    "merged_results": 3,
+    "merged_duplicates": 0
+  },
+  "tmp_size_gb": 0.0010713189840316772,
+  "free_gb": 692.9428901672363,
+  "out": "results\\raw\\b2_v2_2_relaxed7_non_square_R75000_count48_min6.csv"
+}
