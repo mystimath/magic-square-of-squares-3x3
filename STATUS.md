@@ -526,6 +526,41 @@ Interprétation :
 
 La v2.3 détecte davantage de motifs proches dans count=8 que dans count=9..11, mais aucun ne possède le carré isolé supplémentaire permettant d’atteindre 7/9.
 
+### B2-v2.3 — structural relaxed7, centre non carré, couche `count = 8`, `R ≤ 75 000`
+
+La couche `count = 8` a été traitée par tranches afin d’éviter une Pass 2 massive.
+
+Résultats :
+
+```text
+part1 : 2 000 000 centres, 16 000 000 offsets, 0 résultat
+part2 : 2 000 000 centres, 16 000 000 offsets, 0 résultat
+part3 : 2 000 000 centres, 16 000 000 offsets, 0 résultat
+part4 : 2 000 000 centres, 16 000 000 offsets, 0 résultat
+part5 : 2 000 000 centres, 16 000 000 offsets, 0 résultat
+part6 : 2 000 000 centres, 16 000 000 offsets, 0 résultat
+part7 : 1 455 671 centres, 11 645 368 offsets, 0 résultat
+```
+Total :
+```text
+centres testés      : 13 455 671
+offsets régénérés   : 107 645 368
+résultats distincts : 0
+```
+Statistique structurelle :
+```text
+reject_structural_bonus_too_low total : 687
+```
+Interprétation :
+
+La v2.3 a détecté 687 motifs structurels proches dans la couche count = 8, mais aucun ne possède le carré isolé supplémentaire permettant d’atteindre 7/9.
+
+Conclusion :
+
+> Aucun candidat 7/9 n’a été trouvé dans la couche count = 8 jusqu’à R ≤ 75 000.
+
+Avec les résultats précédents, la zone count >= 8 est désormais fermée expérimentalement pour R ≤ 75 000, centre non carré.
+
 
 ---
 ## Branche C — centre carré et quatre coins carrés
