@@ -58,3 +58,7 @@ cohérence interne du paquet ni la portée bornée explicitement revendiquée.
 Le manuscrit et le paquet autonome 1.0 sont prêts pour diffusion dans leur
 périmètre déclaré. Aucun commit, envoi distant ou dépôt sur une plateforme de
 publication n'a été effectué au cours de cet audit.
+
+Le DOI Zenodo `10.5281/zenodo.21418008` est réservé pour la diffusion 1.0 et
+est inclus dans les métadonnées du paquet final ; le record Zenodo demeure à
+publier par son déposant.

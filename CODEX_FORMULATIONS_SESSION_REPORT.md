@@ -85,8 +85,9 @@ journaux, résultats historiques, caches et fichiers temporaires sont exclus.
 - vérification du manifeste : 44/44 ;
 - fichiers `__pycache__` ou `.pyc` : 0 ;
 - ZIP reproductible sur deux constructions ;
+- DOI Zenodo réservé : `10.5281/zenodo.21418008` ;
 - SHA-256 du ZIP :
-  `0b1ca489072e4cdd5cb9fe034656c2d804a3b858a9b6024382b75ba0e76bb365`.
+  `fedf565bb383e011b6c5a2457967f94de8f3040b9dffa57e5ff78b0e407bdc6e`.
 
 Le constructeur reproductible est `scripts/build_formulations_release.py` et
 les modèles de métadonnées sont sous

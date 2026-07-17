@@ -1,5 +1,11 @@
 # Release notes — 1.0.0
 
+## Persistent identifier
+
+Zenodo DOI: [10.5281/zenodo.21418008](https://doi.org/10.5281/zenodo.21418008).
+It has been reserved for this v1.0.0 package before publication of the Zenodo
+record.
+
 ## Scope
 
 This package contains only the formulation-comparison study. Historical search

@@ -2,6 +2,8 @@
 
 Version `1.0.0`.
 
+Zenodo DOI: [10.5281/zenodo.21418008](https://doi.org/10.5281/zenodo.21418008)
+
 This standalone research package compares four mathematical formulations of
 the 3×3 magic square of distinct positive squares problem:
 

@@ -2,6 +2,7 @@
 
 **Mustapha Rherrad (Mystimath)**<br>
 ORCID : [0009-0003-5681-6412](https://orcid.org/0009-0003-5681-6412)
+DOI Zenodo : [10.5281/zenodo.21418008](https://doi.org/10.5281/zenodo.21418008)
 
 _Version 1.0 — 17 juillet 2026_
 
