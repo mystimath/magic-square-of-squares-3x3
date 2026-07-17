@@ -76,18 +76,19 @@ dist/formulations-comparison-v1.0.0/
 dist/formulations-comparison-v1.0.0.zip
 ```
 
-Elle contient 46 fichiers au total, dont 44 fichiers sources autorisés suivis
+Elle contient 47 fichiers au total, dont 45 fichiers sources autorisés suivis
 dans `MANIFEST.json`, plus le manifeste et `SHA256SUMS`. Les autres moteurs,
 journaux, résultats historiques, caches et fichiers temporaires sont exclus.
 
 - licence : MIT ;
 - tests depuis le paquet : 31 réussis ;
-- vérification du manifeste : 44/44 ;
+- vérification du manifeste : 45/45 ;
 - fichiers `__pycache__` ou `.pyc` : 0 ;
 - ZIP reproductible sur deux constructions ;
+- PDF final du manuscrit : 15 pages ;
 - DOI Zenodo réservé : `10.5281/zenodo.21418008` ;
 - SHA-256 du ZIP :
-  `fedf565bb383e011b6c5a2457967f94de8f3040b9dffa57e5ff78b0e407bdc6e`.
+  `55e1b2208164d6b46561d621bdaf91d46290ee07f771ded235d9b7e84611787e`.
 
 Le constructeur reproductible est `scripts/build_formulations_release.py` et
 les modèles de métadonnées sont sous

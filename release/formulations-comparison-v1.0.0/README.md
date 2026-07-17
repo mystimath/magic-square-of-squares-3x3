@@ -12,9 +12,11 @@ the 3×3 magic square of distinct positive squares problem:
 - C: equal-area rational right triangles;
 - D: congruent-number elliptic curves.
 
-The main paper is written in French:
+The main paper is written in French and is available in Markdown and PDF:
 
 `paper/comparaison_algorithmique_formulations_carre_magique_carres.md`
+
+`paper/comparaison_algorithmique_formulations_carre_magique_carres.pdf`
 
 ## Main result
 

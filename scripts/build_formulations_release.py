@@ -25,6 +25,7 @@ MAPPINGS = {
     "release/formulations-comparison-v1.0.0/RELEASE_NOTES.md": "RELEASE_NOTES.md",
     "release/formulations-comparison-v1.0.0/LICENSE": "LICENSE",
     "paper/formulations_comparison/comparaison_algorithmique_formulations_carre_magique_carres.md": "paper/comparaison_algorithmique_formulations_carre_magique_carres.md",
+    "paper/formulations_comparison/comparaison_algorithmique_formulations_carre_magique_carres.pdf": "paper/comparaison_algorithmique_formulations_carre_magique_carres.pdf",
     "paper/formulations_comparison/references_notes.md": "paper/references_notes.md",
     "docs/13-j0-scope-and-vocabulary.md": "docs/mathematical_scope.md",
     "docs/14-j1-verified-repository-inventory.md": "docs/repository_inventory.md",

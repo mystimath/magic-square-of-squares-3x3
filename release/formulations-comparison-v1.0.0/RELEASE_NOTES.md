@@ -19,6 +19,7 @@ code from the parent repository are excluded by an explicit allowlist.
 - pilot benchmark artifacts;
 - exact SageMath control on `E_24`;
 - mathematical, methodological and reproducibility documentation;
+- final PDF of the French manuscript;
 - an updated literature-status note covering the 2025 peer-reviewed result and
   the 2026 non-existence preprint.
 

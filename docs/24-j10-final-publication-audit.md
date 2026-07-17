@@ -24,6 +24,7 @@ _Jalon exécuté le 17 juillet 2026._
   appels : aucune référence absente, dupliquée, inutilisée ou indéfinie ;
 - résolution des 22 cibles de la table des matières et de la figure locale ;
 - conversion du Markdown GFM en HTML avec Pandoc et `--fail-if-warnings` ;
+- production d'un PDF final de 15 pages à partir du rendu HTML autonome ;
 - validation YAML de `CITATION.cff` et contrôle de sa version, de sa date, de
   l'auteur et de l'ORCID ;
 - recherche des marqueurs provisoires et des formulations obsolètes : aucun
