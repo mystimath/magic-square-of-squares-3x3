@@ -1,0 +1,39 @@
+{
+  "script": "search_non_square_center_v2_2_safe.py",
+  "elapsed_seconds": 404.354768037796,
+  "config": {
+    "max_root": 75000,
+    "search_mode": "relaxed7",
+    "center_mode": "non-square",
+    "min_total": 7,
+    "workers": 7,
+    "reduce_workers": 4,
+    "pass2_workers": 2,
+    "recombine_workers": 5,
+    "x_batch_size": 768,
+    "shard_size": 10000000,
+    "moduli": [
+      127,
+      131,
+      137
+    ],
+    "min_offsets_exact": 4,
+    "min_offsets_relaxed": 7,
+    "primitive_only": true,
+    "distinct_roots": true
+  },
+  "stats": {
+    "offset_rows_written": 3812718,
+    "x_done": 75000,
+    "shards_touched": 693,
+    "centers_seen": 544674,
+    "centers_no_candidate": 544674,
+    "shard_id": 115472,
+    "reject_structural_bonus_too_low": 12,
+    "merged_results": 0,
+    "merged_duplicates": 0
+  },
+  "tmp_size_gb": 0.1455888096243143,
+  "free_gb": 696.6985816955566,
+  "out": "results\\raw\\b2_v2_3_structural_R75000_count7.csv"
+}

@@ -1,0 +1,4 @@
+accepted_candidates,additive_hits,additive_membership_tests,base_triples,center_pairs,center_progression_hits,class_count,complete_candidates,cpu_seconds,difference_groups,domain,duplicate_classes,forced_values_computed,formulation,indexed_centers,max_root,offset_pairs,progressions,python_peak_bytes,rejected_base_collision,rejected_forced_nonsquare,rejected_nonpositive,square_membership_tests,status,third_center_tests,wall_seconds
+0,,,125000,,,0,0,2.03125,,positive distinct 9/9; all roots <= max_root; D4 classes,0,705600,A,,50,,,181512,7400,17276,100324,103656,complete,,2.0497464000000036
+0,0,2,,,,0,0,0.0,,positive distinct 9/9; all roots <= max_root; D4 classes,0,,B1,14,50,1,15,9040,,,,,complete,,0.0021080999999867345
+0,,,,1,0,0,0,0.0,14,positive distinct 9/9; all roots <= max_root; D4 classes,0,,B2,,50,,15,7024,,,,,complete,1,0.0026059000001623644

@@ -1,0 +1,43 @@
+{
+  "curve": "y^2 = x^3 - 576*x",
+  "generator_heights": [
+    "0.888625874839619"
+  ],
+  "generators": [
+    {
+      "x": "-12",
+      "y": "72"
+    }
+  ],
+  "halves": [
+    {
+      "x": "-12",
+      "y": "-72"
+    },
+    {
+      "x": "-8",
+      "y": "64"
+    },
+    {
+      "x": "48",
+      "y": "-288"
+    },
+    {
+      "x": "72",
+      "y": "576"
+    }
+  ],
+  "halves_verified": true,
+  "n": 24,
+  "point": {
+    "x": "25",
+    "y": "35"
+  },
+  "point_is_divisible_by_2": true,
+  "rank": 1,
+  "rank_proof_requested": true,
+  "torsion_invariants": [
+    2,
+    2
+  ]
+}

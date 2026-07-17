@@ -16,3 +16,6 @@ env/
 # Gros exports éventuels
 results/tmp/
 results/raw/
+
+# Releases construites localement
+dist/

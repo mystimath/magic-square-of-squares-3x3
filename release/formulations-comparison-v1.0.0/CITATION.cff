@@ -1,0 +1,21 @@
+cff-version: 1.2.0
+message: "If you use this software or research package, please cite it using these metadata."
+title: "Quatre formulations du problème du carré magique de carrés : comparaison de leur intérêt algorithmique"
+type: software
+version: 1.0.0
+date-released: 2026-07-17
+authors:
+  - given-names: "Mustapha"
+    family-names: "Rherrad"
+    alias: "Mystimath"
+    orcid: "https://orcid.org/0009-0003-5681-6412"
+license: MIT
+abstract: >-
+  Reproducible comparison of direct, arithmetic-progression, geometric and
+  elliptic formulations of the 3x3 magic square of distinct positive squares.
+keywords:
+  - magic square of squares
+  - arithmetic progressions
+  - congruent numbers
+  - elliptic curves
+  - computational number theory

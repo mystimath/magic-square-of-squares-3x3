@@ -1,0 +1,13 @@
+{
+  "catalog_size_parametric": 122640,
+  "catalog_size_quadratic": 122640,
+  "catalogs_equal": true,
+  "logical_cpus": 16,
+  "max_root": 100000,
+  "parametric_seconds": 0.42156079999949725,
+  "platform": "Windows-10-10.0.26200-SP0",
+  "python": "3.11.15 | packaged by Anaconda, Inc. | MSC v.1942 64 bit (AMD64)",
+  "quadratic_seconds": 607.6939539999994,
+  "speedup": 1441.5333541466002,
+  "status": "complete"
+}

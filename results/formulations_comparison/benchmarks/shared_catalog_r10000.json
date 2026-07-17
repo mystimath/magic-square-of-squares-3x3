@@ -1,0 +1,404 @@
+{
+  "all_classes_equal": true,
+  "catalog_seconds": 4.518798000000061,
+  "catalog_size": 9354,
+  "class_count": 0,
+  "max_root": 10000,
+  "repetitions": 5,
+  "runs": [
+    {
+      "class_count": 0,
+      "formulation": "B1",
+      "position": 1,
+      "repetition": 1,
+      "stats": {
+        "accepted_candidates": 0,
+        "additive_hits": 0,
+        "additive_membership_tests": 22876,
+        "complete_candidates": 0,
+        "duplicate_classes": 0,
+        "indexed_centers": 5096,
+        "offset_pairs": 11438,
+        "progressions": 9354
+      },
+      "wall_seconds": 0.006219299999429495
+    },
+    {
+      "class_count": 0,
+      "formulation": "B2",
+      "position": 2,
+      "repetition": 1,
+      "stats": {
+        "accepted_candidates": 0,
+        "center_pairs": 888,
+        "center_progression_hits": 0,
+        "complete_candidates": 0,
+        "difference_groups": 8602,
+        "duplicate_classes": 0,
+        "progressions": 9354,
+        "third_center_tests": 888
+      },
+      "wall_seconds": 0.0051086000003124354
+    },
+    {
+      "class_count": 0,
+      "formulation": "C",
+      "position": 3,
+      "repetition": 1,
+      "stats": {
+        "accepted_candidates": 0,
+        "area_groups": 8602,
+        "center_pairs": 888,
+        "complete_candidates": 0,
+        "duplicate_classes": 0,
+        "hypotenuse_square_ap_hits": 0,
+        "hypotenuse_square_ap_tests": 888,
+        "progressions": 9354,
+        "similarity_classes": 1259,
+        "triangles": 9354
+      },
+      "wall_seconds": 0.3299397000000681
+    },
+    {
+      "class_count": 0,
+      "formulation": "D-probe",
+      "position": 4,
+      "repetition": 1,
+      "stats": {
+        "accepted_candidates": 0,
+        "complete_candidates": 0,
+        "duplicate_classes": 0,
+        "n_groups": 8602,
+        "points_constructed": 9354,
+        "points_on_curve": 9354,
+        "progressions": 9354,
+        "two_descent_certificates": 9354,
+        "x_ap_hits": 0,
+        "x_ap_tests": 888,
+        "x_pairs": 888
+      },
+      "wall_seconds": 0.5655266000003394
+    },
+    {
+      "class_count": 0,
+      "formulation": "B1",
+      "position": 1,
+      "repetition": 2,
+      "stats": {
+        "accepted_candidates": 0,
+        "additive_hits": 0,
+        "additive_membership_tests": 22876,
+        "complete_candidates": 0,
+        "duplicate_classes": 0,
+        "indexed_centers": 5096,
+        "offset_pairs": 11438,
+        "progressions": 9354
+      },
+      "wall_seconds": 0.0054620999999315245
+    },
+    {
+      "class_count": 0,
+      "formulation": "D-probe",
+      "position": 2,
+      "repetition": 2,
+      "stats": {
+        "accepted_candidates": 0,
+        "complete_candidates": 0,
+        "duplicate_classes": 0,
+        "n_groups": 8602,
+        "points_constructed": 9354,
+        "points_on_curve": 9354,
+        "progressions": 9354,
+        "two_descent_certificates": 9354,
+        "x_ap_hits": 0,
+        "x_ap_tests": 888,
+        "x_pairs": 888
+      },
+      "wall_seconds": 0.5658564999994269
+    },
+    {
+      "class_count": 0,
+      "formulation": "C",
+      "position": 3,
+      "repetition": 2,
+      "stats": {
+        "accepted_candidates": 0,
+        "area_groups": 8602,
+        "center_pairs": 888,
+        "complete_candidates": 0,
+        "duplicate_classes": 0,
+        "hypotenuse_square_ap_hits": 0,
+        "hypotenuse_square_ap_tests": 888,
+        "progressions": 9354,
+        "similarity_classes": 1259,
+        "triangles": 9354
+      },
+      "wall_seconds": 0.3261952000002566
+    },
+    {
+      "class_count": 0,
+      "formulation": "B2",
+      "position": 4,
+      "repetition": 2,
+      "stats": {
+        "accepted_candidates": 0,
+        "center_pairs": 888,
+        "center_progression_hits": 0,
+        "complete_candidates": 0,
+        "difference_groups": 8602,
+        "duplicate_classes": 0,
+        "progressions": 9354,
+        "third_center_tests": 888
+      },
+      "wall_seconds": 0.0051095999997414765
+    },
+    {
+      "class_count": 0,
+      "formulation": "C",
+      "position": 1,
+      "repetition": 3,
+      "stats": {
+        "accepted_candidates": 0,
+        "area_groups": 8602,
+        "center_pairs": 888,
+        "complete_candidates": 0,
+        "duplicate_classes": 0,
+        "hypotenuse_square_ap_hits": 0,
+        "hypotenuse_square_ap_tests": 888,
+        "progressions": 9354,
+        "similarity_classes": 1259,
+        "triangles": 9354
+      },
+      "wall_seconds": 0.3354178999998112
+    },
+    {
+      "class_count": 0,
+      "formulation": "D-probe",
+      "position": 2,
+      "repetition": 3,
+      "stats": {
+        "accepted_candidates": 0,
+        "complete_candidates": 0,
+        "duplicate_classes": 0,
+        "n_groups": 8602,
+        "points_constructed": 9354,
+        "points_on_curve": 9354,
+        "progressions": 9354,
+        "two_descent_certificates": 9354,
+        "x_ap_hits": 0,
+        "x_ap_tests": 888,
+        "x_pairs": 888
+      },
+      "wall_seconds": 0.5701824999996461
+    },
+    {
+      "class_count": 0,
+      "formulation": "B1",
+      "position": 3,
+      "repetition": 3,
+      "stats": {
+        "accepted_candidates": 0,
+        "additive_hits": 0,
+        "additive_membership_tests": 22876,
+        "complete_candidates": 0,
+        "duplicate_classes": 0,
+        "indexed_centers": 5096,
+        "offset_pairs": 11438,
+        "progressions": 9354
+      },
+      "wall_seconds": 0.005885599999601254
+    },
+    {
+      "class_count": 0,
+      "formulation": "B2",
+      "position": 4,
+      "repetition": 3,
+      "stats": {
+        "accepted_candidates": 0,
+        "center_pairs": 888,
+        "center_progression_hits": 0,
+        "complete_candidates": 0,
+        "difference_groups": 8602,
+        "duplicate_classes": 0,
+        "progressions": 9354,
+        "third_center_tests": 888
+      },
+      "wall_seconds": 0.005234500000369735
+    },
+    {
+      "class_count": 0,
+      "formulation": "C",
+      "position": 1,
+      "repetition": 4,
+      "stats": {
+        "accepted_candidates": 0,
+        "area_groups": 8602,
+        "center_pairs": 888,
+        "complete_candidates": 0,
+        "duplicate_classes": 0,
+        "hypotenuse_square_ap_hits": 0,
+        "hypotenuse_square_ap_tests": 888,
+        "progressions": 9354,
+        "similarity_classes": 1259,
+        "triangles": 9354
+      },
+      "wall_seconds": 0.33384879999994155
+    },
+    {
+      "class_count": 0,
+      "formulation": "B2",
+      "position": 2,
+      "repetition": 4,
+      "stats": {
+        "accepted_candidates": 0,
+        "center_pairs": 888,
+        "center_progression_hits": 0,
+        "complete_candidates": 0,
+        "difference_groups": 8602,
+        "duplicate_classes": 0,
+        "progressions": 9354,
+        "third_center_tests": 888
+      },
+      "wall_seconds": 0.005242100000032224
+    },
+    {
+      "class_count": 0,
+      "formulation": "B1",
+      "position": 3,
+      "repetition": 4,
+      "stats": {
+        "accepted_candidates": 0,
+        "additive_hits": 0,
+        "additive_membership_tests": 22876,
+        "complete_candidates": 0,
+        "duplicate_classes": 0,
+        "indexed_centers": 5096,
+        "offset_pairs": 11438,
+        "progressions": 9354
+      },
+      "wall_seconds": 0.005431700000372075
+    },
+    {
+      "class_count": 0,
+      "formulation": "D-probe",
+      "position": 4,
+      "repetition": 4,
+      "stats": {
+        "accepted_candidates": 0,
+        "complete_candidates": 0,
+        "duplicate_classes": 0,
+        "n_groups": 8602,
+        "points_constructed": 9354,
+        "points_on_curve": 9354,
+        "progressions": 9354,
+        "two_descent_certificates": 9354,
+        "x_ap_hits": 0,
+        "x_ap_tests": 888,
+        "x_pairs": 888
+      },
+      "wall_seconds": 0.5645948999999746
+    },
+    {
+      "class_count": 0,
+      "formulation": "B1",
+      "position": 1,
+      "repetition": 5,
+      "stats": {
+        "accepted_candidates": 0,
+        "additive_hits": 0,
+        "additive_membership_tests": 22876,
+        "complete_candidates": 0,
+        "duplicate_classes": 0,
+        "indexed_centers": 5096,
+        "offset_pairs": 11438,
+        "progressions": 9354
+      },
+      "wall_seconds": 0.005331599999408354
+    },
+    {
+      "class_count": 0,
+      "formulation": "B2",
+      "position": 2,
+      "repetition": 5,
+      "stats": {
+        "accepted_candidates": 0,
+        "center_pairs": 888,
+        "center_progression_hits": 0,
+        "complete_candidates": 0,
+        "difference_groups": 8602,
+        "duplicate_classes": 0,
+        "progressions": 9354,
+        "third_center_tests": 888
+      },
+      "wall_seconds": 0.005767799999375711
+    },
+    {
+      "class_count": 0,
+      "formulation": "C",
+      "position": 3,
+      "repetition": 5,
+      "stats": {
+        "accepted_candidates": 0,
+        "area_groups": 8602,
+        "center_pairs": 888,
+        "complete_candidates": 0,
+        "duplicate_classes": 0,
+        "hypotenuse_square_ap_hits": 0,
+        "hypotenuse_square_ap_tests": 888,
+        "progressions": 9354,
+        "similarity_classes": 1259,
+        "triangles": 9354
+      },
+      "wall_seconds": 0.3392899000000398
+    },
+    {
+      "class_count": 0,
+      "formulation": "D-probe",
+      "position": 4,
+      "repetition": 5,
+      "stats": {
+        "accepted_candidates": 0,
+        "complete_candidates": 0,
+        "duplicate_classes": 0,
+        "n_groups": 8602,
+        "points_constructed": 9354,
+        "points_on_curve": 9354,
+        "progressions": 9354,
+        "two_descent_certificates": 9354,
+        "x_ap_hits": 0,
+        "x_ap_tests": 888,
+        "x_pairs": 888
+      },
+      "wall_seconds": 0.5833327000000281
+    }
+  ],
+  "schema_version": 1,
+  "status": "complete",
+  "summary": {
+    "B1": {
+      "max_seconds": 0.006219299999429495,
+      "median_seconds": 0.0054620999999315245,
+      "min_seconds": 0.005331599999408354,
+      "samples": 5
+    },
+    "B2": {
+      "max_seconds": 0.005767799999375711,
+      "median_seconds": 0.005234500000369735,
+      "min_seconds": 0.0051086000003124354,
+      "samples": 5
+    },
+    "C": {
+      "max_seconds": 0.3392899000000398,
+      "median_seconds": 0.33384879999994155,
+      "min_seconds": 0.3261952000002566,
+      "samples": 5
+    },
+    "D-probe": {
+      "max_seconds": 0.5833327000000281,
+      "median_seconds": 0.5658564999994269,
+      "min_seconds": 0.5645948999999746,
+      "samples": 5
+    }
+  },
+  "timing_scope": "adapter only; shared catalog excluded"
+}

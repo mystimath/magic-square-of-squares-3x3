@@ -1,0 +1,74 @@
+{
+  "all_cross_validated": true,
+  "bounds": [
+    50
+  ],
+  "completeness_scope": "each listed max_root independently",
+  "environment": {
+    "implementation": "CPython",
+    "logical_cpus": 16,
+    "machine": "AMD64",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "processor": "Intel64 Family 6 Model 167 Stepping 1, GenuineIntel",
+    "python": "3.11.15 | packaged by Anaconda, Inc. | (main, Mar 11 2026, 17:12:15) [MSC v.1942 64 bit (AMD64)]"
+  },
+  "milestone": "J7-pilot",
+  "runs": [
+    {
+      "accepted_candidates": 0,
+      "base_triples": 125000,
+      "class_count": 0,
+      "complete_candidates": 0,
+      "cpu_seconds": 2.03125,
+      "domain": "positive distinct 9/9; all roots <= max_root; D4 classes",
+      "duplicate_classes": 0,
+      "forced_values_computed": 705600,
+      "formulation": "A",
+      "max_root": 50,
+      "python_peak_bytes": 181512,
+      "rejected_base_collision": 7400,
+      "rejected_forced_nonsquare": 17276,
+      "rejected_nonpositive": 100324,
+      "square_membership_tests": 103656,
+      "status": "complete",
+      "wall_seconds": 2.0497464000000036
+    },
+    {
+      "accepted_candidates": 0,
+      "additive_hits": 0,
+      "additive_membership_tests": 2,
+      "class_count": 0,
+      "complete_candidates": 0,
+      "cpu_seconds": 0.0,
+      "domain": "positive distinct 9/9; all roots <= max_root; D4 classes",
+      "duplicate_classes": 0,
+      "formulation": "B1",
+      "indexed_centers": 14,
+      "max_root": 50,
+      "offset_pairs": 1,
+      "progressions": 15,
+      "python_peak_bytes": 9040,
+      "status": "complete",
+      "wall_seconds": 0.0021080999999867345
+    },
+    {
+      "accepted_candidates": 0,
+      "center_pairs": 1,
+      "center_progression_hits": 0,
+      "class_count": 0,
+      "complete_candidates": 0,
+      "cpu_seconds": 0.0,
+      "difference_groups": 14,
+      "domain": "positive distinct 9/9; all roots <= max_root; D4 classes",
+      "duplicate_classes": 0,
+      "formulation": "B2",
+      "max_root": 50,
+      "progressions": 15,
+      "python_peak_bytes": 7024,
+      "status": "complete",
+      "third_center_tests": 1,
+      "wall_seconds": 0.0026059000001623644
+    }
+  ],
+  "schema_version": 1
+}

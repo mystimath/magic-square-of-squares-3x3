@@ -1,0 +1,10 @@
+accepted_candidates,additive_hits,additive_membership_tests,base_triples,center_pairs,center_progression_hits,class_count,complete_candidates,cpu_seconds,difference_groups,domain,duplicate_classes,forced_values_computed,formulation,indexed_centers,max_root,offset_pairs,progressions,python_peak_bytes,rejected_base_collision,rejected_forced_nonsquare,rejected_nonpositive,square_membership_tests,status,third_center_tests,wall_seconds
+0,,,125000,,,0,0,2.046875,,positive distinct 9/9; all roots <= max_root; D4 classes,0,705600,A,,50,,,181512,7400,17276,100324,103656,complete,,2.0548807999998644
+0,0,2,,,,0,0,0.0,,positive distinct 9/9; all roots <= max_root; D4 classes,0,,B1,14,50,1,15,8880,,,,,complete,,0.0022536999999829277
+0,,,,1,0,0,0,0.0,14,positive distinct 9/9; all roots <= max_root; D4 classes,0,,B2,,50,,15,7024,,,,,complete,1,0.0024889000001167005
+0,,,421875,,,0,0,7.046875,,positive distinct 9/9; all roots <= max_root; D4 classes,0,2430900,A,,75,,,6176,16725,61408,343742,368448,complete,,7.0625129000000015
+0,0,4,,,,0,0,0.0,,positive distinct 9/9; all roots <= max_root; D4 classes,0,,B1,22,75,2,24,10496,,,,,complete,,0.004496800000197254
+0,,,,1,0,0,0,0.015625,23,positive distinct 9/9; all roots <= max_root; D4 classes,0,,B2,,75,,24,10800,,,,,complete,1,0.005224400000315654
+0,,,1000000,,,0,0,17.171875,,positive distinct 9/9; all roots <= max_root; D4 classes,0,5821200,A,,100,,,13120,29800,149366,820834,896196,complete,,17.196250899999995
+0,0,16,,,,0,0,0.015625,,positive distinct 9/9; all roots <= max_root; D4 classes,0,,B1,32,100,8,37,14816,,,,,complete,,0.008329400000093301
+0,,,,2,0,0,0,0.0,35,positive distinct 9/9; all roots <= max_root; D4 classes,0,,B2,,100,,37,15712,,,,,complete,2,0.010374799999681272

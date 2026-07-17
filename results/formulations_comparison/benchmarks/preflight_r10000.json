@@ -1,0 +1,43 @@
+{
+  "all_classes_equal": true,
+  "domain": "positive distinct 9/9; all roots <= 10000; D4 classes",
+  "max_root": 10000,
+  "note": "Single-run post-J7 preflight; not the J8 confirmatory benchmark",
+  "runs": [
+    {
+      "classes": 0,
+      "formulation": "B1",
+      "progressions": 9354,
+      "structural_pairs": 11438,
+      "structural_hits": 0,
+      "wall_seconds": 4.703676999999971
+    },
+    {
+      "classes": 0,
+      "formulation": "B2",
+      "progressions": 9354,
+      "structural_pairs": 888,
+      "structural_hits": 0,
+      "wall_seconds": 4.61286519999976
+    },
+    {
+      "classes": 0,
+      "formulation": "C",
+      "progressions": 9354,
+      "structural_pairs": 888,
+      "structural_hits": 0,
+      "triangles": 9354,
+      "wall_seconds": 5.014628300000368
+    },
+    {
+      "classes": 0,
+      "formulation": "D-probe",
+      "points_constructed": 9354,
+      "structural_pairs": 888,
+      "structural_hits": 0,
+      "two_descent_certificates": 9354,
+      "wall_seconds": 5.191646199999923
+    }
+  ],
+  "status": "complete"
+}
