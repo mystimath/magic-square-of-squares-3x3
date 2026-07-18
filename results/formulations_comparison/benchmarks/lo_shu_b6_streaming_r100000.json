@@ -1,0 +1,49 @@
+{
+  "engine": "B6-LoShu-exact-9/9-shared-square-index",
+  "domain": {
+    "complete_box_root": 100000,
+    "complete_box_upper_value": 10000000000,
+    "exact_square_count": 9,
+    "primitive_only": true,
+    "positive_distinct_entries": true,
+    "equivalence": "D4"
+  },
+  "catalog": {
+    "mode": "streaming",
+    "parameter_domain": "canonical",
+    "seconds_included_in_search": true,
+    "progressions": 122640,
+    "raw_incidence_records": 367920,
+    "shards_used": 128,
+    "duplicate_incidence_records": 0,
+    "max_incidence_records_in_shard": 6203,
+    "indexed_square_values": 86154
+  },
+  "search_seconds": 5.143708699999479,
+  "total_seconds": 5.143708699999479,
+  "stats": {
+    "progressions": 122640,
+    "progression_incidences": 367920,
+    "indexed_square_values": 86154,
+    "shared_square_values": 61904,
+    "gcd_buckets": 165071,
+    "gcd_bucket_pairs_considered": 519994,
+    "ordered_seed_pairs": 2861724,
+    "rejected_nonprimitive_seed": 2175518,
+    "compatible_seed_pairs": 686206,
+    "rejected_equal_steps": 0,
+    "reconstructed_grids": 686206,
+    "rejected_nonpositive": 225656,
+    "rejected_outside_complete_box": 23274,
+    "rejected_nondistinct": 4,
+    "square_membership_tests": 1749088,
+    "rejected_not_all_nine_square": 437272,
+    "validated_candidates": 0,
+    "rejected_nonprimitive": 0,
+    "duplicate_classes": 0,
+    "accepted_classes": 0
+  },
+  "class_count": 0,
+  "hits": [],
+  "csv": "results\\formulations_comparison\\benchmarks\\lo_shu_b6_streaming_r100000.csv"
+}

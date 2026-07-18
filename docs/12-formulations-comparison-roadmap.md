@@ -1,6 +1,6 @@
 # Architecture et feuille de route — comparaison des formulations
 
-_Version de cadrage : 2026-07-15_
+_Version de cadrage : 2026-07-15 — état mis à jour à la clôture du 18 juillet 2026._
 
 ## 1. Portée
 
@@ -295,8 +295,28 @@ une conclusion méthodologique.
 - lancer trop tôt des benchmarks moyens ;
 - multiplier des notes sans résultat autonome.
 
-## 10. Prochaine action proposée
+## 10. État de réalisation à la clôture du 18 juillet 2026
 
-La prochaine session, si elle est explicitement autorisée, exécutera uniquement
-**J0 et J1** : périmètre formel et inventaire vérifié. Elle ne créera aucun
-prototype et ne lancera aucun benchmark.
+Les jalons J0 à J10 sont réalisés et documentés dans les notes 13 à 24.
+Les optimisations spécialisées B3 à B8 sont documentées dans les notes 25 à
+32. Les campagnes exhaustives en boîte complète jusqu'à `R=1000000` donnent :
+
+- B3 et B4 : l'unique classe primitive de Bremner ;
+- B5 : aucune classe exactement 8/9 ;
+- B6 : aucune classe 9/9.
+
+## 11. TODO actualisée
+
+- [x] Formaliser le périmètre et inventorier le dépôt (J0–J1).
+- [x] Adapter et valider les quatre formulations (J2–J6).
+- [x] Exécuter les benchmarks pilote et confirmatoire (J7–J8).
+- [x] Produire le rapport, l'audit final et les moteurs B3–B6 (J9–B6).
+- [x] Supprimer la table de `R` carrés et vectoriser les tests `isqrt` (B7–B8).
+- [ ] **B9 — reporté à une session ultérieure :** profiler et optimiser la
+  reconstruction des `10029290` grilles au million, notamment
+  `build_like_bremner_grid`, les contrôles `min/max/distinct` et les filtres
+  algébriques applicables avant la construction du tuple de neuf cases.
+- [ ] Après B9, refaire d'abord le benchmark apparié à `R=100000`, puis une
+  campagne confirmatoire à `R=1000000` seulement si le gain est net.
+
+Aucun travail B9 n'est engagé dans la présente session.

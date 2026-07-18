@@ -1,0 +1,216 @@
+{
+  "benchmark": "like_bremner_material_vs_streaming_end_to_end",
+  "domain": {
+    "max_square_root": 100000,
+    "primitive_only": true,
+    "target_mask": "acdefgh",
+    "shard_count": 64
+  },
+  "environment": {
+    "python": "3.11.15 | packaged by Anaconda, Inc. | (main, Mar 11 2026, 17:12:15) [MSC v.1942 64 bit (AMD64)]",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "processor": "Intel64 Family 6 Model 167 Stepping 1, GenuineIntel"
+  },
+  "timing_repeats": 6,
+  "class_sets_equal": true,
+  "classes": [
+    [
+      42025,
+      277729,
+      222121,
+      360721,
+      180625,
+      529,
+      139129,
+      83521,
+      319225
+    ]
+  ],
+  "runs": [
+    {
+      "run": 1,
+      "order_index": 1,
+      "variant": "material",
+      "wall_seconds": 0.8207918999996764,
+      "cpu_seconds": 0.828125,
+      "class_count": 1
+    },
+    {
+      "run": 1,
+      "order_index": 2,
+      "variant": "streaming",
+      "wall_seconds": 1.368897400001515,
+      "cpu_seconds": 1.046875,
+      "class_count": 1
+    },
+    {
+      "run": 2,
+      "order_index": 1,
+      "variant": "streaming",
+      "wall_seconds": 1.2792016999992484,
+      "cpu_seconds": 0.984375,
+      "class_count": 1
+    },
+    {
+      "run": 2,
+      "order_index": 2,
+      "variant": "material",
+      "wall_seconds": 0.8515499999994063,
+      "cpu_seconds": 0.84375,
+      "class_count": 1
+    },
+    {
+      "run": 3,
+      "order_index": 1,
+      "variant": "material",
+      "wall_seconds": 0.8356050000002142,
+      "cpu_seconds": 0.84375,
+      "class_count": 1
+    },
+    {
+      "run": 3,
+      "order_index": 2,
+      "variant": "streaming",
+      "wall_seconds": 1.297836499999903,
+      "cpu_seconds": 0.96875,
+      "class_count": 1
+    },
+    {
+      "run": 4,
+      "order_index": 1,
+      "variant": "streaming",
+      "wall_seconds": 1.29381420000027,
+      "cpu_seconds": 1.015625,
+      "class_count": 1
+    },
+    {
+      "run": 4,
+      "order_index": 2,
+      "variant": "material",
+      "wall_seconds": 0.852437400000781,
+      "cpu_seconds": 0.859375,
+      "class_count": 1
+    },
+    {
+      "run": 5,
+      "order_index": 1,
+      "variant": "material",
+      "wall_seconds": 0.8559573999991699,
+      "cpu_seconds": 0.859375,
+      "class_count": 1
+    },
+    {
+      "run": 5,
+      "order_index": 2,
+      "variant": "streaming",
+      "wall_seconds": 1.2876411999986885,
+      "cpu_seconds": 0.984375,
+      "class_count": 1
+    },
+    {
+      "run": 6,
+      "order_index": 1,
+      "variant": "streaming",
+      "wall_seconds": 1.2980969000000186,
+      "cpu_seconds": 0.9375,
+      "class_count": 1
+    },
+    {
+      "run": 6,
+      "order_index": 2,
+      "variant": "material",
+      "wall_seconds": 0.8516492999988259,
+      "cpu_seconds": 0.828125,
+      "class_count": 1
+    }
+  ],
+  "wall_seconds": {
+    "material": {
+      "minimum": 0.8207918999996764,
+      "median": 0.8515996499991161,
+      "mean": 0.8446651666663456,
+      "maximum": 0.8559573999991699,
+      "sample_standard_deviation": 0.013682987060095617
+    },
+    "streaming": {
+      "minimum": 1.2792016999992484,
+      "median": 1.2958253500000865,
+      "mean": 1.3042479833332739,
+      "maximum": 1.368897400001515,
+      "sample_standard_deviation": 0.03246676890748699
+    }
+  },
+  "cpu_seconds": {
+    "material": {
+      "minimum": 0.828125,
+      "median": 0.84375,
+      "mean": 0.84375,
+      "maximum": 0.859375,
+      "sample_standard_deviation": 0.013975424859373685
+    },
+    "streaming": {
+      "minimum": 0.9375,
+      "median": 0.984375,
+      "mean": 0.9895833333333334,
+      "maximum": 1.046875,
+      "sample_standard_deviation": 0.03784562942621864
+    }
+  },
+  "streaming_over_material_wall_ratio": 1.5216367808528708,
+  "streaming_wall_change_percent": 52.16367808528708,
+  "python_peak_bytes": {
+    "material": 46484996,
+    "streaming": 11058586
+  },
+  "streaming_over_material_memory_ratio": 0.23789581481302052,
+  "streaming_memory_reduction_percent": 76.21041851869794,
+  "catalog_stats": {
+    "material": {
+      "unique_progressions": 122640
+    },
+    "streaming": {
+      "raw_records_written": 490560,
+      "shards_used": 64,
+      "unique_progressions": 122640,
+      "duplicate_records": 367920,
+      "max_unique_progressions_in_shard": 9593,
+      "groups_yielded": 45623
+    }
+  },
+  "search_stats": {
+    "material": {
+      "progressions": 122640,
+      "first_term_groups": 45623,
+      "groups_with_two_progressions": 22385,
+      "gcd_buckets": 48738,
+      "gcd_bucket_pairs_considered": 116991,
+      "ordered_progression_pairs": 635968,
+      "rejected_nonprimitive_seed": 478344,
+      "compatible_progression_pairs": 157624,
+      "square_membership_tests": 315248,
+      "pair_extension_hits": 1,
+      "validated_candidates": 1,
+      "rejected_mask": 0,
+      "rejected_nonprimitive": 0,
+      "duplicate_classes": 0,
+      "accepted_classes": 1
+    },
+    "streaming": {
+      "progressions": 122640,
+      "first_term_groups": 45623,
+      "groups_with_two_progressions": 22385,
+      "gcd_buckets": 48738,
+      "gcd_bucket_pairs_considered": 116991,
+      "ordered_progression_pairs": 635968,
+      "rejected_nonprimitive_seed": 478344,
+      "compatible_progression_pairs": 157624,
+      "square_membership_tests": 315248,
+      "pair_extension_hits": 1,
+      "validated_candidates": 1,
+      "rejected_mask": 0,
+      "rejected_nonprimitive": 0,
+      "duplicate_classes": 0,
+      "accepted_classes": 1
+    }
+  }
+}

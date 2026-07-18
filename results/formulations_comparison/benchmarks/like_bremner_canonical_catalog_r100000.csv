@@ -1,0 +1,17 @@
+run,order_index,variant,wall_seconds,cpu_seconds,class_count
+1,1,material_historical,0.8409181000006356,0.84375,1
+1,2,material_canonical,0.665311799999472,0.671875,1
+1,3,streaming_historical,1.307091800001217,1.03125,1
+1,4,streaming_canonical,1.0168807999998535,0.671875,1
+2,1,material_canonical,0.6287389999997686,0.609375,1
+2,2,streaming_historical,1.28764880000017,1.046875,1
+2,3,streaming_canonical,0.960050499999852,0.625,1
+2,4,material_historical,0.8336601000009978,0.84375,1
+3,1,streaming_historical,1.28132800000094,1.078125,1
+3,2,streaming_canonical,0.9586409000003187,0.625,1
+3,3,material_historical,0.8343002999990858,0.828125,1
+3,4,material_canonical,0.6638356999992538,0.671875,1
+4,1,streaming_canonical,0.9557535000003554,0.546875,1
+4,2,material_historical,0.8190791999986686,0.828125,1
+4,3,material_canonical,0.662444300000061,0.65625,1
+4,4,streaming_historical,1.2806258000000525,1.0625,1

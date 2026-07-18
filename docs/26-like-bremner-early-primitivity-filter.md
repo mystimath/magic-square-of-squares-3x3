@@ -92,7 +92,7 @@ Artefacts :
 
 ## 5. Conclusion
 
-Le filtre est sûr, peu complexe et rentable. La prochaine réduction potentielle
-porterait sur les 157624 tests de couples qui subsistent : préindexer les
-extensions carrées ou grouper le catalogue par premier terme primitif permettrait
-d'éviter une partie de ces consultations sans réintroduire les dilatations.
+Le filtre est sûr, peu complexe et rentable. L'étape suivante est maintenant
+réalisée dans le document 27 : l'index de compatibilité PGCD rejette les couples
+non primitifs par seaux, et le catalogue groupé canonique évite les quatre
+représentants paramétriques historiques.

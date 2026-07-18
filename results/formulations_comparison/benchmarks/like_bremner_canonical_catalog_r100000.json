@@ -1,0 +1,319 @@
+{
+  "benchmark": "like_bremner_canonical_parameter_domain",
+  "domain": {
+    "max_square_root": 100000,
+    "shard_count": 64,
+    "target_mask": "acdefgh"
+  },
+  "repeats": 4,
+  "class_sets_equal": true,
+  "classes": [
+    [
+      42025,
+      277729,
+      222121,
+      360721,
+      180625,
+      529,
+      139129,
+      83521,
+      319225
+    ]
+  ],
+  "runs": [
+    {
+      "run": 1,
+      "order_index": 1,
+      "variant": "material_historical",
+      "wall_seconds": 0.8409181000006356,
+      "cpu_seconds": 0.84375,
+      "class_count": 1
+    },
+    {
+      "run": 1,
+      "order_index": 2,
+      "variant": "material_canonical",
+      "wall_seconds": 0.665311799999472,
+      "cpu_seconds": 0.671875,
+      "class_count": 1
+    },
+    {
+      "run": 1,
+      "order_index": 3,
+      "variant": "streaming_historical",
+      "wall_seconds": 1.307091800001217,
+      "cpu_seconds": 1.03125,
+      "class_count": 1
+    },
+    {
+      "run": 1,
+      "order_index": 4,
+      "variant": "streaming_canonical",
+      "wall_seconds": 1.0168807999998535,
+      "cpu_seconds": 0.671875,
+      "class_count": 1
+    },
+    {
+      "run": 2,
+      "order_index": 1,
+      "variant": "material_canonical",
+      "wall_seconds": 0.6287389999997686,
+      "cpu_seconds": 0.609375,
+      "class_count": 1
+    },
+    {
+      "run": 2,
+      "order_index": 2,
+      "variant": "streaming_historical",
+      "wall_seconds": 1.28764880000017,
+      "cpu_seconds": 1.046875,
+      "class_count": 1
+    },
+    {
+      "run": 2,
+      "order_index": 3,
+      "variant": "streaming_canonical",
+      "wall_seconds": 0.960050499999852,
+      "cpu_seconds": 0.625,
+      "class_count": 1
+    },
+    {
+      "run": 2,
+      "order_index": 4,
+      "variant": "material_historical",
+      "wall_seconds": 0.8336601000009978,
+      "cpu_seconds": 0.84375,
+      "class_count": 1
+    },
+    {
+      "run": 3,
+      "order_index": 1,
+      "variant": "streaming_historical",
+      "wall_seconds": 1.28132800000094,
+      "cpu_seconds": 1.078125,
+      "class_count": 1
+    },
+    {
+      "run": 3,
+      "order_index": 2,
+      "variant": "streaming_canonical",
+      "wall_seconds": 0.9586409000003187,
+      "cpu_seconds": 0.625,
+      "class_count": 1
+    },
+    {
+      "run": 3,
+      "order_index": 3,
+      "variant": "material_historical",
+      "wall_seconds": 0.8343002999990858,
+      "cpu_seconds": 0.828125,
+      "class_count": 1
+    },
+    {
+      "run": 3,
+      "order_index": 4,
+      "variant": "material_canonical",
+      "wall_seconds": 0.6638356999992538,
+      "cpu_seconds": 0.671875,
+      "class_count": 1
+    },
+    {
+      "run": 4,
+      "order_index": 1,
+      "variant": "streaming_canonical",
+      "wall_seconds": 0.9557535000003554,
+      "cpu_seconds": 0.546875,
+      "class_count": 1
+    },
+    {
+      "run": 4,
+      "order_index": 2,
+      "variant": "material_historical",
+      "wall_seconds": 0.8190791999986686,
+      "cpu_seconds": 0.828125,
+      "class_count": 1
+    },
+    {
+      "run": 4,
+      "order_index": 3,
+      "variant": "material_canonical",
+      "wall_seconds": 0.662444300000061,
+      "cpu_seconds": 0.65625,
+      "class_count": 1
+    },
+    {
+      "run": 4,
+      "order_index": 4,
+      "variant": "streaming_historical",
+      "wall_seconds": 1.2806258000000525,
+      "cpu_seconds": 1.0625,
+      "class_count": 1
+    }
+  ],
+  "wall_seconds": {
+    "material_historical": {
+      "minimum": 0.8190791999986686,
+      "median": 0.8339802000000418,
+      "mean": 0.831989424999847,
+      "maximum": 0.8409181000006356,
+      "sample_standard_deviation": 0.009210979771850834
+    },
+    "material_canonical": {
+      "minimum": 0.6287389999997686,
+      "median": 0.6631399999996574,
+      "mean": 0.6550826999996389,
+      "maximum": 0.665311799999472,
+      "sample_standard_deviation": 0.01760145050887595
+    },
+    "streaming_historical": {
+      "minimum": 1.2806258000000525,
+      "median": 1.284488400000555,
+      "mean": 1.2891736000005949,
+      "maximum": 1.307091800001217,
+      "sample_standard_deviation": 0.012355905882174311
+    },
+    "streaming_canonical": {
+      "minimum": 0.9557535000003554,
+      "median": 0.9593457000000853,
+      "mean": 0.9728314250000949,
+      "maximum": 1.0168807999998535,
+      "sample_standard_deviation": 0.029420661695466057
+    }
+  },
+  "cpu_seconds": {
+    "material_historical": {
+      "minimum": 0.828125,
+      "median": 0.8359375,
+      "mean": 0.8359375,
+      "maximum": 0.84375,
+      "sample_standard_deviation": 0.009021097956087902
+    },
+    "material_canonical": {
+      "minimum": 0.609375,
+      "median": 0.6640625,
+      "mean": 0.65234375,
+      "maximum": 0.671875,
+      "sample_standard_deviation": 0.029577647634376425
+    },
+    "streaming_historical": {
+      "minimum": 1.03125,
+      "median": 1.0546875,
+      "mean": 1.0546875,
+      "maximum": 1.078125,
+      "sample_standard_deviation": 0.020171788261496962
+    },
+    "streaming_canonical": {
+      "minimum": 0.546875,
+      "median": 0.625,
+      "mean": 0.6171875,
+      "maximum": 0.671875,
+      "sample_standard_deviation": 0.05182226234930312
+    }
+  },
+  "python_peak_bytes": {
+    "material_historical": 46484996,
+    "material_canonical": 46484996,
+    "streaming_historical": 11058538,
+    "streaming_canonical": 11058430
+  },
+  "material_historical_over_canonical_ratio": 1.2576231263390425,
+  "material_canonical_reduction_percent": 20.48492278358357,
+  "streaming_historical_over_canonical_ratio": 1.338921308554821,
+  "streaming_canonical_reduction_percent": 25.313011779657113,
+  "catalog_stats": {
+    "material_historical": {
+      "raw_records": 490560,
+      "unique_progressions": 122640
+    },
+    "material_canonical": {
+      "raw_records": 122640,
+      "unique_progressions": 122640
+    },
+    "streaming_historical": {
+      "raw_records_written": 490560,
+      "shards_used": 64,
+      "unique_progressions": 122640,
+      "duplicate_records": 367920,
+      "max_unique_progressions_in_shard": 9593,
+      "groups_yielded": 45623
+    },
+    "streaming_canonical": {
+      "raw_records_written": 122640,
+      "shards_used": 64,
+      "unique_progressions": 122640,
+      "duplicate_records": 0,
+      "max_unique_progressions_in_shard": 9593,
+      "groups_yielded": 45623
+    }
+  },
+  "search_stats": {
+    "material_historical": {
+      "progressions": 122640,
+      "first_term_groups": 45623,
+      "groups_with_two_progressions": 22385,
+      "gcd_buckets": 48738,
+      "gcd_bucket_pairs_considered": 116991,
+      "ordered_progression_pairs": 635968,
+      "rejected_nonprimitive_seed": 478344,
+      "compatible_progression_pairs": 157624,
+      "square_membership_tests": 315248,
+      "pair_extension_hits": 1,
+      "validated_candidates": 1,
+      "rejected_mask": 0,
+      "rejected_nonprimitive": 0,
+      "duplicate_classes": 0,
+      "accepted_classes": 1
+    },
+    "material_canonical": {
+      "progressions": 122640,
+      "first_term_groups": 45623,
+      "groups_with_two_progressions": 22385,
+      "gcd_buckets": 48738,
+      "gcd_bucket_pairs_considered": 116991,
+      "ordered_progression_pairs": 635968,
+      "rejected_nonprimitive_seed": 478344,
+      "compatible_progression_pairs": 157624,
+      "square_membership_tests": 315248,
+      "pair_extension_hits": 1,
+      "validated_candidates": 1,
+      "rejected_mask": 0,
+      "rejected_nonprimitive": 0,
+      "duplicate_classes": 0,
+      "accepted_classes": 1
+    },
+    "streaming_historical": {
+      "progressions": 122640,
+      "first_term_groups": 45623,
+      "groups_with_two_progressions": 22385,
+      "gcd_buckets": 48738,
+      "gcd_bucket_pairs_considered": 116991,
+      "ordered_progression_pairs": 635968,
+      "rejected_nonprimitive_seed": 478344,
+      "compatible_progression_pairs": 157624,
+      "square_membership_tests": 315248,
+      "pair_extension_hits": 1,
+      "validated_candidates": 1,
+      "rejected_mask": 0,
+      "rejected_nonprimitive": 0,
+      "duplicate_classes": 0,
+      "accepted_classes": 1
+    },
+    "streaming_canonical": {
+      "progressions": 122640,
+      "first_term_groups": 45623,
+      "groups_with_two_progressions": 22385,
+      "gcd_buckets": 48738,
+      "gcd_bucket_pairs_considered": 116991,
+      "ordered_progression_pairs": 635968,
+      "rejected_nonprimitive_seed": 478344,
+      "compatible_progression_pairs": 157624,
+      "square_membership_tests": 315248,
+      "pair_extension_hits": 1,
+      "validated_candidates": 1,
+      "rejected_mask": 0,
+      "rejected_nonprimitive": 0,
+      "duplicate_classes": 0,
+      "accepted_classes": 1
+    }
+  }
+}

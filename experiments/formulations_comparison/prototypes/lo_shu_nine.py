@@ -1,0 +1,250 @@
+"""Branche B6 : recherche Lo Shu exhaustive des carrés magiques exacts 9/9."""
+
+from __future__ import annotations
+
+from collections.abc import Iterable
+from dataclasses import dataclass
+
+from common.validation import Grid, canonical_d4, validate_grid
+
+from .canonical_progressions import (
+    generate_square_progressions_parametric_canonical,
+)
+from .like_bremner import build_like_bremner_grid
+from .lo_shu_seven import (
+    REMAINING_GRID_INDICES,
+    _compatible_ordered_incidences,
+    _primitive_root_gcd,
+    _progression_roots,
+    _progression_values,
+)
+from .lo_shu_seven_grouped import (
+    IncidenceGroup,
+    group_progression_incidences,
+)
+from .model import ArithmeticProgression, validate_bound
+from .square_membership import (
+    IsqrtSquareMembership,
+    SquareMembershipMode,
+    build_square_membership,
+    square_membership_stats,
+)
+
+
+@dataclass(frozen=True)
+class LoShuNineHit:
+    grid: Grid
+    canonical: Grid
+    A: int
+    q: int
+    r: int
+    square_roots: tuple[int | None, ...]
+    primitive_root_gcd: int
+    shared_square: int
+    r_seed_roots: tuple[int, int, int]
+    q_seed_roots: tuple[int, int, int]
+    r_intersection_index: int
+    q_intersection_index: int
+
+
+@dataclass(frozen=True)
+class LoShuNineSearchResult:
+    formulation: str
+    complete_box_root: int
+    hits: tuple[LoShuNineHit, ...]
+    stats: dict[str, int]
+
+    @property
+    def classes(self) -> tuple[Grid, ...]:
+        return tuple(hit.canonical for hit in self.hits)
+
+
+def search_lo_shu_nine_incidence_groups(
+    complete_box_root: int,
+    groups: Iterable[IncidenceGroup],
+    *,
+    primitive_only: bool = True,
+    square_membership_mode: SquareMembershipMode = "isqrt",
+) -> LoShuNineSearchResult:
+    """Consomme un index matériel ou streaming par valeur carrée partagée."""
+
+    validate_bound(complete_box_root)
+    bounded_squares = build_square_membership(complete_box_root, square_membership_mode)
+    batch_square_test = (
+        bounded_squares.all_bounded_squares
+        if isinstance(bounded_squares, IsqrtSquareMembership)
+        else None
+    )
+    stats = {
+        "progressions": 0,
+        "progression_incidences": 0,
+        "indexed_square_values": 0,
+        "shared_square_values": 0,
+        "gcd_buckets": 0,
+        "gcd_bucket_pairs_considered": 0,
+        "ordered_seed_pairs": 0,
+        "rejected_nonprimitive_seed": 0,
+        "compatible_seed_pairs": 0,
+        "rejected_equal_steps": 0,
+        "reconstructed_grids": 0,
+        "rejected_nonpositive": 0,
+        "rejected_outside_complete_box": 0,
+        "rejected_nondistinct": 0,
+        "square_membership_tests": 0,
+        "rejected_not_all_nine_square": 0,
+        "validated_candidates": 0,
+        "rejected_nonprimitive": 0,
+        "duplicate_classes": 0,
+        "accepted_classes": 0,
+    }
+    hits: dict[Grid, LoShuNineHit] = {}
+    upper = complete_box_root * complete_box_root
+    previous_shared_square = 0
+
+    for shared_square, source in groups:
+        if shared_square <= previous_shared_square:
+            raise ValueError(
+                "Les groupes d'incidences doivent être strictement croissants."
+            )
+        previous_shared_square = shared_square
+        incidences = tuple(
+            sorted(
+                source,
+                key=lambda item: (
+                    item.root_gcd,
+                    item.progression.difference,
+                    item.term_index,
+                ),
+            )
+        )
+        if not incidences:
+            raise ValueError("Un groupe d'incidences ne peut pas être vide.")
+        if len(set(incidences)) != len(incidences):
+            raise ValueError("Un groupe contient une incidence dupliquée.")
+        for incidence in incidences:
+            values = _progression_values(incidence.progression)
+            if values[incidence.term_index] != shared_square:
+                raise ValueError("Une incidence ne correspond pas à sa valeur partagée.")
+
+        stats["indexed_square_values"] += 1
+        stats["progression_incidences"] += len(incidences)
+        if len(incidences) < 2:
+            continue
+        stats["shared_square_values"] += 1
+        for r_seed, q_seed in _compatible_ordered_incidences(
+            incidences,
+            primitive_only=primitive_only,
+            stats=stats,
+        ):
+            r = r_seed.progression.difference
+            q = q_seed.progression.difference
+            if r == q:
+                stats["rejected_equal_steps"] += 1
+                continue
+            x0 = q_seed.term_index
+            k0 = r_seed.term_index
+            A = shared_square - x0 * q - k0 * r
+            grid = build_like_bremner_grid(A, A + q, A + 2 * q, r)
+            stats["reconstructed_grids"] += 1
+            if min(grid) <= 0:
+                stats["rejected_nonpositive"] += 1
+                continue
+            if max(grid) > upper:
+                stats["rejected_outside_complete_box"] += 1
+                continue
+            if len(set(grid)) != 9:
+                stats["rejected_nondistinct"] += 1
+                continue
+
+            i0, i1, i2, i3 = REMAINING_GRID_INDICES[x0][k0]
+            remaining_values = (grid[i0], grid[i1], grid[i2], grid[i3])
+            stats["square_membership_tests"] += 4
+            if batch_square_test is not None:
+                remaining_are_squares = batch_square_test(remaining_values)
+            else:
+                remaining_are_squares = all(
+                    tuple(value in bounded_squares for value in remaining_values)
+                )
+            if not remaining_are_squares:
+                stats["rejected_not_all_nine_square"] += 1
+                continue
+
+            report = validate_grid(
+                grid,
+                min_square_count=9,
+                require_positive=True,
+                require_distinct=True,
+                require_primitive=False,
+            )
+            stats["validated_candidates"] += 1
+            if (
+                not report.is_magic
+                or not report.all_positive
+                or not report.all_distinct
+                or report.square_count != 9
+            ):
+                raise ArithmeticError("La reconstruction B6 a produit une grille invalide.")
+            primitive_root_gcd = _primitive_root_gcd(report.square_roots)
+            if primitive_only and primitive_root_gcd != 1:
+                stats["rejected_nonprimitive"] += 1
+                continue
+
+            canonical = canonical_d4(grid)
+            hit = LoShuNineHit(
+                grid=grid,
+                canonical=canonical,
+                A=A,
+                q=q,
+                r=r,
+                square_roots=report.square_roots,
+                primitive_root_gcd=primitive_root_gcd,
+                shared_square=shared_square,
+                r_seed_roots=_progression_roots(r_seed.progression),
+                q_seed_roots=_progression_roots(q_seed.progression),
+                r_intersection_index=k0,
+                q_intersection_index=x0,
+            )
+            previous = hits.get(canonical)
+            if previous is not None:
+                stats["duplicate_classes"] += 1
+                if grid < previous.grid:
+                    hits[canonical] = hit
+            else:
+                hits[canonical] = hit
+
+    if stats["progression_incidences"] % 3:
+        raise ValueError("Le flux ne contient pas trois incidences par progression.")
+    stats["progressions"] = stats["progression_incidences"] // 3
+    frozen = tuple(hits[key] for key in sorted(hits))
+    stats["accepted_classes"] = len(frozen)
+    stats.update(square_membership_stats(bounded_squares))
+    return LoShuNineSearchResult(
+        "B6-LoShu-exact-9/9-shared-square-index",
+        complete_box_root,
+        frozen,
+        stats,
+    )
+
+
+def search_lo_shu_nine_box(
+    complete_box_root: int,
+    *,
+    primitive_only: bool = True,
+    square_membership_mode: SquareMembershipMode = "isqrt",
+    progressions: tuple[ArithmeticProgression, ...] | None = None,
+) -> LoShuNineSearchResult:
+    """Adapte un catalogue matériel au cœur B6 groupé."""
+
+    validate_bound(complete_box_root)
+    if progressions is None:
+        progressions = generate_square_progressions_parametric_canonical(
+            complete_box_root
+        )
+    if len(set(progressions)) != len(progressions):
+        raise ValueError("Le catalogue contient une progression dupliquée.")
+    return search_lo_shu_nine_incidence_groups(
+        complete_box_root,
+        group_progression_incidences(progressions),
+        primitive_only=primitive_only,
+        square_membership_mode=square_membership_mode,
+    )

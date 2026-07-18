@@ -1,0 +1,182 @@
+{
+  "benchmark": "B6 square membership oracle",
+  "python": "3.11.15",
+  "platform": "Windows-10-10.0.26200-SP0",
+  "max_square_root": 100000,
+  "complete_box_upper_value": 10000000000,
+  "repeats": 5,
+  "catalog": {
+    "parameter_domain": "canonical",
+    "progressions": 122640,
+    "generation_seconds": 0.21516970000084257,
+    "shared_between_modes": true
+  },
+  "memory_measurement": {
+    "catalog_mode": "streaming",
+    "shard_count": 128,
+    "stream_stats_by_mode": {
+      "isqrt": {
+        "progressions": 122640,
+        "raw_incidence_records": 367920,
+        "shards_used": 128,
+        "duplicate_incidence_records": 0,
+        "max_incidence_records_in_shard": 6203,
+        "indexed_square_values": 86154
+      },
+      "residue_isqrt": {
+        "progressions": 122640,
+        "raw_incidence_records": 367920,
+        "shards_used": 128,
+        "duplicate_incidence_records": 0,
+        "max_incidence_records_in_shard": 6203,
+        "indexed_square_values": 86154
+      },
+      "materialized_set": {
+        "progressions": 122640,
+        "raw_incidence_records": 367920,
+        "shards_used": 128,
+        "duplicate_incidence_records": 0,
+        "max_incidence_records_in_shard": 6203,
+        "indexed_square_values": 86154
+      }
+    }
+  },
+  "class_count": 0,
+  "summaries": {
+    "isqrt": {
+      "seconds": [
+        4.987588099997083,
+        4.713415800000803,
+        4.719597399998747,
+        4.733436499998788,
+        4.738295899998775
+      ],
+      "median_seconds": 4.733436499998788,
+      "min_seconds": 4.713415800000803,
+      "max_seconds": 4.987588099997083,
+      "peak_bytes": 2215677,
+      "stats": {
+        "progressions": 122640,
+        "progression_incidences": 367920,
+        "indexed_square_values": 86154,
+        "shared_square_values": 61904,
+        "gcd_buckets": 165071,
+        "gcd_bucket_pairs_considered": 519994,
+        "ordered_seed_pairs": 2861724,
+        "rejected_nonprimitive_seed": 2175518,
+        "compatible_seed_pairs": 686206,
+        "rejected_equal_steps": 0,
+        "reconstructed_grids": 686206,
+        "rejected_nonpositive": 225656,
+        "rejected_outside_complete_box": 23274,
+        "rejected_nondistinct": 4,
+        "square_membership_tests": 1749088,
+        "rejected_not_all_nine_square": 437272,
+        "validated_candidates": 0,
+        "rejected_nonprimitive": 0,
+        "duplicate_classes": 0,
+        "accepted_classes": 0,
+        "square_oracle_isqrt": 1,
+        "square_oracle_residue_isqrt": 0,
+        "square_oracle_materialized_set": 0,
+        "square_oracle_queries": 1749088,
+        "square_oracle_range_rejections": 0,
+        "square_oracle_residue_rejections": 0,
+        "square_oracle_isqrt_tests": 1749088,
+        "square_oracle_hits": 1582
+      }
+    },
+    "residue_isqrt": {
+      "seconds": [
+        5.408466699998826,
+        5.307314099998621,
+        5.203381300001638,
+        5.244076400002086,
+        5.144904099997802
+      ],
+      "median_seconds": 5.244076400002086,
+      "min_seconds": 5.144904099997802,
+      "max_seconds": 5.408466699998826,
+      "peak_bytes": 2206799,
+      "stats": {
+        "progressions": 122640,
+        "progression_incidences": 367920,
+        "indexed_square_values": 86154,
+        "shared_square_values": 61904,
+        "gcd_buckets": 165071,
+        "gcd_bucket_pairs_considered": 519994,
+        "ordered_seed_pairs": 2861724,
+        "rejected_nonprimitive_seed": 2175518,
+        "compatible_seed_pairs": 686206,
+        "rejected_equal_steps": 0,
+        "reconstructed_grids": 686206,
+        "rejected_nonpositive": 225656,
+        "rejected_outside_complete_box": 23274,
+        "rejected_nondistinct": 4,
+        "square_membership_tests": 1749088,
+        "rejected_not_all_nine_square": 437272,
+        "validated_candidates": 0,
+        "rejected_nonprimitive": 0,
+        "duplicate_classes": 0,
+        "accepted_classes": 0,
+        "square_oracle_isqrt": 0,
+        "square_oracle_residue_isqrt": 1,
+        "square_oracle_materialized_set": 0,
+        "square_oracle_queries": 1749088,
+        "square_oracle_range_rejections": 0,
+        "square_oracle_residue_rejections": 1685384,
+        "square_oracle_isqrt_tests": 63704,
+        "square_oracle_hits": 1582,
+        "square_oracle_mod1001_rejections": 1062612,
+        "square_oracle_mod41_rejections": 317508,
+        "square_oracle_mod37_rejections": 163130,
+        "square_oracle_mod29_rejections": 91576,
+        "square_oracle_mod31_rejections": 50558
+      }
+    },
+    "materialized_set": {
+      "seconds": [
+        4.450753600001917,
+        4.406096899998374,
+        4.240832999999839,
+        4.3045813999997335,
+        4.275226300000213
+      ],
+      "median_seconds": 4.3045813999997335,
+      "min_seconds": 4.240832999999839,
+      "max_seconds": 4.450753600001917,
+      "peak_bytes": 9600263,
+      "stats": {
+        "progressions": 122640,
+        "progression_incidences": 367920,
+        "indexed_square_values": 86154,
+        "shared_square_values": 61904,
+        "gcd_buckets": 165071,
+        "gcd_bucket_pairs_considered": 519994,
+        "ordered_seed_pairs": 2861724,
+        "rejected_nonprimitive_seed": 2175518,
+        "compatible_seed_pairs": 686206,
+        "rejected_equal_steps": 0,
+        "reconstructed_grids": 686206,
+        "rejected_nonpositive": 225656,
+        "rejected_outside_complete_box": 23274,
+        "rejected_nondistinct": 4,
+        "square_membership_tests": 1749088,
+        "rejected_not_all_nine_square": 437272,
+        "validated_candidates": 0,
+        "rejected_nonprimitive": 0,
+        "duplicate_classes": 0,
+        "accepted_classes": 0,
+        "square_oracle_isqrt": 0,
+        "square_oracle_residue_isqrt": 0,
+        "square_oracle_materialized_set": 1
+      }
+    }
+  },
+  "ratios": {
+    "materialized_over_residue_median_time": 0.8208464316038608,
+    "materialized_over_residue_peak_memory": 4.350311469236663,
+    "materialized_over_isqrt_median_time": 0.9093987845830055,
+    "materialized_over_isqrt_peak_memory": 4.332880198693221
+  }
+}

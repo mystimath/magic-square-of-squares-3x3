@@ -137,8 +137,8 @@ python experiments\formulations_comparison\benchmark_like_bremner_v2_2.py `
 
 La branche Lo Shu ciblée est suffisamment rapide et validée pour devenir le
 scanner principal du motif `acdefgh`. v2.2 reste le contrôle général. Le filtre
-précoce de primitivité est maintenant réalisé et mesuré dans le document 26.
-Pour monter nettement au-delà de `R=100000`, la prochaine optimisation utile est
-de grouper ou diffuser le catalogue par premier terme `A`. Toute
-extension à d'autres masques 7/9 devra recevoir sa propre preuve de couverture
-et une comparaison indépendante avec v2.2.
+précoce de primitivité est mesuré dans le document 26 ; le groupement par `A`,
+l'index PGCD, le streaming et le domaine paramétrique canonique sont désormais
+réalisés et mesurés dans le document 27. Toute extension à d'autres masques 7/9
+devra recevoir sa propre preuve de couverture et une comparaison indépendante
+avec v2.2.

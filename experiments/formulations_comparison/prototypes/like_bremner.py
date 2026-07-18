@@ -7,6 +7,12 @@ import math
 
 from common.validation import Grid, canonical_d4, validate_grid
 
+from .square_membership import (
+    IsqrtSquareMembership,
+    SquareMembershipMode,
+    build_square_membership,
+    square_membership_stats,
+)
 from .model import (
     ArithmeticProgression,
     generate_square_progressions_parametric,
@@ -77,6 +83,7 @@ def search_like_bremner(
     primitive_only: bool = True,
     progressions: tuple[ArithmeticProgression, ...] | None = None,
     early_primitive_filter: bool = True,
+    square_membership_mode: SquareMembershipMode = "isqrt",
 ) -> LikeBremnerSearchResult:
     """Recherche sous une borne des racines carrées, et non une boîte complète.
 
@@ -94,7 +101,12 @@ def search_like_bremner(
     by_first: dict[int, list[ArithmeticProgression]] = {}
     for progression in progressions:
         by_first.setdefault(progression.low, []).append(progression)
-    bounded_squares = {root * root for root in range(1, max_square_root + 1)}
+    bounded_squares = build_square_membership(max_square_root, square_membership_mode)
+    batch_square_test = (
+        bounded_squares.all_bounded_squares_short_circuit
+        if isinstance(bounded_squares, IsqrtSquareMembership)
+        else None
+    )
     stats = {
         "progressions": len(progressions),
         "early_primitive_filter_enabled": int(primitive_only and early_primitive_filter),
@@ -136,7 +148,15 @@ def search_like_bremner(
                     continue
                 B, C = horizontal.center, horizontal.high
                 stats["square_membership_tests"] += 2
-                if B + r not in bounded_squares or C + r not in bounded_squares:
+                extension_values = (B + r, C + r)
+                if batch_square_test is not None:
+                    extensions_are_squares = batch_square_test(extension_values)
+                else:
+                    extensions_are_squares = (
+                        extension_values[0] in bounded_squares
+                        and extension_values[1] in bounded_squares
+                    )
+                if not extensions_are_squares:
                     continue
                 stats["pair_extension_hits"] += 1
                 grid = build_like_bremner_grid(A, B, C, r)
@@ -177,4 +197,5 @@ def search_like_bremner(
                     hits[canonical] = hit
     frozen = tuple(hits[key] for key in sorted(hits))
     stats["accepted_classes"] = len(frozen)
+    stats.update(square_membership_stats(bounded_squares))
     return LikeBremnerSearchResult("LoShu-Bremner-7/9", max_square_root, frozen, stats)

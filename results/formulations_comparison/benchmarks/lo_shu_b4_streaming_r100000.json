@@ -1,0 +1,169 @@
+{
+  "benchmark": "lo_shu_b4_material_vs_streaming_incidences",
+  "domain": {
+    "max_square_root": 100000,
+    "shard_count": 128,
+    "complete_box": true,
+    "exact_square_count": 7,
+    "primitive_only": true,
+    "equivalence": "D4"
+  },
+  "repeats": 4,
+  "class_sets_equal": true,
+  "classes": [
+    [
+      42025,
+      277729,
+      222121,
+      360721,
+      180625,
+      529,
+      139129,
+      83521,
+      319225
+    ]
+  ],
+  "orbit_class_counts": {
+    "corner_edge_nonincident": 1
+  },
+  "runs": [
+    {
+      "run": 1,
+      "order_index": 1,
+      "variant": "material",
+      "wall_seconds": 3.9982770000005985,
+      "cpu_seconds": 3.984375,
+      "class_count": 1
+    },
+    {
+      "run": 1,
+      "order_index": 2,
+      "variant": "streaming",
+      "wall_seconds": 5.0221760000004,
+      "cpu_seconds": 4.390625,
+      "class_count": 1
+    },
+    {
+      "run": 2,
+      "order_index": 1,
+      "variant": "streaming",
+      "wall_seconds": 4.960471000000325,
+      "cpu_seconds": 4.140625,
+      "class_count": 1
+    },
+    {
+      "run": 2,
+      "order_index": 2,
+      "variant": "material",
+      "wall_seconds": 3.8943428000002314,
+      "cpu_seconds": 3.890625,
+      "class_count": 1
+    },
+    {
+      "run": 3,
+      "order_index": 1,
+      "variant": "material",
+      "wall_seconds": 3.888735100001213,
+      "cpu_seconds": 3.890625,
+      "class_count": 1
+    },
+    {
+      "run": 3,
+      "order_index": 2,
+      "variant": "streaming",
+      "wall_seconds": 4.962779000001319,
+      "cpu_seconds": 4.296875,
+      "class_count": 1
+    },
+    {
+      "run": 4,
+      "order_index": 1,
+      "variant": "streaming",
+      "wall_seconds": 5.003622700000051,
+      "cpu_seconds": 4.21875,
+      "class_count": 1
+    },
+    {
+      "run": 4,
+      "order_index": 2,
+      "variant": "material",
+      "wall_seconds": 3.8980043999999907,
+      "cpu_seconds": 3.90625,
+      "class_count": 1
+    }
+  ],
+  "wall_seconds": {
+    "material": {
+      "minimum": 3.888735100001213,
+      "median": 3.896173600000111,
+      "mean": 3.9198398250005084,
+      "maximum": 3.9982770000005985,
+      "sample_standard_deviation": 0.052430202517551934
+    },
+    "streaming": {
+      "minimum": 4.960471000000325,
+      "median": 4.983200850000685,
+      "mean": 4.987262175000524,
+      "maximum": 5.0221760000004,
+      "sample_standard_deviation": 0.030571418407367854
+    }
+  },
+  "cpu_seconds": {
+    "material": {
+      "minimum": 3.890625,
+      "median": 3.8984375,
+      "mean": 3.91796875,
+      "maximum": 3.984375,
+      "sample_standard_deviation": 0.04487939567607835
+    },
+    "streaming": {
+      "minimum": 4.140625,
+      "median": 4.2578125,
+      "mean": 4.26171875,
+      "maximum": 4.390625,
+      "sample_standard_deviation": 0.10702459681267978
+    }
+  },
+  "python_peak_bytes": {
+    "material": 93979212,
+    "streaming": 9605335
+  },
+  "streaming_memory_reduction_percent": 89.77929821331125,
+  "streaming_wall_overhead_percent": 27.89986693612787,
+  "catalog_stats": {
+    "material": {
+      "progressions": 122640
+    },
+    "streaming": {
+      "progressions": 122640,
+      "raw_incidence_records": 367920,
+      "shards_used": 128,
+      "duplicate_incidence_records": 0,
+      "max_incidence_records_in_shard": 6203,
+      "indexed_square_values": 86154
+    }
+  },
+  "search_stats": {
+    "progressions": 122640,
+    "progression_incidences": 367920,
+    "indexed_square_values": 86154,
+    "shared_square_values": 61904,
+    "gcd_buckets": 165071,
+    "gcd_bucket_pairs_considered": 519994,
+    "ordered_seed_pairs": 2861724,
+    "rejected_nonprimitive_seed": 2175518,
+    "compatible_seed_pairs": 686206,
+    "rejected_equal_steps": 0,
+    "reconstructed_grids": 686206,
+    "rejected_nonpositive": 225656,
+    "rejected_outside_complete_box": 23274,
+    "rejected_nondistinct": 4,
+    "square_membership_tests": 1749088,
+    "rejected_not_exactly_seven": 437268,
+    "validated_candidates": 4,
+    "rejected_nonprimitive": 0,
+    "duplicate_classes": 3,
+    "accepted_classes": 1,
+    "orbit_candidates_corner_edge_nonincident": 4
+  }
+}

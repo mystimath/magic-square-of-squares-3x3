@@ -1,0 +1,46 @@
+{
+  "probe": "B6 bounded LRU square-membership reuse",
+  "max_square_root": 100000,
+  "catalog_progressions": 122640,
+  "catalog_seconds": 0.21136180000030436,
+  "search_seconds_instrumented": 8.552073000002565,
+  "class_count": 0,
+  "membership": {
+    "queries": 1749088,
+    "unique_values": 837653,
+    "repeated_queries": 911435,
+    "global_repeat_rate": 0.521091563146051,
+    "lru": {
+      "256": {
+        "hits": 589349,
+        "misses": 1159739,
+        "hit_rate": 0.3369464543807973,
+        "final_entries": 256
+      },
+      "1024": {
+        "hits": 805246,
+        "misses": 943842,
+        "hit_rate": 0.46038049543533544,
+        "final_entries": 1024
+      },
+      "4096": {
+        "hits": 886398,
+        "misses": 862690,
+        "hit_rate": 0.5067772461991621,
+        "final_entries": 4096
+      },
+      "16384": {
+        "hits": 890696,
+        "misses": 858392,
+        "hit_rate": 0.5092345267933918,
+        "final_entries": 16384
+      },
+      "65536": {
+        "hits": 895516,
+        "misses": 853572,
+        "hit_rate": 0.5119902486324301,
+        "final_entries": 65536
+      }
+    }
+  }
+}
