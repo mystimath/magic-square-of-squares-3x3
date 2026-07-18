@@ -1,0 +1,12 @@
+engine,run,wall_seconds,cpu_seconds,python_peak_incremental_bytes,class_count
+parametric_catalog,1,0.013980700000502111,0.015625,127488,
+lo_shu_like_bremner,1,0.0033789999997679843,0.0,103576,1
+structural_v2_2_shared_catalog,1,0.020412599999872327,0.03125,83896,1
+lo_shu_like_bremner,2,0.002955100000690436,0.0,103544,1
+structural_v2_2_shared_catalog,2,0.022211399999832793,0.03125,82698,1
+lo_shu_like_bremner,3,0.002997499999764841,0.0,103512,1
+structural_v2_2_shared_catalog,3,0.01989659999981086,0.015625,82666,1
+lo_shu_like_bremner,4,0.003502900000057707,0.015625,103472,1
+structural_v2_2_shared_catalog,4,0.02009529999941151,0.015625,82642,1
+lo_shu_like_bremner,5,0.002907500000219443,0.0,103440,1
+structural_v2_2_shared_catalog,5,0.02446700000018609,0.015625,82626,1

@@ -1,0 +1,241 @@
+{
+  "benchmark": "like_bremner_early_primitive_filter_paired",
+  "domain": {
+    "max_square_root": 100000,
+    "bound_semantics": "racines des cases carrées, pas boîte complète",
+    "primitive_only": true,
+    "target_mask": "acdefgh"
+  },
+  "environment": {
+    "python": "3.11.15 | packaged by Anaconda, Inc. | (main, Mar 11 2026, 17:12:15) [MSC v.1942 64 bit (AMD64)]",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "processor": "Intel64 Family 6 Model 167 Stepping 1, GenuineIntel"
+  },
+  "repeats": 7,
+  "catalog_size": 122640,
+  "catalog_seconds": 0.4089845999997124,
+  "class_sets_equal": true,
+  "classes": [
+    [
+      42025,
+      277729,
+      222121,
+      360721,
+      180625,
+      529,
+      139129,
+      83521,
+      319225
+    ]
+  ],
+  "runs": [
+    {
+      "run": 1,
+      "order_index": 1,
+      "variant": "filtered",
+      "early_primitive_filter": true,
+      "wall_seconds": 0.4533264000001509,
+      "cpu_seconds": 0.453125,
+      "class_count": 1
+    },
+    {
+      "run": 1,
+      "order_index": 2,
+      "variant": "legacy",
+      "early_primitive_filter": false,
+      "wall_seconds": 0.4719183000006524,
+      "cpu_seconds": 0.46875,
+      "class_count": 1
+    },
+    {
+      "run": 2,
+      "order_index": 1,
+      "variant": "legacy",
+      "early_primitive_filter": false,
+      "wall_seconds": 0.4748573999995642,
+      "cpu_seconds": 0.484375,
+      "class_count": 1
+    },
+    {
+      "run": 2,
+      "order_index": 2,
+      "variant": "filtered",
+      "early_primitive_filter": true,
+      "wall_seconds": 0.44542830000045797,
+      "cpu_seconds": 0.4375,
+      "class_count": 1
+    },
+    {
+      "run": 3,
+      "order_index": 1,
+      "variant": "filtered",
+      "early_primitive_filter": true,
+      "wall_seconds": 0.45071809999990364,
+      "cpu_seconds": 0.4375,
+      "class_count": 1
+    },
+    {
+      "run": 3,
+      "order_index": 2,
+      "variant": "legacy",
+      "early_primitive_filter": false,
+      "wall_seconds": 0.47617369999989023,
+      "cpu_seconds": 0.484375,
+      "class_count": 1
+    },
+    {
+      "run": 4,
+      "order_index": 1,
+      "variant": "legacy",
+      "early_primitive_filter": false,
+      "wall_seconds": 0.4699571000001015,
+      "cpu_seconds": 0.46875,
+      "class_count": 1
+    },
+    {
+      "run": 4,
+      "order_index": 2,
+      "variant": "filtered",
+      "early_primitive_filter": true,
+      "wall_seconds": 0.4504907999998977,
+      "cpu_seconds": 0.453125,
+      "class_count": 1
+    },
+    {
+      "run": 5,
+      "order_index": 1,
+      "variant": "filtered",
+      "early_primitive_filter": true,
+      "wall_seconds": 0.44334449999951175,
+      "cpu_seconds": 0.453125,
+      "class_count": 1
+    },
+    {
+      "run": 5,
+      "order_index": 2,
+      "variant": "legacy",
+      "early_primitive_filter": false,
+      "wall_seconds": 0.4735627999998542,
+      "cpu_seconds": 0.46875,
+      "class_count": 1
+    },
+    {
+      "run": 6,
+      "order_index": 1,
+      "variant": "legacy",
+      "early_primitive_filter": false,
+      "wall_seconds": 0.46117210000011255,
+      "cpu_seconds": 0.46875,
+      "class_count": 1
+    },
+    {
+      "run": 6,
+      "order_index": 2,
+      "variant": "filtered",
+      "early_primitive_filter": true,
+      "wall_seconds": 0.45407499999964784,
+      "cpu_seconds": 0.453125,
+      "class_count": 1
+    },
+    {
+      "run": 7,
+      "order_index": 1,
+      "variant": "filtered",
+      "early_primitive_filter": true,
+      "wall_seconds": 0.4443049000001338,
+      "cpu_seconds": 0.453125,
+      "class_count": 1
+    },
+    {
+      "run": 7,
+      "order_index": 2,
+      "variant": "legacy",
+      "early_primitive_filter": false,
+      "wall_seconds": 0.46822680000059336,
+      "cpu_seconds": 0.46875,
+      "class_count": 1
+    }
+  ],
+  "wall_seconds": {
+    "filtered": {
+      "minimum": 0.44334449999951175,
+      "median": 0.4504907999998977,
+      "mean": 0.4488125714285291,
+      "maximum": 0.45407499999964784,
+      "sample_standard_deviation": 0.004400520671319563
+    },
+    "legacy": {
+      "minimum": 0.46117210000011255,
+      "median": 0.4719183000006524,
+      "mean": 0.47083831428582407,
+      "maximum": 0.47617369999989023,
+      "sample_standard_deviation": 0.005070187806170792
+    }
+  },
+  "cpu_seconds": {
+    "filtered": {
+      "minimum": 0.4375,
+      "median": 0.453125,
+      "mean": 0.4486607142857143,
+      "maximum": 0.453125,
+      "sample_standard_deviation": 0.007624219319910416
+    },
+    "legacy": {
+      "minimum": 0.46875,
+      "median": 0.46875,
+      "mean": 0.4732142857142857,
+      "maximum": 0.484375,
+      "sample_standard_deviation": 0.007624219319910416
+    }
+  },
+  "paired_speedups": [
+    1.0410121713637135,
+    1.0660692192190662,
+    1.056477873863934,
+    1.0432113153036826,
+    1.0681598621396582,
+    1.0156297968407646,
+    1.053841179785441
+  ],
+  "paired_speedup_summary": {
+    "minimum": 1.0156297968407646,
+    "median": 1.053841179785441,
+    "mean": 1.04920020264518,
+    "maximum": 1.0681598621396582,
+    "sample_standard_deviation": 0.01802044371091649
+  },
+  "median_wall_speedup": 1.0475647893381164,
+  "median_wall_reduction_percent": 4.540510508010609,
+  "stats": {
+    "filtered": {
+      "progressions": 122640,
+      "early_primitive_filter_enabled": 1,
+      "first_term_groups": 45623,
+      "groups_with_two_progressions": 22385,
+      "ordered_progression_pairs": 635968,
+      "rejected_nonprimitive_seed": 478344,
+      "square_membership_tests": 315248,
+      "pair_extension_hits": 1,
+      "validated_candidates": 1,
+      "rejected_mask": 0,
+      "rejected_nonprimitive": 0,
+      "duplicate_classes": 0,
+      "accepted_classes": 1
+    },
+    "legacy": {
+      "progressions": 122640,
+      "early_primitive_filter_enabled": 0,
+      "first_term_groups": 45623,
+      "groups_with_two_progressions": 22385,
+      "ordered_progression_pairs": 635968,
+      "rejected_nonprimitive_seed": 0,
+      "square_membership_tests": 1271936,
+      "pair_extension_hits": 176,
+      "validated_candidates": 176,
+      "rejected_mask": 0,
+      "rejected_nonprimitive": 175,
+      "duplicate_classes": 0,
+      "accepted_classes": 1
+    }
+  }
+}

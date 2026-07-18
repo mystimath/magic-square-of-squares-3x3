@@ -1,0 +1,4 @@
+engine,run,wall_seconds,cpu_seconds,python_peak_incremental_bytes,class_count
+parametric_catalog,1,4.921572299999752,4.90625,42550608,
+lo_shu_like_bremner,1,3.4535657000001265,3.453125,18883052,1
+structural_v2_2_shared_catalog,1,22.477676800000154,22.390625,18248956,1
