@@ -151,3 +151,13 @@ non-régression aux seuils voisins.
 B5 ne trouve toujours aucune classe exactement 8/9 à `R=1000000`. Le comptage `isqrt` par lot réduit le temps streaming de `63,756097 s` à `53,688051 s` (`−15,792 %`). Artefact : `results/formulations_comparison/benchmarks/lo_shu_b5_all_masks_batched_isqrt_r1000000.json`.
 
 Profil et méthode : [32-batched-square-membership.md](32-batched-square-membership.md).
+
+## Mise à jour B11
+
+La campagne historique ci-dessus utilise 512 shards. Le balayage B11 recommande
+désormais 256 shards vers `R=1000000`. B5 conserve le même résultat et
+les mêmes compteurs en `31,866563 s`.
+
+Artefact : `results/formulations_comparison/benchmarks/lo_shu_b5_all_masks_shards256_r1000000.json`.
+
+Méthode : [35-incidence-shard-tradeoff.md](35-incidence-shard-tradeoff.md).

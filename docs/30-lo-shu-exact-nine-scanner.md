@@ -163,3 +163,13 @@ au million sont documentés dans
 B6 ne trouve toujours aucune classe 9/9 à `R=1000000`. Le test `isqrt` vectorisé réduit le temps streaming de `65,036925 s` à `54,279316 s` (`−16,541 %`). Artefact : `results/formulations_comparison/benchmarks/lo_shu_b6_exact9_batched_isqrt_r1000000.json`.
 
 Profil et méthode : [32-batched-square-membership.md](32-batched-square-membership.md).
+
+## Mise à jour B11
+
+La campagne historique ci-dessus utilise 512 shards. Le balayage B11 recommande
+désormais 256 shards vers `R=1000000`. B6 conserve le même résultat et
+les mêmes compteurs en `32,072967 s`.
+
+Artefact : `results/formulations_comparison/benchmarks/lo_shu_b6_exact9_shards256_r1000000.json`.
+
+Méthode : [35-incidence-shard-tradeoff.md](35-incidence-shard-tradeoff.md).

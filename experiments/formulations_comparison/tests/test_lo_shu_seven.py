@@ -13,8 +13,11 @@ from _seven_square_v2_2_oracle import (  # noqa: E402
     search_v2_2_seven_box,
 )
 from common.validation import canonical_d4  # noqa: E402
+from prototypes.like_bremner import build_like_bremner_grid  # noqa: E402
 from prototypes.lo_shu_seven import (  # noqa: E402
     PARAMETER_POSITIONS,
+    _has_distinct_parameter_values,
+    _remaining_parameter_values,
     search_lo_shu_seven_box,
     seed_crosses_for_mask,
 )
@@ -66,6 +69,40 @@ class SevenSquareMaskTests(unittest.TestCase):
                             <= selected
                         )
 
+    def test_algebraic_distinctness_matches_materialized_grids(self) -> None:
+        for q in range(1, 10):
+            for r in range(1, 10):
+                with self.subTest(q=q, r=r):
+                    grid = build_like_bremner_grid(
+                        17,
+                        17 + q,
+                        17 + 2 * q,
+                        r,
+                    )
+                    self.assertEqual(
+                        _has_distinct_parameter_values(q, r),
+                        len(set(grid)) == 9,
+                    )
+                    self.assertEqual(min(grid), 17)
+                    self.assertEqual(max(grid), 17 + 2 * q + 2 * r)
+
+    def test_remaining_values_match_materialized_grid(self) -> None:
+        A, q, r = 17, 11, 7
+        grid = build_like_bremner_grid(A, A + q, A + 2 * q, r)
+        for x0 in range(3):
+            for k0 in range(3):
+                with self.subTest(x0=x0, k0=k0):
+                    indices = tuple(
+                        "abcdefghi".index(PARAMETER_POSITIONS[x][k])
+                        for x in range(3)
+                        for k in range(3)
+                        if x != x0 and k != k0
+                    )
+                    self.assertEqual(
+                        _remaining_parameter_values(A, q, r, x0, k0),
+                        tuple(grid[index] for index in indices),
+                    )
+
 
 class LoShuSevenSearchTests(unittest.TestCase):
     def test_complete_box_threshold_and_bremner_orbit(self) -> None:
@@ -75,6 +112,14 @@ class LoShuSevenSearchTests(unittest.TestCase):
         self.assertEqual(
             result.orbit_class_counts,
             {"corner_edge_nonincident": 1},
+        )
+        self.assertEqual(
+            result.stats["reconstructed_grids"],
+            result.stats["validated_candidates"],
+        )
+        self.assertGreater(
+            result.stats["candidate_parameter_triples"],
+            result.stats["reconstructed_grids"],
         )
 
     def test_b4_matches_exhaustive_v2_2_oracle(self) -> None:

@@ -28,13 +28,10 @@ PARAMETER_POSITIONS = (
     ("a", "e", "i"),
     ("f", "g", "b"),
 )
-POSITION_INDEX = {
-    position: index for index, position in enumerate("abcdefghi")
-}
-REMAINING_GRID_INDICES = tuple(
+REMAINING_PARAMETER_COORDINATES = tuple(
     tuple(
         tuple(
-            POSITION_INDEX[PARAMETER_POSITIONS[x][k]]
+            (x, k)
             for x in range(3)
             for k in range(3)
             if x != x0 and k != k0
@@ -43,6 +40,35 @@ REMAINING_GRID_INDICES = tuple(
     )
     for x0 in range(3)
 )
+
+def _remaining_parameter_values(
+    A: int,
+    q: int,
+    r: int,
+    x0: int,
+    k0: int,
+) -> tuple[int, int, int, int]:
+    """Calcule les quatre cases hors des deux progressions graines."""
+
+    (x1, k1), (x2, k2), (x3, k3), (x4, k4) = (
+        REMAINING_PARAMETER_COORDINATES[x0][k0]
+    )
+    return (
+        A + x1 * q + k1 * r,
+        A + x2 * q + k2 * r,
+        A + x3 * q + k3 * r,
+        A + x4 * q + k4 * r,
+    )
+
+
+def _has_distinct_parameter_values(q: int, r: int) -> bool:
+    """Teste la distinction des neuf valeurs A + x*q + k*r.
+
+    Pour q,r > 0, une collision impose u*q = v*r avec u,v dans {1,2}.
+    Les seuls rapports interdits sont donc q/r égal à 1, 2 ou 1/2.
+    """
+
+    return q != r and q != 2 * r and r != 2 * q
 
 
 @dataclass(frozen=True)
@@ -135,7 +161,7 @@ def _compatible_ordered_incidences(
         stats["compatible_seed_pairs"] += pair_total
         for r_seed in incidences:
             for q_seed in incidences:
-                if r_seed.progression != q_seed.progression:
+                if r_seed is not q_seed:
                     yield r_seed, q_seed
         return
 
@@ -146,8 +172,9 @@ def _compatible_ordered_incidences(
     buckets = tuple(sorted(by_gcd.items()))
     for r_gcd, r_group in buckets:
         for q_gcd, q_group in buckets:
+            same_bucket = r_gcd == q_gcd
             pair_count = len(r_group) * len(q_group)
-            if r_gcd == q_gcd:
+            if same_bucket:
                 pair_count -= len(r_group)
             if pair_count == 0:
                 continue
@@ -156,9 +183,14 @@ def _compatible_ordered_incidences(
                 stats["rejected_nonprimitive_seed"] += pair_count
                 continue
             stats["compatible_seed_pairs"] += pair_count
-            for r_seed in r_group:
-                for q_seed in q_group:
-                    if r_seed.progression != q_seed.progression:
+            if same_bucket:
+                for r_seed in r_group:
+                    for q_seed in q_group:
+                        if r_seed is not q_seed:
+                            yield r_seed, q_seed
+            else:
+                for r_seed in r_group:
+                    for q_seed in q_group:
                         yield r_seed, q_seed
 
 
@@ -215,6 +247,8 @@ def search_lo_shu_seven_box(
         "rejected_nonprimitive_seed": 0,
         "compatible_seed_pairs": 0,
         "rejected_equal_steps": 0,
+        "incidence_group_validation": 0,
+        "candidate_parameter_triples": 0,
         "reconstructed_grids": 0,
         "rejected_nonpositive": 0,
         "rejected_outside_complete_box": 0,
@@ -254,23 +288,29 @@ def search_lo_shu_seven_box(
             if r == q:
                 stats["rejected_equal_steps"] += 1
                 continue
+            stats["candidate_parameter_triples"] += 1
             x0 = q_seed.term_index
             k0 = r_seed.term_index
             A = shared_square - x0 * q - k0 * r
-            grid = build_like_bremner_grid(A, A + q, A + 2 * q, r)
-            stats["reconstructed_grids"] += 1
-            if min(grid) <= 0:
+            if A <= 0:
                 stats["rejected_nonpositive"] += 1
                 continue
-            if max(grid) > upper:
+            if A + 2 * q + 2 * r > upper:
                 stats["rejected_outside_complete_box"] += 1
                 continue
-            if len(set(grid)) != 9:
+            if q == 2 * r or r == 2 * q:
                 stats["rejected_nondistinct"] += 1
                 continue
 
-            i0, i1, i2, i3 = REMAINING_GRID_INDICES[x0][k0]
-            remaining_values = (grid[i0], grid[i1], grid[i2], grid[i3])
+            (x1, k1), (x2, k2), (x3, k3), (x4, k4) = (
+                REMAINING_PARAMETER_COORDINATES[x0][k0]
+            )
+            remaining_values = (
+                A + x1 * q + k1 * r,
+                A + x2 * q + k2 * r,
+                A + x3 * q + k3 * r,
+                A + x4 * q + k4 * r,
+            )
             stats["square_membership_tests"] += 4
             if batch_square_count is not None:
                 extra_squares = batch_square_count(remaining_values)
@@ -282,6 +322,8 @@ def search_lo_shu_seven_box(
                 stats["rejected_not_exactly_seven"] += 1
                 continue
 
+            grid = build_like_bremner_grid(A, A + q, A + 2 * q, r)
+            stats["reconstructed_grids"] += 1
             report = validate_grid(
                 grid,
                 min_square_count=7,

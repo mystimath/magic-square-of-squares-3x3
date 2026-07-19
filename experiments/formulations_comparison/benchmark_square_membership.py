@@ -98,6 +98,7 @@ def main() -> int:
             args.max_root,
             stream,
             square_membership_mode=mode,
+            validate_incidence_groups=False,
         )
         _, peak_bytes = tracemalloc.get_traced_memory()
         tracemalloc.stop()

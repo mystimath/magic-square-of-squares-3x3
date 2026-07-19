@@ -86,10 +86,15 @@ class LoShuEightSearchTests(unittest.TestCase):
                     actual = search_lo_shu_eight_incidence_groups(
                         complete_box_root,
                         stream,
+                        validate_incidence_groups=False,
                     )
                     self.assertEqual(list(temporary_path.iterdir()), [])
                 self.assertEqual(actual.classes, expected.classes)
                 self.assertEqual(actual.stats, expected.stats)
+                self.assertEqual(
+                    actual.stats["incidence_group_validation"],
+                    0,
+                )
                 self.assertEqual(
                     actual.orbit_class_counts,
                     expected.orbit_class_counts,
@@ -99,6 +104,8 @@ class LoShuEightSearchTests(unittest.TestCase):
         result = search_lo_shu_eight_box(601)
         self.assertEqual(result.classes, ())
         self.assertEqual(result.stats["validated_candidates"], 0)
+        self.assertEqual(result.stats["reconstructed_grids"], 0)
+        self.assertGreater(result.stats["candidate_parameter_triples"], 0)
 
 
 if __name__ == "__main__":

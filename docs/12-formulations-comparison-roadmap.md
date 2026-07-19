@@ -1,6 +1,6 @@
 # Architecture et feuille de route — comparaison des formulations
 
-_Version de cadrage : 2026-07-15 — état mis à jour à la clôture du 18 juillet 2026._
+_Version de cadrage : 2026-07-15 — état mis à jour à la clôture du 19 juillet 2026._
 
 ## 1. Portée
 
@@ -295,15 +295,20 @@ une conclusion méthodologique.
 - lancer trop tôt des benchmarks moyens ;
 - multiplier des notes sans résultat autonome.
 
-## 10. État de réalisation à la clôture du 18 juillet 2026
+## 10. État de réalisation à la clôture du 19 juillet 2026
 
 Les jalons J0 à J10 sont réalisés et documentés dans les notes 13 à 24.
-Les optimisations spécialisées B3 à B8 sont documentées dans les notes 25 à
-32. Les campagnes exhaustives en boîte complète jusqu'à `R=1000000` donnent :
+Les optimisations spécialisées B3 à B11 sont documentées dans les notes 25 à
+35. Les campagnes exhaustives en boîte complète jusqu'à `R=1000000` donnent :
 
 - B3 et B4 : l'unique classe primitive de Bremner ;
 - B5 : aucune classe exactement 8/9 ;
 - B6 : aucune classe 9/9.
+
+B9 diffère la reconstruction, B10 supprime les revalidations internes et B11
+règle le découpage streaming. Avec 256 shards au million, B4–B6 terminent en
+31,87 s à 32,07 s, soit 40,6 % environ de gain cumulé depuis B8, sans modifier
+les compteurs de couverture ni les classes.
 
 ## 11. TODO actualisée
 
@@ -311,12 +316,15 @@ Les optimisations spécialisées B3 à B8 sont documentées dans les notes 25 à
 - [x] Adapter et valider les quatre formulations (J2–J6).
 - [x] Exécuter les benchmarks pilote et confirmatoire (J7–J8).
 - [x] Produire le rapport, l'audit final et les moteurs B3–B6 (J9–B6).
-- [x] Supprimer la table de `R` carrés et vectoriser les tests `isqrt` (B7–B8).
-- [ ] **B9 — reporté à une session ultérieure :** profiler et optimiser la
-  reconstruction des `10029290` grilles au million, notamment
-  `build_like_bremner_grid`, les contrôles `min/max/distinct` et les filtres
-  algébriques applicables avant la construction du tuple de neuf cases.
-- [ ] Après B9, refaire d'abord le benchmark apparié à `R=100000`, puis une
-  campagne confirmatoire à `R=1000000` seulement si le gain est net.
+- [x] Supprimer la table de `R` carrés et vectoriser les tests `isqrt`
+  (B7–B8).
+- [x] Préfiltrer la grille et différer sa reconstruction (B9).
+- [x] Éviter les revalidations et comparaisons redondantes des groupes internes
+  tout en conservant le chemin défensif public (B10).
+- [x] Mesurer le compromis temps/mémoire des shards, conserver 128 par défaut et
+  recommander 256 à `R=1000000` (B11).
+- [ ] **B12 — reporté à une session ultérieure :** évaluer un cache LRU borné
+  des handles d'écriture pour supprimer la remontée mémoire observée à
+  256–512 shards sans multiplier excessivement les ouvertures.
 
-Aucun travail B9 n'est engagé dans la présente session.
+Aucun travail B12 n'est engagé dans la présente session.

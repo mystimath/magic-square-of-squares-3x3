@@ -50,7 +50,11 @@ def _streaming(max_root: int, shard_count: int) -> Outcome:
         max_root,
         shard_count=shard_count,
     )
-    result = search_lo_shu_seven_incidence_groups(max_root, stream)
+    result = search_lo_shu_seven_incidence_groups(
+        max_root,
+        stream,
+        validate_incidence_groups=False,
+    )
     return Outcome(result, dict(stream.stats))
 
 

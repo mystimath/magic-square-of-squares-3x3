@@ -77,7 +77,12 @@ def main() -> int:
         default="isqrt",
         help="isqrt direct par défaut; les deux témoins restent disponibles",
     )
-    parser.add_argument("--shard-count", type=int, default=128)
+    parser.add_argument(
+        "--shard-count",
+        type=int,
+        default=128,
+        help="128 par défaut ; 256 recommandé vers R=1000000",
+    )
     parser.add_argument("--temp-dir", type=pathlib.Path)
     parser.add_argument("--all-scalings", action="store_true")
     parser.add_argument("--csv-out", type=pathlib.Path)
@@ -116,6 +121,7 @@ def main() -> int:
             stream,
             primitive_only=not args.all_scalings,
             square_membership_mode=args.square_membership,
+            validate_incidence_groups=False,
         )
         search_seconds = time.perf_counter() - search_started
         catalog_seconds = 0.0

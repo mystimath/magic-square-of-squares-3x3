@@ -1,0 +1,204 @@
+{
+  "benchmark": "B11 incidence shard time-memory tradeoff",
+  "python": "3.11.15",
+  "platform": "Windows-10-10.0.26200-SP0",
+  "max_square_root": 100000,
+  "complete_box_upper_value": 10000000000,
+  "repeats": 3,
+  "shard_counts": [
+    16,
+    32,
+    64,
+    128,
+    256,
+    512
+  ],
+  "timing_order": [
+    [
+      16,
+      32,
+      64,
+      128,
+      256,
+      512
+    ],
+    [
+      16,
+      512,
+      256,
+      128,
+      64,
+      32
+    ],
+    [
+      64,
+      128,
+      256,
+      512,
+      16,
+      32
+    ]
+  ],
+  "catalog_mode": "streaming",
+  "square_membership": "isqrt",
+  "trusted_incidence_groups": true,
+  "class_count": 0,
+  "classes": [],
+  "search_stats": {
+    "progressions": 122640,
+    "progression_incidences": 367920,
+    "indexed_square_values": 86154,
+    "shared_square_values": 61904,
+    "gcd_buckets": 165071,
+    "gcd_bucket_pairs_considered": 519994,
+    "ordered_seed_pairs": 2861724,
+    "rejected_nonprimitive_seed": 2175518,
+    "compatible_seed_pairs": 686206,
+    "rejected_equal_steps": 0,
+    "incidence_group_validation": 0,
+    "candidate_parameter_triples": 686206,
+    "reconstructed_grids": 0,
+    "rejected_nonpositive": 225656,
+    "rejected_outside_complete_box": 23274,
+    "rejected_nondistinct": 4,
+    "square_membership_tests": 1749088,
+    "rejected_not_all_nine_square": 437272,
+    "validated_candidates": 0,
+    "rejected_nonprimitive": 0,
+    "duplicate_classes": 0,
+    "accepted_classes": 0,
+    "square_oracle_cached_isqrt": 0,
+    "square_oracle_isqrt": 1,
+    "square_oracle_residue_isqrt": 0,
+    "square_oracle_materialized_set": 0,
+    "square_oracle_queries": 1749088,
+    "square_oracle_range_rejections": 0,
+    "square_oracle_residue_rejections": 0,
+    "square_oracle_isqrt_tests": 1749088,
+    "square_oracle_hits": 1582
+  },
+  "summaries": {
+    "16": {
+      "seconds": [
+        2.404983899999934,
+        2.3048491999998078,
+        2.4619846000005055
+      ],
+      "median_seconds": 2.404983899999934,
+      "min_seconds": 2.3048491999998078,
+      "max_seconds": 2.4619846000005055,
+      "peak_bytes": 13353383,
+      "stream_stats": {
+        "progressions": 122640,
+        "raw_incidence_records": 367920,
+        "shards_used": 16,
+        "duplicate_incidence_records": 0,
+        "max_incidence_records_in_shard": 43504,
+        "indexed_square_values": 86154
+      },
+      "estimated_file_opens": 32
+    },
+    "32": {
+      "seconds": [
+        2.6180123000012827,
+        2.4577710000012303,
+        2.499190599999565
+      ],
+      "median_seconds": 2.499190599999565,
+      "min_seconds": 2.4577710000012303,
+      "max_seconds": 2.6180123000012827,
+      "peak_bytes": 7229775,
+      "stream_stats": {
+        "progressions": 122640,
+        "raw_incidence_records": 367920,
+        "shards_used": 32,
+        "duplicate_incidence_records": 0,
+        "max_incidence_records_in_shard": 23339,
+        "indexed_square_values": 86154
+      },
+      "estimated_file_opens": 64
+    },
+    "64": {
+      "seconds": [
+        2.6836057000000437,
+        2.662934199999654,
+        2.6074286000002758
+      ],
+      "median_seconds": 2.662934199999654,
+      "min_seconds": 2.6074286000002758,
+      "max_seconds": 2.6836057000000437,
+      "peak_bytes": 3954987,
+      "stream_stats": {
+        "progressions": 122640,
+        "raw_incidence_records": 367920,
+        "shards_used": 64,
+        "duplicate_incidence_records": 0,
+        "max_incidence_records_in_shard": 12182,
+        "indexed_square_values": 86154
+      },
+      "estimated_file_opens": 128
+    },
+    "128": {
+      "seconds": [
+        3.091300800000681,
+        2.995285999999396,
+        2.9949391999998625
+      ],
+      "median_seconds": 2.995285999999396,
+      "min_seconds": 2.9949391999998625,
+      "max_seconds": 3.091300800000681,
+      "peak_bytes": 2200723,
+      "stream_stats": {
+        "progressions": 122640,
+        "raw_incidence_records": 367920,
+        "shards_used": 128,
+        "duplicate_incidence_records": 0,
+        "max_incidence_records_in_shard": 6203,
+        "indexed_square_values": 86154
+      },
+      "estimated_file_opens": 256
+    },
+    "256": {
+      "seconds": [
+        3.753441999999268,
+        3.6726689000006445,
+        3.6625358000001142
+      ],
+      "median_seconds": 3.6726689000006445,
+      "min_seconds": 3.6625358000001142,
+      "max_seconds": 3.753441999999268,
+      "peak_bytes": 2389289,
+      "stream_stats": {
+        "progressions": 122640,
+        "raw_incidence_records": 367920,
+        "shards_used": 256,
+        "duplicate_incidence_records": 0,
+        "max_incidence_records_in_shard": 3185,
+        "indexed_square_values": 86154
+      },
+      "estimated_file_opens": 512
+    },
+    "512": {
+      "seconds": [
+        5.033225699999093,
+        4.920080699999744,
+        5.022363399999449
+      ],
+      "median_seconds": 5.022363399999449,
+      "min_seconds": 4.920080699999744,
+      "max_seconds": 5.033225699999093,
+      "peak_bytes": 4780561,
+      "stream_stats": {
+        "progressions": 122640,
+        "raw_incidence_records": 367920,
+        "shards_used": 512,
+        "duplicate_incidence_records": 0,
+        "max_incidence_records_in_shard": 1629,
+        "indexed_square_values": 86154
+      },
+      "estimated_file_opens": 1024
+    }
+  },
+  "fastest_shard_count": 16,
+  "lowest_peak_shard_count": 128
+}

@@ -50,7 +50,7 @@ classe primitive : Bremner.
 
 ```powershell
 python experiments\formulations_comparison\search_lo_shu_seven.py `
-  --complete-box-root 1000000 --catalog-mode streaming --shard-count 512
+  --complete-box-root 1000000 --catalog-mode streaming --shard-count 256
 ```
 
 Preuve de couverture, validation v2.2 et résultats :
@@ -64,7 +64,7 @@ aucune classe exactement 8/9.
 
 ```powershell
 python experiments\formulations_comparison\search_lo_shu_eight.py `
-  --complete-box-root 1000000 --catalog-mode streaming --shard-count 512
+  --complete-box-root 1000000 --catalog-mode streaming --shard-count 256
 ```
 
 Preuve de couverture, validation v2.2 et résultats :
@@ -78,7 +78,7 @@ aucune classe de carré magique composée de neuf carrés distincts.
 
 ```powershell
 python experiments\formulations_comparison\search_lo_shu_nine.py `
-  --complete-box-root 1000000 --catalog-mode streaming --shard-count 512
+  --complete-box-root 1000000 --catalog-mode streaming --shard-count 256
 ```
 
 Preuve de couverture, validations B1/B2/v2.2 et résultats :
@@ -104,4 +104,37 @@ tout en conservant l'économie mémoire.
 
 Profil CPU, expérience de cache et campagnes appariées :
 [docs/32-batched-square-membership.md](docs/32-batched-square-membership.md).
+
+## Préfiltrage algébrique B9
+
+B4–B6 testent maintenant la positivité, la borne et la distinction directement
+sur `(A,q,r)`, puis évaluent les quatre cases complémentaires avant de
+construire la grille. Au million, B4 ne reconstruit plus que les quatre
+représentants de Bremner ; B5 et B6 n'allouent aucune grille complète. Les temps
+streaming passent à 41,06 s, 40,81 s et 41,17 s, soit environ 24 % de gain
+supplémentaire sans modifier les résultats.
+
+Preuve algébrique, profils et campagnes confirmatoires :
+[docs/33-algebraic-grid-prefilter.md](docs/33-algebraic-grid-prefilter.md).
+
+## Groupes d'incidences internes B10
+
+Les groupes créés par le catalogue canonique et le flux streaming ne sont plus
+revalidés ni retriés par le consommateur ; les flux externes restent contrôlés
+par défaut. L'auto-paire est exclue par identité sans comparaison structurelle
+des progressions. Au million, B4–B6 passent à 34,68 s, 34,83 s et 35,25 s,
+soit environ 35 % de gain cumulé depuis B8.
+
+Contrat de confiance, profils et campagnes :
+[docs/34-trusted-incidence-groups.md](docs/34-trusted-incidence-groups.md).
+
+## Réglage des shards B11
+
+Un balayage temps/mémoire conserve 128 shards comme défaut général et recommande
+256 shards au million. Cette configuration limite le pic RSS à environ
+40,1 Mo tout en ramenant B4, B5 et B6 à 32,02 s, 31,87 s et 32,07 s. Le gain
+cumulé depuis B8 atteint ainsi environ 40,6 %, sans changement de couverture.
+
+Mesures `tracemalloc`, RSS isolé et confirmations :
+[docs/35-incidence-shard-tradeoff.md](docs/35-incidence-shard-tradeoff.md).
 
