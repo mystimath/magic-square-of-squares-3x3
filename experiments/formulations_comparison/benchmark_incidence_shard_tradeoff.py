@@ -38,10 +38,18 @@ def _run(
     max_root: int,
     shard_count: int,
     temp_dir: pathlib.Path | None,
+    max_open_shard_handles: int | None = None,
+    max_buffered_write_bytes: int | None = None,
+    write_handle_buffering: int | None = None,
+    group_writes_by_shard: bool = False,
 ):
     stream = CanonicalProgressionIncidenceStream(
         max_root,
         shard_count=shard_count,
+        max_open_shard_handles=max_open_shard_handles,
+        max_buffered_write_bytes=max_buffered_write_bytes,
+        write_handle_buffering=write_handle_buffering,
+        group_writes_by_shard=group_writes_by_shard,
         temp_dir=temp_dir,
     )
     result = search_lo_shu_nine_incidence_groups(

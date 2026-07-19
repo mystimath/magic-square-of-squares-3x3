@@ -83,6 +83,26 @@ def main() -> int:
         default=128,
         help="128 par défaut ; 256 recommandé vers R=1000000",
     )
+    parser.add_argument(
+        "--max-open-shard-handles",
+        type=int,
+        help="active un cache LRU borné des handles d'écriture",
+    )
+    parser.add_argument(
+        "--max-buffered-write-bytes",
+        type=int,
+        help="active les tampons LRU B13 sous ce budget global",
+    )
+    parser.add_argument(
+        "--write-handle-buffering",
+        type=int,
+        help="taille du tampon binaire de chaque handle (-1 implicite par défaut)",
+    )
+    parser.add_argument(
+        "--group-writes-by-shard",
+        action="store_true",
+        help="regroupe toutes les incidences en mémoire avant écriture",
+    )
     parser.add_argument("--temp-dir", type=pathlib.Path)
     parser.add_argument("--all-scalings", action="store_true")
     parser.add_argument("--csv-out", type=pathlib.Path)
@@ -113,6 +133,10 @@ def main() -> int:
         stream = CanonicalProgressionIncidenceStream(
             args.complete_box_root,
             shard_count=args.shard_count,
+            max_open_shard_handles=args.max_open_shard_handles,
+            max_buffered_write_bytes=args.max_buffered_write_bytes,
+            write_handle_buffering=args.write_handle_buffering,
+            group_writes_by_shard=args.group_writes_by_shard,
             temp_dir=args.temp_dir,
         )
         search_started = time.perf_counter()

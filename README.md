@@ -138,3 +138,55 @@ cumulé depuis B8 atteint ainsi environ 40,6 %, sans changement de couverture.
 Mesures `tracemalloc`, RSS isolé et confirmations :
 [docs/35-incidence-shard-tradeoff.md](docs/35-incidence-shard-tradeoff.md).
 
+## Cache LRU des handles B12
+
+Un cache LRU borné est disponible avec `--max-open-shard-handles`, mais reste
+désactivé par défaut. Le pilote à `R=100000` montre que la localité des écritures
+est insuffisante : même les limites proches du nombre de shards multiplient les
+réouvertures et coûtent de 119 % à 150 % de temps pour seulement 0,9 % à 6,0 %
+de RSS gagné. Aucun candidat n'a donc été promu au benchmark au million.
+
+Protocole, compteurs exhaustifs et décision :
+[docs/36-incidence-handle-lru.md](docs/36-incidence-handle-lru.md).
+
+## Tampons d'écriture B13
+
+Les tampons applicatifs bornés sont disponibles avec
+`--max-buffered-write-bytes`. À `R=100000` et 512 shards, un budget de
+256 KiB ramène le pic RSS d'environ 27,0 Mio à 24,5 Mio et limite les handles
+simultanés à un seul, mais le temps passe de 4,68 s à 8,97 s. Le témoin non
+borné reste donc le choix par défaut ; aucune confirmation au million n'est
+lancée pour cette branche expérimentale.
+
+Le contrôle à 256 shards est encore moins favorable : 256 KiB ajoute environ
+80 % de temps sans gain RSS, et 2 MiB ajoute environ 25 % de temps avec un RSS
+supérieur au témoin.
+
+Le contrôle à 256 shards est encore moins favorable : 256 KiB ajoute environ
+80 % de temps sans gain RSS, et 2 MiB ajoute environ 25 % de temps avec un RSS
+supérieur au témoin.
+
+Mesures et compteurs :
+[docs/37-incidence-buffered-writes.md](docs/37-incidence-buffered-writes.md).
+
+## Buffering natif des handles B14
+
+Le paramètre `--write-handle-buffering` permet d'ajuster le tampon Python de
+chaque handle persistant. À `R=100000` et 512 shards, `1024` octets réduisent
+le RSS médian d'environ 2,7 Mio pour un surcoût temporel de 0,4 %. La valeur
+`16384` est marginalement la plus rapide, mais augmente le RSS d'environ
+3,4 Mio. Le défaut plateforme reste donc inchangé.
+
+Résultats :
+[docs/38-incidence-handle-buffering.md](docs/38-incidence-handle-buffering.md).
+
+## Regroupement des écritures B15
+
+Le mode `--group-writes-by-shard` écrit chaque shard en une seule séquence,
+supprimant les dispersions d'écriture. À `R=100000`, 256 shards, il conserve
+un temps médian comparable au témoin (~3,70 s), mais matérialise environ 9,2 Mo
+d'incidences. Il reste donc une option de secours pour les systèmes imposant
+une limite stricte de handles, et ne change pas le défaut.
+
+Mesure et décision :
+[docs/39-incidence-grouped-writes.md](docs/39-incidence-grouped-writes.md).

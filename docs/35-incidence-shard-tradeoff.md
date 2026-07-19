@@ -137,3 +137,7 @@ Le pic qui remonte à 256–512 shards au pilote vient du dictionnaire de handle
 gardés ouverts pendant l'écriture. Une éventuelle B12 devra comparer un cache
 LRU borné de handles à l'implémentation actuelle, sans multiplier les
 ouvertures au point d'annuler le gain mémoire.
+
+Cette évaluation a été réalisée en B12 et conclut à conserver le témoin non
+borné par défaut : voir
+`docs/36-incidence-handle-lru.md`.
