@@ -19,3 +19,8 @@ results/raw/
 
 # Releases construites localement
 dist/
+
+# État local des outils d'assistance
+.codex/
+.codex-state/
+logs/codex-sessions/

@@ -5,7 +5,7 @@ _Version de cadrage : 2026-07-15 — état mis à jour à la clôture du 19 juil
 ## 1. Portée
 
 Cette feuille de route transforme le cahier
-`CODEX_TASK_COMPARAISON_FORMULATIONS_CARRE_MAGIQUE_CARRES.md` en programme de
+[`CODEX_TASK_COMPARAISON_FORMULATIONS_CARRE_MAGIQUE_CARRES.md`](../../../docs/history/CODEX_TASK_COMPARAISON_FORMULATIONS_CARRE_MAGIQUE_CARRES.md) en programme de
 recherche planifié. Elle n'autorise par elle-même aucun prototype, benchmark,
 run à grande borne, installation ou publication.
 
