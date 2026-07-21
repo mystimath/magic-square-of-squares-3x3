@@ -27,6 +27,18 @@ Somme magique : 541875
 Ces résultats ne constituent pas une preuve d’impossibilité générale.
 Ils documentent une recherche exhaustive dans une famille structurée précise.
 
+
+## Profil des moteurs privilégiés
+
+Les explorations utilisent désormais le moteur le plus récent ayant franchi la
+validation croisée, le benchmark et la documentation de promotion :
+
+- D3 elliptique pour les fermetures like-Bremner, avec tamis local à 16 premiers ;
+- D4 → B4 pour valider et classer les candidats elliptiques 7/9 ;
+- B4, B5 et B6 streaming à 256 shards pour les campagnes entières au million.
+
+Les moteurs historiques restent disponibles comme oracles de contrôle. La
+politique complète de promotion est décrite dans [ARCHITECTURE.md](ARCHITECTURE.md).
 ## Scanner spécialisé B3
 
 La branche B3 indexe les progressions compatibles par PGCD et utilise par

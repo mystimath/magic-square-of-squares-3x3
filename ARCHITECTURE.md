@@ -39,3 +39,27 @@ artefacts de benchmark établissent les mesures de performance.
   validations et décisions d'optimisation du pipeline actif.
 - [Le journal historique du 8 juillet 2026](docs/history/status-2026-07-08.md)
   est conservé pour la traçabilité ; il n'est plus l'état courant.
+
+## Politique de promotion des moteurs
+
+Un moteur devient **privilégié** pour son domaine dès qu'il satisfait les quatre
+critères suivants :
+
+1. concordance avec un oracle indépendant à petite borne ;
+2. conservation des classes et des compteurs attendus ;
+3. benchmark reproductible montrant le gain annoncé ;
+4. documentation de ses limites et de sa commande par défaut.
+
+Le moteur promu est alors utilisé par les explorations suivantes. Les versions
+antérieures restent archivées comme témoins et contrôles de non-régression ;
+elles ne sont pas supprimées ni présentées comme moteur actif.
+
+| Domaine | Moteur privilégié actuel | Preuve de promotion |
+| --- | --- | --- |
+| Like-Bremner elliptique | D3, tamis local à 16 premiers et résidus pré-calculés | concordance D2, 71 courbes, B4 indépendant ; [docs/45](docs/45-d3-local-closure-sieve.md) |
+| Validation elliptique 7/9 | Pont D4 → B4 | Bremner retrouvé et masque classifié ; [docs/44](docs/44-elliptic-b4-bridge.md) |
+| 7/9 exhaustif entier | B4 streaming, 256 shards au million | couverture des 36 masques et benchmark B11 |
+| 8/9 et 9/9 exhaustif entier | B5/B6 streaming, 256 shards au million | validations croisées et revalidation R=1 000 000 |
+
+Toute nouvelle optimisation doit d'abord passer ces quatre portes et mettre à
+jour cette table, `STATUS.md` et la note de campagne correspondante.
