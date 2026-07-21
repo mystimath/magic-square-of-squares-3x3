@@ -1,0 +1,85 @@
+{
+  "engine": "D4-elliptic-to-B4-bridge",
+  "source_artifact": "results/formulations_comparison/sage/d2_rank2_curves_bounds2_3.json",
+  "integer_grid_count": 1,
+  "complete_box_root": 601,
+  "progressions": [
+    {
+      "roots": [
+        23,
+        205,
+        289
+      ],
+      "difference": 41496
+    },
+    {
+      "roots": [
+        23,
+        373,
+        527
+      ],
+      "difference": 138600
+    },
+    {
+      "roots": [
+        205,
+        425,
+        565
+      ],
+      "difference": 138600
+    }
+  ],
+  "b4": {
+    "formulation": "B4-LoShu-exact-7/9-shared-square-index",
+    "stats": {
+      "progressions": 3,
+      "progression_incidences": 9,
+      "indexed_square_values": 7,
+      "shared_square_values": 2,
+      "gcd_buckets": 3,
+      "gcd_bucket_pairs_considered": 3,
+      "ordered_seed_pairs": 4,
+      "rejected_nonprimitive_seed": 0,
+      "compatible_seed_pairs": 4,
+      "rejected_equal_steps": 0,
+      "incidence_group_validation": 0,
+      "candidate_parameter_triples": 4,
+      "reconstructed_grids": 4,
+      "rejected_nonpositive": 0,
+      "rejected_outside_complete_box": 0,
+      "rejected_nondistinct": 0,
+      "square_membership_tests": 16,
+      "rejected_not_exactly_seven": 0,
+      "validated_candidates": 4,
+      "rejected_nonprimitive": 0,
+      "duplicate_classes": 3,
+      "accepted_classes": 1,
+      "square_oracle_cached_isqrt": 0,
+      "square_oracle_isqrt": 1,
+      "square_oracle_residue_isqrt": 0,
+      "square_oracle_materialized_set": 0,
+      "square_oracle_queries": 16,
+      "square_oracle_range_rejections": 0,
+      "square_oracle_residue_rejections": 0,
+      "square_oracle_isqrt_tests": 16,
+      "square_oracle_hits": 8,
+      "orbit_candidates_corner_edge_nonincident": 4
+    },
+    "orbit_class_counts": {
+      "corner_edge_nonincident": 1
+    },
+    "classes": [
+      [
+        42025,
+        277729,
+        222121,
+        360721,
+        180625,
+        529,
+        139129,
+        83521,
+        319225
+      ]
+    ]
+  }
+}

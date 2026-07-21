@@ -1,11 +1,11 @@
-"""Pont entre une sortie elliptique normalisée et le scanner B4 exact 7/9."""
+"""Pont entre des sorties elliptiques normalisées et le scanner B4 exact 7/9."""
 
 from __future__ import annotations
 
 import json
+from collections.abc import Iterator, Mapping, Sequence
 from math import isqrt
 from pathlib import Path
-from typing import Sequence
 
 from common.validation import POSITIONS
 
@@ -55,22 +55,62 @@ def progressions_from_integer_grid(grid: Sequence[int]) -> tuple[ArithmeticProgr
     return tuple(sorted(progressions, key=lambda item: (item.low, item.difference)))
 
 
-def progressions_from_d0_artifact(path: Path) -> tuple[ArithmeticProgression, ...]:
-    """Charge les grilles entières d'un artefact D0 et en extrait les graines B4."""
+def _integer_candidate_grids(node: object) -> Iterator[tuple[int, ...]]:
+    """Parcourt les artefacts D0--D2 et rend leurs grilles entières normalisées."""
+    if isinstance(node, Mapping):
+        normalized = node.get("integer_normalization")
+        if isinstance(normalized, Mapping) and isinstance(normalized.get("grid"), list):
+            grid = tuple(map(int, normalized["grid"]))
+            if len(grid) == 9:
+                yield grid
+        elif isinstance(node.get("grid"), list):
+            try:
+                grid = tuple(map(int, node["grid"]))
+            except ValueError:
+                grid = ()
+            if len(grid) == 9:
+                yield grid
+        for key, value in node.items():
+            if key != "integer_normalization":
+                yield from _integer_candidate_grids(value)
+    elif isinstance(node, list):
+        for value in node:
+            yield from _integer_candidate_grids(value)
+
+
+def integer_grids_from_elliptic_artifact(path: Path) -> tuple[tuple[int, ...], ...]:
+    """Charge et déduplique les grilles entières de tout artefact D0, D1 ou D2."""
     payload = json.loads(path.read_text(encoding="utf-8"))
+    return tuple(sorted(set(_integer_candidate_grids(payload))))
+
+
+def progressions_from_elliptic_artifact(path: Path) -> tuple[ArithmeticProgression, ...]:
+    """Extrait les graines B4 d'un artefact elliptique D0, D1 ou D2."""
     progressions: set[ArithmeticProgression] = set()
-    for candidate in payload.get("candidates", []):
-        normalized = candidate.get("integer_normalization")
-        raw_grid = normalized["grid"] if normalized is not None else candidate["grid"]
-        progressions.update(progressions_from_integer_grid(tuple(map(int, raw_grid))))
+    for grid in integer_grids_from_elliptic_artifact(path):
+        progressions.update(progressions_from_integer_grid(grid))
     return tuple(sorted(progressions, key=lambda item: (item.low, item.difference)))
 
 
+def progressions_from_d0_artifact(path: Path) -> tuple[ArithmeticProgression, ...]:
+    """Alias de compatibilité pour l'ancien nom D0."""
+    return progressions_from_elliptic_artifact(path)
+
+
+def inferred_complete_box_root(grids: Sequence[Sequence[int]]) -> int:
+    """Plus petite borne B4 couvrant les valeurs des grilles fournies."""
+    maximum = max((value for grid in grids for value in grid), default=1)
+    return isqrt(maximum - 1) + 1
+
+
+def search_b4_from_elliptic_artifact(path: Path, complete_box_root: int | None = None):
+    """Injecte un catalogue elliptique dans B4, sans catalogue paramétrique global."""
+    grids = integer_grids_from_elliptic_artifact(path)
+    progressions = progressions_from_elliptic_artifact(path)
+    bound = inferred_complete_box_root(grids) if complete_box_root is None else complete_box_root
+    return search_lo_shu_seven_box(bound, primitive_only=True, progressions=progressions)
+
+
 def search_b4_from_d0_artifact(path: Path, complete_box_root: int):
-    """Injecte un petit catalogue elliptique dans B4, sans catalogue paramétrique global."""
-    progressions = progressions_from_d0_artifact(path)
-    return search_lo_shu_seven_box(
-        complete_box_root,
-        primitive_only=True,
-        progressions=progressions,
-    )
+    """Alias de compatibilité pour l'ancien point d'entrée D0."""
+    return search_b4_from_elliptic_artifact(path, complete_box_root)

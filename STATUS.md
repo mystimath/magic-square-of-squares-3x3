@@ -32,10 +32,10 @@ le `README.md` et `ARCHITECTURE.md`.
  sans facteur carré, rang Sage certifié au moins 2, puis D0 à très faible hauteur.
 3. **D2 — terminé.** Les neuf courbes D1 restent négatives sauf `E_154`; ne pas augmenter uniformément la hauteur.
 4. **D3 — fermeture structurée.** Étudier directement la condition quadratique liant deux points de `2E_n(Q)` avant reconstruction.
-5. **D4 — pont elliptique → B4.** La calibration `E_138600` extrait trois
-   progressions arithmétiques de Bremner et B4 retrouve ensuite exactement sa
-   classe à `R=601`. Généraliser cette interface aux sorties normalisées D1–D3,
-   afin de classer les fermetures par masque plutôt que de balayer une boîte.
+5. **D4 — pont elliptique → B4.** Terminé pour les artefacts D0–D2 : après
+   normalisation et déduplication, `E_154`/Bremner est l'unique fermeture, dans
+   l'orbite `corner_edge_nonincident`. Le prochain apport doit venir de D3,
+   pas d'une extension uniforme de D2.
 6. **B4–B6.** Ils restent les validateurs exhaustifs dans une boîte de racines,
    pas la voie de découverte à prolonger uniformément.
 

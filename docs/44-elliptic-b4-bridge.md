@@ -45,3 +45,25 @@ validation exacte et un classificateur de masque pour les candidats elliptiques.
 2. Extraire les progressions et mesurer le taux de fermeture par masque B4.
 3. N'élargir la hauteur elliptique ou la sélection de courbes que si cette
    mesure apporte une fermeture nouvelle ou un filtre prédictif vérifiable.
+
+## Premier passage D0--D2
+
+Le script `analyze_elliptic_b4_bridge.py` parcourt aussi les structures
+imbriquées D1 et D2, déduplique les grilles normalisées et choisit la plus petite
+borne B4 couvrante. Les trois artefacts déjà disponibles donnent le même bilan :
+
+| Source | Grilles entières distinctes | Borne B4 | Classes | Orbite |
+| --- | ---: | ---: | ---: | --- |
+| D0 `E_154`, borne 1 | 1 | 601 | 1 | `corner_edge_nonincident` |
+| D1 jusqu'à `n=200`, borne 1 | 1 | 601 | 1 | `corner_edge_nonincident` |
+| D2, coefficients jusqu'à 3 | 1 | 601 | 1 | `corner_edge_nonincident` |
+
+Cette unique grille est Bremner. D4 confirme donc que les fermetures D1--D2 ne
+cachent ni une nouvelle classe ni un nouveau masque : elles redécouvrent le
+même point de la courbe `E_154`. Le prochain gain doit venir de D3 (sélection
+par condition de fermeture), non d'une nouvelle traversée uniforme de D2.
+
+Artefacts :
+`results/formulations_comparison/sage/d4_b4_bridge_d0_e154_bound1.json`,
+`d4_b4_bridge_d1_n200_bound1.json` et
+`d4_b4_bridge_d2_bounds2_3.json`.
