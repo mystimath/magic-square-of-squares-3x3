@@ -1,0 +1,109 @@
+{
+  "engine": "D0-elliptic-fixed-curve-bremner-7of9",
+  "curve": "y^2 = x^3 - 19209960000*x",
+  "n": 138600,
+  "rank": 2,
+  "rank_proof_requested": true,
+  "generators": [
+    {
+      "x": "-88200",
+      "y": "31752000"
+    },
+    {
+      "x": "315000",
+      "y": "158760000"
+    }
+  ],
+  "generator_heights": [
+    "2.29141533813899",
+    "3.04717431616727"
+  ],
+  "coefficient_bound": 1,
+  "half_combinations_tested": 8,
+  "certified_progression_centers": 4,
+  "candidate_count": 1,
+  "candidates": [
+    {
+      "lower_center": "139129",
+      "upper_center": "180625",
+      "horizontal_difference": "41496",
+      "vertical_difference": "138600",
+      "lower_point": {
+        "half_coefficients": [
+          0,
+          -1
+        ],
+        "half": {
+          "x": "315000",
+          "y": "-158760000"
+        },
+        "point": {
+          "x": "139129",
+          "y": "4521133"
+        },
+        "certificate": {
+          "center": "139129",
+          "roots": [
+            "23",
+            "373",
+            "527"
+          ],
+          "values": [
+            "529",
+            "139129",
+            "277729"
+          ]
+        }
+      },
+      "upper_point": {
+        "half_coefficients": [
+          -1,
+          0
+        ],
+        "half": {
+          "x": "-88200",
+          "y": "-31752000"
+        },
+        "point": {
+          "x": "180625",
+          "y": "49225625"
+        },
+        "certificate": {
+          "center": "180625",
+          "roots": [
+            "205",
+            "425",
+            "565"
+          ],
+          "values": [
+            "42025",
+            "180625",
+            "319225"
+          ]
+        }
+      },
+      "grid": [
+        "139129",
+        "360721",
+        "42025",
+        "83521",
+        "180625",
+        "277729",
+        "319225",
+        "529",
+        "222121"
+      ],
+      "square_roots": [
+        "373",
+        null,
+        "205",
+        "289",
+        "425",
+        "527",
+        "565",
+        "23",
+        null
+      ]
+    }
+  ]
+}

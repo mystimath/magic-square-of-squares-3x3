@@ -1,0 +1,70 @@
+{
+  "engine": "D1-squarefree-rank-selector",
+  "max_n": 10,
+  "min_rank": 2,
+  "coefficient_bound": 1,
+  "rank_proof_requested": true,
+  "squarefree_curves_considered": 7,
+  "rank_errors": 0,
+  "rank_records": [
+    {
+      "n": 1,
+      "status": "certified",
+      "rank": 0,
+      "generators": []
+    },
+    {
+      "n": 2,
+      "status": "certified",
+      "rank": 0,
+      "generators": []
+    },
+    {
+      "n": 3,
+      "status": "certified",
+      "rank": 0,
+      "generators": []
+    },
+    {
+      "n": 5,
+      "status": "certified",
+      "rank": 1,
+      "generators": [
+        {
+          "x": "-4",
+          "y": "6"
+        }
+      ]
+    },
+    {
+      "n": 6,
+      "status": "certified",
+      "rank": 1,
+      "generators": [
+        {
+          "x": "-3",
+          "y": "9"
+        }
+      ]
+    },
+    {
+      "n": 7,
+      "status": "certified",
+      "rank": 1,
+      "generators": [
+        {
+          "x": "25",
+          "y": "120"
+        }
+      ]
+    },
+    {
+      "n": 10,
+      "status": "certified",
+      "rank": 0,
+      "generators": []
+    }
+  ],
+  "selected_curve_count": 0,
+  "selected_curves": []
+}
