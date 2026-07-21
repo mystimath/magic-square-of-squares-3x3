@@ -43,11 +43,10 @@ le `README.md` et `ARCHITECTURE.md`.
 
 ## Priorité suivante
 
-Ne pas augmenter uniformément la borne de coefficients au-delà de 20 sur les 71
-courbes déjà traitées. La prochaine campagne doit changer l'axe de couverture :
-sélectionner de nouvelles courbes ou familles elliptiques justifiées, avec rang
-positif et générateurs de faible hauteur, puis appliquer D3 à petite borne et
-valider toute fermeture par D4/B4.
+**D5 — prochaine session.** Sélectionner au-delà de `n=200` de nouvelles courbes
+sans facteur carré, en priorité de rang certifié au moins 2 et générateurs de
+faible hauteur ; appliquer D3 à `[-10,10]`, réserver `[-20,20]` aux signaux
+favorables et valider par D4/B4. Voir [docs/46-d5-next-campaign.md](docs/46-d5-next-campaign.md).
 
 ## Traçabilité
 
