@@ -1,0 +1,614 @@
+{
+  "engine": "D3-elliptic-local-square-closure-sieve-campaign",
+  "curves": [
+    34,
+    41,
+    65,
+    137,
+    138,
+    145,
+    154,
+    161,
+    194
+  ],
+  "coefficient_bound": 10,
+  "local_primes": [
+    13,
+    29,
+    19,
+    17,
+    23,
+    31,
+    7,
+    11
+  ],
+  "rank_proof_requested": true,
+  "records": [
+    {
+      "engine": "D3-elliptic-local-square-closure-sieve",
+      "curve": "y^2 = x^3 - 1156*x",
+      "n": 34,
+      "rank": 2,
+      "rank_proof_requested": true,
+      "generators": [
+        {
+          "x": "-16",
+          "y": "120"
+        },
+        {
+          "x": "-2",
+          "y": "48"
+        }
+      ],
+      "coefficient_bound": 10,
+      "local_primes": [
+        13,
+        29,
+        19,
+        17,
+        23,
+        31,
+        7,
+        11
+      ],
+      "half_combinations_tested": 440,
+      "certified_progression_centers": 220,
+      "center_pairs_tested": 24090,
+      "rejected_nonpositive_after_local_sieve": 0,
+      "local_rejection_counts": {
+        "13": 3734,
+        "29": 6872,
+        "19": 2233,
+        "17": 5109,
+        "23": 683,
+        "31": 1389,
+        "7": 0,
+        "11": 0
+      },
+      "local_sieve_survivors": 4070,
+      "exact_square_tests": 4070,
+      "exact_square_test_reduction": 0.8310502283105023,
+      "horizontal_square_closures": 0,
+      "candidate_count": 0,
+      "candidates": [],
+      "timing_seconds": {
+        "center_enumeration": 0.09992613100000369,
+        "pair_sieve_and_closure": 0.06380873999999892,
+        "total": 2.1558161340000055
+      }
+    },
+    {
+      "engine": "D3-elliptic-local-square-closure-sieve",
+      "curve": "y^2 = x^3 - 1681*x",
+      "n": 41,
+      "rank": 2,
+      "rank_proof_requested": true,
+      "generators": [
+        {
+          "x": "-9",
+          "y": "120"
+        },
+        {
+          "x": "841",
+          "y": "24360"
+        }
+      ],
+      "coefficient_bound": 10,
+      "local_primes": [
+        13,
+        29,
+        19,
+        17,
+        23,
+        31,
+        7,
+        11
+      ],
+      "half_combinations_tested": 440,
+      "certified_progression_centers": 220,
+      "center_pairs_tested": 24090,
+      "rejected_nonpositive_after_local_sieve": 0,
+      "local_rejection_counts": {
+        "13": 3828,
+        "29": 3104,
+        "19": 2724,
+        "17": 2216,
+        "23": 0,
+        "31": 1458,
+        "7": 0,
+        "11": 0
+      },
+      "local_sieve_survivors": 10760,
+      "exact_square_tests": 10760,
+      "exact_square_test_reduction": 0.5533416355334164,
+      "horizontal_square_closures": 0,
+      "candidate_count": 0,
+      "candidates": [],
+      "timing_seconds": {
+        "center_enumeration": 0.1415164600000054,
+        "pair_sieve_and_closure": 0.1860134970000047,
+        "total": 0.5561876829999903
+      }
+    },
+    {
+      "engine": "D3-elliptic-local-square-closure-sieve",
+      "curve": "y^2 = x^3 - 4225*x",
+      "n": 65,
+      "rank": 2,
+      "rank_proof_requested": true,
+      "generators": [
+        {
+          "x": "-25",
+          "y": "300"
+        },
+        {
+          "x": "-16",
+          "y": "252"
+        }
+      ],
+      "coefficient_bound": 10,
+      "local_primes": [
+        13,
+        29,
+        19,
+        17,
+        23,
+        31,
+        7,
+        11
+      ],
+      "half_combinations_tested": 440,
+      "certified_progression_centers": 220,
+      "center_pairs_tested": 24090,
+      "rejected_nonpositive_after_local_sieve": 0,
+      "local_rejection_counts": {
+        "13": 10305,
+        "29": 4449,
+        "19": 1449,
+        "17": 1187,
+        "23": 773,
+        "31": 1621,
+        "7": 0,
+        "11": 0
+      },
+      "local_sieve_survivors": 4306,
+      "exact_square_tests": 4306,
+      "exact_square_test_reduction": 0.8212536322125363,
+      "horizontal_square_closures": 0,
+      "candidate_count": 0,
+      "candidates": [],
+      "timing_seconds": {
+        "center_enumeration": 0.1264005490000102,
+        "pair_sieve_and_closure": 0.061216340000001424,
+        "total": 0.4063881609999953
+      }
+    },
+    {
+      "engine": "D3-elliptic-local-square-closure-sieve",
+      "curve": "y^2 = x^3 - 18769*x",
+      "n": 137,
+      "rank": 2,
+      "rank_proof_requested": true,
+      "generators": [
+        {
+          "x": "-3136/25",
+          "y": "-77112/125"
+        },
+        {
+          "x": "188502273/1073296",
+          "y": "1619389601535/1111934656"
+        }
+      ],
+      "coefficient_bound": 10,
+      "local_primes": [
+        13,
+        29,
+        19,
+        17,
+        23,
+        31,
+        7,
+        11
+      ],
+      "half_combinations_tested": 440,
+      "certified_progression_centers": 220,
+      "center_pairs_tested": 24090,
+      "rejected_nonpositive_after_local_sieve": 0,
+      "local_rejection_counts": {
+        "13": 4006,
+        "29": 3292,
+        "19": 2557,
+        "17": 0,
+        "23": 0,
+        "31": 3326,
+        "7": 0,
+        "11": 0
+      },
+      "local_sieve_survivors": 10909,
+      "exact_square_tests": 10909,
+      "exact_square_test_reduction": 0.547156496471565,
+      "horizontal_square_closures": 0,
+      "candidate_count": 0,
+      "candidates": [],
+      "timing_seconds": {
+        "center_enumeration": 0.32164440000001093,
+        "pair_sieve_and_closure": 0.4445777979999974,
+        "total": 0.9367174870000099
+      }
+    },
+    {
+      "engine": "D3-elliptic-local-square-closure-sieve",
+      "curve": "y^2 = x^3 - 19044*x",
+      "n": 138,
+      "rank": 2,
+      "rank_proof_requested": true,
+      "generators": [
+        {
+          "x": "150",
+          "y": "720"
+        },
+        {
+          "x": "162",
+          "y": "1080"
+        }
+      ],
+      "coefficient_bound": 10,
+      "local_primes": [
+        13,
+        29,
+        19,
+        17,
+        23,
+        31,
+        7,
+        11
+      ],
+      "half_combinations_tested": 440,
+      "certified_progression_centers": 220,
+      "center_pairs_tested": 24090,
+      "rejected_nonpositive_after_local_sieve": 0,
+      "local_rejection_counts": {
+        "13": 3992,
+        "29": 7296,
+        "19": 1956,
+        "17": 753,
+        "23": 4280,
+        "31": 1902,
+        "7": 0,
+        "11": 0
+      },
+      "local_sieve_survivors": 3911,
+      "exact_square_tests": 3911,
+      "exact_square_test_reduction": 0.8376504773765048,
+      "horizontal_square_closures": 0,
+      "candidate_count": 0,
+      "candidates": [],
+      "timing_seconds": {
+        "center_enumeration": 0.11459838399999,
+        "pair_sieve_and_closure": 0.06403885900000716,
+        "total": 0.41050210800000286
+      }
+    },
+    {
+      "engine": "D3-elliptic-local-square-closure-sieve",
+      "curve": "y^2 = x^3 - 21025*x",
+      "n": 145,
+      "rank": 2,
+      "rank_proof_requested": true,
+      "generators": [
+        {
+          "x": "-144",
+          "y": "204"
+        },
+        {
+          "x": "-100",
+          "y": "1050"
+        }
+      ],
+      "coefficient_bound": 10,
+      "local_primes": [
+        13,
+        29,
+        19,
+        17,
+        23,
+        31,
+        7,
+        11
+      ],
+      "half_combinations_tested": 440,
+      "certified_progression_centers": 220,
+      "center_pairs_tested": 24090,
+      "rejected_nonpositive_after_local_sieve": 0,
+      "local_rejection_counts": {
+        "13": 3950,
+        "29": 9501,
+        "19": 1737,
+        "17": 0,
+        "23": 1067,
+        "31": 1905,
+        "7": 0,
+        "11": 0
+      },
+      "local_sieve_survivors": 5930,
+      "exact_square_tests": 5930,
+      "exact_square_test_reduction": 0.7538397675383977,
+      "horizontal_square_closures": 0,
+      "candidate_count": 0,
+      "candidates": [],
+      "timing_seconds": {
+        "center_enumeration": 0.15147199999999827,
+        "pair_sieve_and_closure": 0.10324317900000324,
+        "total": 0.480682250000001
+      }
+    },
+    {
+      "engine": "D3-elliptic-local-square-closure-sieve",
+      "curve": "y^2 = x^3 - 23716*x",
+      "n": 154,
+      "rank": 2,
+      "rank_proof_requested": true,
+      "generators": [
+        {
+          "x": "-98",
+          "y": "1176"
+        },
+        {
+          "x": "350",
+          "y": "5880"
+        }
+      ],
+      "coefficient_bound": 10,
+      "local_primes": [
+        13,
+        29,
+        19,
+        17,
+        23,
+        31,
+        7,
+        11
+      ],
+      "half_combinations_tested": 440,
+      "certified_progression_centers": 220,
+      "center_pairs_tested": 24090,
+      "rejected_nonpositive_after_local_sieve": 0,
+      "local_rejection_counts": {
+        "13": 3768,
+        "29": 7238,
+        "19": 2113,
+        "17": 870,
+        "23": 1089,
+        "31": 1716,
+        "7": 1796,
+        "11": 1762
+      },
+      "local_sieve_survivors": 3738,
+      "exact_square_tests": 3738,
+      "exact_square_test_reduction": 0.8448318804483188,
+      "horizontal_square_closures": 1,
+      "candidate_count": 1,
+      "candidates": [
+        {
+          "lower_center": "139129/900",
+          "upper_center": "7225/36",
+          "horizontal_difference": "3458/75",
+          "vertical_difference": "154",
+          "lower_point": {
+            "half_coefficients": [
+              0,
+              -1
+            ],
+            "half": {
+              "x": "350",
+              "y": "-5880"
+            },
+            "point": {
+              "x": "139129/900",
+              "y": "4521133/27000"
+            },
+            "certificate": {
+              "center": "139129/900",
+              "roots": [
+                "23/30",
+                "373/30",
+                "527/30"
+              ],
+              "values": [
+                "529/900",
+                "139129/900",
+                "277729/900"
+              ]
+            }
+          },
+          "upper_point": {
+            "half_coefficients": [
+              -1,
+              0
+            ],
+            "half": {
+              "x": "-98",
+              "y": "-1176"
+            },
+            "point": {
+              "x": "7225/36",
+              "y": "393805/216"
+            },
+            "certificate": {
+              "center": "7225/36",
+              "roots": [
+                "41/6",
+                "85/6",
+                "113/6"
+              ],
+              "values": [
+                "1681/36",
+                "7225/36",
+                "12769/36"
+              ]
+            }
+          },
+          "grid": [
+            "139129/900",
+            "360721/900",
+            "1681/36",
+            "83521/900",
+            "7225/36",
+            "277729/900",
+            "12769/36",
+            "529/900",
+            "222121/900"
+          ],
+          "square_roots": [
+            "373/30",
+            null,
+            "41/6",
+            "289/30",
+            "85/6",
+            "527/30",
+            "113/6",
+            "23/30",
+            null
+          ],
+          "integer_normalization": {
+            "root_scale": "30",
+            "value_scale": "900",
+            "grid": [
+              "139129",
+              "360721",
+              "42025",
+              "83521",
+              "180625",
+              "277729",
+              "319225",
+              "529",
+              "222121"
+            ],
+            "square_roots": [
+              "373",
+              null,
+              "205",
+              "289",
+              "425",
+              "527",
+              "565",
+              "23",
+              null
+            ]
+          }
+        }
+      ],
+      "timing_seconds": {
+        "center_enumeration": 0.1033086979999922,
+        "pair_sieve_and_closure": 0.05687514400000282,
+        "total": 0.3965571629999971
+      }
+    },
+    {
+      "engine": "D3-elliptic-local-square-closure-sieve",
+      "curve": "y^2 = x^3 - 25921*x",
+      "n": 161,
+      "rank": 2,
+      "rank_proof_requested": true,
+      "generators": [
+        {
+          "x": "-63",
+          "y": "1176"
+        },
+        {
+          "x": "289",
+          "y": "4080"
+        }
+      ],
+      "coefficient_bound": 10,
+      "local_primes": [
+        13,
+        29,
+        19,
+        17,
+        23,
+        31,
+        7,
+        11
+      ],
+      "half_combinations_tested": 440,
+      "certified_progression_centers": 220,
+      "center_pairs_tested": 24090,
+      "rejected_nonpositive_after_local_sieve": 0,
+      "local_rejection_counts": {
+        "13": 3890,
+        "29": 6427,
+        "19": 1886,
+        "17": 0,
+        "23": 5011,
+        "31": 1766,
+        "7": 1338,
+        "11": 0
+      },
+      "local_sieve_survivors": 3772,
+      "exact_square_tests": 3772,
+      "exact_square_test_reduction": 0.8434205064342051,
+      "horizontal_square_closures": 0,
+      "candidate_count": 0,
+      "candidates": [],
+      "timing_seconds": {
+        "center_enumeration": 0.1432493549999947,
+        "pair_sieve_and_closure": 0.07115087699999378,
+        "total": 0.460443314999992
+      }
+    },
+    {
+      "engine": "D3-elliptic-local-square-closure-sieve",
+      "curve": "y^2 = x^3 - 37636*x",
+      "n": 194,
+      "rank": 2,
+      "rank_proof_requested": true,
+      "generators": [
+        {
+          "x": "-144",
+          "y": "1560"
+        },
+        {
+          "x": "488977/144",
+          "y": "-341367929/1728"
+        }
+      ],
+      "coefficient_bound": 10,
+      "local_primes": [
+        13,
+        29,
+        19,
+        17,
+        23,
+        31,
+        7,
+        11
+      ],
+      "half_combinations_tested": 440,
+      "certified_progression_centers": 220,
+      "center_pairs_tested": 24090,
+      "rejected_nonpositive_after_local_sieve": 0,
+      "local_rejection_counts": {
+        "13": 0,
+        "29": 8176,
+        "19": 2541,
+        "17": 2121,
+        "23": 1157,
+        "31": 1559,
+        "7": 0,
+        "11": 0
+      },
+      "local_sieve_survivors": 8536,
+      "exact_square_tests": 8536,
+      "exact_square_test_reduction": 0.645662100456621,
+      "horizontal_square_closures": 0,
+      "candidate_count": 0,
+      "candidates": [],
+      "timing_seconds": {
+        "center_enumeration": 0.17394031099999552,
+        "pair_sieve_and_closure": 0.18860382600000491,
+        "total": 0.5483427310000053
+      }
+    }
+  ]
+}

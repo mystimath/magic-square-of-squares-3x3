@@ -31,20 +31,23 @@ le `README.md` et `ARCHITECTURE.md`.
 2. **D1 — sélection de courbes.** Pilote sur les représentants
  sans facteur carré, rang Sage certifié au moins 2, puis D0 à très faible hauteur.
 3. **D2 — terminé.** Les neuf courbes D1 restent négatives sauf `E_154`; ne pas augmenter uniformément la hauteur.
-4. **D3 — fermeture structurée.** Étudier directement la condition quadratique liant deux points de `2E_n(Q)` avant reconstruction.
-5. **D4 — pont elliptique → B4.** Terminé pour les artefacts D0–D2 : après
-   normalisation et déduplication, `E_154`/Bremner est l'unique fermeture, dans
-   l'orbite `corner_edge_nonincident`. Le prochain apport doit venir de D3,
-   pas d'une extension uniforme de D2.
+4. **D3 — tamis de fermeture terminé jusqu'à la borne 20.** Sur les 71
+   courbes de rang positif certifié jusqu'à `n=200`, soit 3 183 200 paires,
+   Bremner sur `E_154` reste l'unique fermeture. Le moteur par défaut pré-calcule
+   les résidus pour 16 premiers ; voir `docs/45-d3-local-closure-sieve.md`.
+5. **D4 — pont elliptique → B4.** Terminé pour D0–D3 : après normalisation
+   et déduplication, `E_154`/Bremner est l'unique fermeture, dans l'orbite
+   `corner_edge_nonincident`.
 6. **B4–B6.** Ils restent les validateurs exhaustifs dans une boîte de racines,
    pas la voie de découverte à prolonger uniformément.
 
 ## Priorité suivante
 
-Ne pas lancer une augmentation uniforme de borne par défaut. Avant une nouvelle
-campagne, formuler une hypothèse ou un changement de couverture mesurable,
-valider à petite borne contre les oracles existants, puis documenter la décision
-et son coût.
+Ne pas augmenter uniformément la borne de coefficients au-delà de 20 sur les 71
+courbes déjà traitées. La prochaine campagne doit changer l'axe de couverture :
+sélectionner de nouvelles courbes ou familles elliptiques justifiées, avec rang
+positif et générateurs de faible hauteur, puis appliquer D3 à petite borne et
+valider toute fermeture par D4/B4.
 
 ## Traçabilité
 

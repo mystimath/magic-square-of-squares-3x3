@@ -67,3 +67,13 @@ Artefacts :
 `results/formulations_comparison/sage/d4_b4_bridge_d0_e154_bound1.json`,
 `d4_b4_bridge_d1_n200_bound1.json` et
 `d4_b4_bridge_d2_bounds2_3.json`.
+
+## Passage D3
+
+L'artefact D3 couvrant les 71 courbes de rang positif certifié jusqu'à `n=200`
+et la borne de coefficients 20 contient une seule grille entière distincte.
+Le pont extrait les trois progressions de Bremner ; B4 retourne une classe dans
+l'orbite `corner_edge_nonincident`. Aucun nouveau masque n'est introduit.
+
+Artefact :
+`results/formulations_comparison/sage/d4_b4_bridge_d3_positive_rank_bound20.json`.
